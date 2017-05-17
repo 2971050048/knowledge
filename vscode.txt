@@ -1,0 +1,82 @@
+快捷键
+    切换自动换行 alt+z
+    多行编辑 ctrl+alt+箭头|alt+f3
+    多列选择 alt+shift+鼠标或箭头
+    复制该行 ctrl+shift+d,删除行 ctrl+shift+k
+    注释 ctrl+/ 或者 ctrl+shift+/
+    f2可以重命名一个变量，右键也行
+    格式化代码 ctrl+shift+f,右键也行
+    代码折叠 ctrl+shift+[, 点击'-'也行
+        全部打开 ctrl+k ctrl+0
+        全部折叠 ctrl+k ctrl+9(自己定义的)
+    移动代码 ctrl+[
+    代码错误警告 ctrl+k n
+    转化为小写 ctrl+k ctrl+l
+    关闭当前文件 alt+f4
+    全屏模式: f11
+    zen模式：shift+f11 (只看代码)
+    多行代码变成一行: ctrl+j
+
+自定义快捷键
+    全部折叠: ctrl+k ctrl+9
+    emmet: tab改成了'alt+c e'
+    新建文件: ctrl+alt+n
+    代码格式化: alt+c b
+    color picker: alt+c p|c
+
+问题: 
+    集成终端错位：打开命令行，右键属性->使用旧版控制台
+
+插件：
+    `advanced new file: 新建文件， 快捷键 ctrl+alt+n
+        设置user:     "newFile.showFullPath": false, //将当前文件路径设为新建文件的路径
+    `beautify: 代码格式化，设置快捷键为"alt+c b",
+        设置方法: open keyboard shortcuts ->搜索HookyQR.beautify
+        设置文件: .jsbeautifyrc, 参考：https://github.com/victorporof/Sublime-HTMLPrettify/blob/master/.jsbeautifyrc
+    `color picker: alt+c p|c 颜色面板|改变表示方式
+        设置user:    "colorHelper.pickerForm": "simple" //面板设置为简单模式
+    debugger for chrome:
+    `eslint: 先npm i -g eslint，vscode也装eslint，然后命令面板->eslint:create '.eslintrc.json' file
+        .eslintrc.json配置：http://eslint.cn/docs/user-guide/configuring
+        .eslintignore文件是纯文本文件，每一行都是glob模式表哪些路径应该忽略检测
+    `GBKtoUTF8: 自动把文件编码方式换成utf8
+    `git history(git log): view file|git|line history
+    `HTML Snippets: html代码提醒
+        设置user: 允许在其他哪些文件使用html代码提醒
+        "files.associations": {
+            "*.ejs": "html",
+            "*.js": "html"
+        }
+    intellisense for css class name: 用不了？？？
+    `vscode-icons: 在每个文件前添加图标；
+        使用: 命令面板 -> preferences: file icon theme -> vscode icon
+    powershell: 智能感知
+        "terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
+    markdownlint
+    `prettify json: 命令面板 -> prettify json即可, 要求是json文件里不能有注释，不然用不了这个插件
+    `sublime text keymap
+    `view in browser
+    vetur
+    vue
+    `vue 2 snippets
+    `filesize: 左下角显示文件大小，点击可显示详细信息
+
+
+setting:
+    用户设置：命令面板 -> preferences: open user setting ->  点击行前面那只笔就能设置
+    工作区设置：命令面板 -> preferences: open workspace setting
+    特定语言设置：命令面板 -> preferences: configure language special setting
+    界面语言: 命令面板 -> configure language
+
+左边工具栏：
+    搜索：ctrl+shift+f 可以搜索整个工作区文件，找到指定代码
+
+调试:
+    launch.json中
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "启动程序",
+            "program": "${file}"//基于当前文件调试
+            // "program": "${workspaceRoot}\\src\\main.js"
+        }

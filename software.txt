@@ -1,0 +1,36 @@
+工作:
+  必备: chrome|vscode|护眼宝|ss|搜狗输入法绿色版
+  bandzip|wps|snipaste|github
+  everything|xampp|ps|typora(编辑md)|sublime|坚果云
+  teamviewer|xmind(思维导图)|autoruns(开机启动)|procexp
+  putty|lantern
+
+娱乐:
+  ADSafe|网易云音乐|tim|potplayer|爱壁纸
+  audacity(音频编辑)|OBSstudio(直播录像)
+
+下载工具:
+  迅雷精简版|IDE|youtube-dl
+
+手机:
+  ss|lantern|tim|wechat|知乎|网易云|alipay
+  高德地图|wifi钥匙
+  ??微博国际版|weico酷安
+
+??
+  sysinternals
+  piriform(ccleanerrecuva文件恢复 speccy硬件检测)
+  freefilwsync(文件同步软件)
+  sumatraPDF(pdf阅读)
+  myersplash
+  种子搜索神奇
+
+everything:
+  官网: http://www.voidtools.com/
+  指定文件夹搜索: 
+    设置: 搜索->'匹配路径'+'所有'
+    e:\software\*.txt 表在e:\software下所有.txt结尾的文件
+  正则搜索:
+    设置: 搜索->'正则'+'所有'
+  开启ftp|http服务器:
+    设置: 工具->选项->http->接口为ip地址

@@ -1,0 +1,57 @@
+/**
+  谷歌开发者工具 https://developers.google.com/web/tools/chrome-devtools/
+  插件商店 https://chrome.google.com/webstore/category/extensions
+  demo https://events.google.com/io2016/
+ */ 
+搜索命令:
+  1、双引号: 完全匹配搜索。 "谷歌搜索"
+  2、减号: 搜索不包含减号词的页面。减号前面必须是空格,后面没有空格。eg. 搜索 -引擎
+  3、星号: 通配符, eg.搜索*擎
+  4、inurl: 查询词出现在url中的页面。支持中文和英文。eg.inurl:搜索引擎优化
+  8、allinurl。 eg.allinurl:SEO 搜索引擎优化, 等用于inurl:SEO inurl:搜索引擎优化
+  6、intitle: 页面title中包含关键词的页面。
+  7、allintitle:多组关键词。例如 :allintitle:SEO 搜索引擎优化就相当于:intitle:SEO intitle:搜索引擎优化返回的是标题中中既包含“SEO”,也包含“搜索引擎优化”的页面
+  5、inanchor: 导入链接锚文字中包含搜索词的页面。eg.inanchor:点击这里,返回的结果页面并不一定包含“点击这里”,指向页面的链接锚文字出现了“点击这里”。
+  9、filetype: 搜索特定文件格式。eg.filetype:pdf SEO,返回包含SEO关键词的pdf文件
+  10、site: 搜索某域名下的所有文件。
+  11、linkdomain: 只适用于雅虎,返回某域名的反向链接。雅虎的反向链接数据还比较准确,是SEO人员研究竞争对手外部链接情况的重要工具之一。
+  eg.linkdomain:http://cnseotool.com -site:http://cnseotool.com, 得到的就是点石网站的外部链接,因为-site:http://cnseotool.com 已经排除了内部链接
+  12、related: 只适用于Google,返回的结果是与某个网站有关联的页面。eg.related:http://cnseotool.com, 得到Google所认为的与点石网站有关联的其他页面。 
+
+URL命令:
+  chrome://version chrome:58.0.3029.110(64b) js:v8 5.8.283.39
+  chrome://bookmarks|settings|downloads
+  chrome://chrome-urls 可以查看其他命令
+
+插件:
+  vue-devtools: 
+  emmet re:view 显示在不同设备下的页面
+  whatfont: 查看页面字体的种类
+  turn off the light: 看视屏时选择关灯
+  infinity: 标签管理，科学上网？https://infinitysocks.com/
+  stylus:
+  
+
+控制台:
+  Ctrl+Shift+I: 打开开发者工具
+  Shift+Enter: 进入多行模式
+  ctrl+shift+c: 检查元素模式
+  ctrl+l: 清除控制台历史
+  console.time()和console.timeEnd() 计算代码运行时间
+
+工作区的更改映射到源文件:
+  sources面板->右键'add folder to workspace'->加入源文件
+  ->右键工作区文件'map to file system resource'->选择已在工作区的对应本地文件
+工作区内搜索字符串: ctrl+shift+f
+
+elements
+console
+sources
+network
+performance|timeline
+memory|profiles(轮廓，简况)
+application
+  网络应用清单、服务工作线程和服务工作线程缓存
+security
+audits
+

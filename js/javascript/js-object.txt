@@ -1,0 +1,200 @@
+//https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object
+//创建对象，属性(都用到属性描述符)
+Object.create(原型对象, [可选]参数对象) ie9+
+    结果为新对象,指定原型对象和属性创建新对象
+        参数对象为属性和属性描述符，属性描述符跟Object.defineProperties(obj, props)的props一样
+    o = Object.create(Object.prototype, {
+        // foo成为所创建对象的数据属性
+        foo: { writable:true, configurable:true, value: "hello" },
+        // bar成为所创建对象的访问器属性
+        bar: {
+            configurable: false,
+            get: function() { return 10 },
+            set: function(value) { console.log("Setting `o.bar` to", value) }
+    }});
+
+Object.defineProperties(obj, props) ie9+
+    结果为该对象,props为对象,键名为属性，键值为属性描述符组成的对象：
+    value,writable,enumerable,configurable,get,set; 前4个默认为false。后2个默认为underfined
+        configurable: 属性描述能否修改或属性能否删除
+
+Object.getOwnPropertyDescriptor(obj, prop) ie8+
+
+    结果该属性的描述符对象,返回对象某自有属性的属性描述符
+    Object.defineProperties(o, {
+        name: {
+            value: 'perhaps',
+            writable: true
+        }
+    });
+    console.log(Object.getOwnPropertyDescriptor(o, 'name'));//{configurable: false}
+
+//获取属性名
+Object.getOwnPropertyNames(obj) ie9+
+    结果为数组，返回给定对象所有自身属性(不包括原型对象属性)组成的数组(包括可枚举，不可枚举和继承属性)
+    var p3 = ['q', 'w', 'e'];
+    console.log(Object.getOwnPropertyNames(p3));//['0', '1', '2', 'length']
+    //只获取不可枚举属性
+    function nonenum(obj) {
+        var props = Object.getOwnPropertyNames(obj);
+        var enum_only = Object.keys(obj);
+        return props.filter((prop) => {
+            if(enum_only.indexOf(prop) == -1) return true;
+            //若改为: 只获取特定自身不可枚举属性
+            //if(enum_only.indexOf(prop) == -1 && obj.hasOwnProperty(prop)) return true;
+            else return false;
+        });
+    }
+    console.log(nonenum(p3));//['length']
+
+
+Object.keys(obj) ie9+
+    //for...in循环遍历对象的可枚举属性,for(var key in obj)(包括可枚举和继承属性)
+    结果为数组,返回给定对象自身可枚举属性组成的数组(只有可枚举)
+    var p1 = {a: 1, b: 2};
+    console.log(Object.keys(p1));//['a', 'b']，对象
+    var p2 = {0: 'a', 10: 'b'};
+    console.log(Object.keys(p2));//['0', '10'],类数组对象
+    var p3 = ['q', 'w', 'e'];
+    console.log(Object.keys(p3));//['0', '1', '2']
+
+Object.prototype.hasOwnProperty 都支持
+    结果为布尔值,某对象自身是否有某属性(包括可枚举和不可枚举)
+    // 返回所有特定自身的可枚举属性
+
+
+    
+
+Object.assign(target, ...sources) ie不支持
+
+    结果为对象,将所有可枚举属性的值从源对象复制到目标对象。返回目标对象。
+    //合并object
+    var o1 = { a: 1 }, o2 = { b: 2 }, o3 = { c: 3 };
+    var obj = Object.assign(o1, o2, o3);
+    console.log(obj); // { a: 1, b: 2, c: 3 }
+    console.log(o1);  // { a: 1, b: 2, c: 3 }
+
+    //继承属性和不可枚举属性则不能拷贝
+    var o = Object.create({q: 1});
+    Object.defineProperties(o, {
+        name: {
+            value: 'perhaps',
+            writable: true
+        },
+        age: {
+            value: 21,
+            enumerable: true
+        }
+    });
+    console.log(Object.keys(o));//['age']
+    console.log(Object.assign({}, o));//{age: 21}
+
+//可扩展属性
+Object.freeze(obj) ie9+
+    返回该对象，冻结一个对象，这个对象永远是不可变的。
+    var o = {
+        prop: function() {},
+        foo: 'bar',
+        p: {}
+    }
+    Object.freeze(o);
+    console.log(Object.isFrozen(o));//true
+    o.prop = 1;//静默失败
+    Object.defineProperties(o, {
+        name: {value: 42, configurable: true}
+    });//抛出错误
+
+    //浅冻结: 冻结对象的非冻结对象可被修改; 需要完全冻结
+    o.p.foo = 'dog';//可以修改
+    function deepFreeze(o) {//完全冻结函数
+        var key, keyValue;
+        Object.freeze(o);//冻结第一层
+        for(key in o) {
+            keyValue = o[key];
+            if(!Object.isFrozen(keyValue) && (typeof keyValue === 'object') && o.hasOwnProperty(key)) {
+                deepFreeze(keyValue);//递归调用
+            }
+        }
+    }
+    deepFreeze(o);
+    o.p.foo = 'cat';//修改失败
+    console.log(o.p.foo);//'dog'
+
+Object.preventExtensions(obj) ie9+，opera不支持
+    返回该对象，让一个对象变得不可扩展
+
+Object.seal(obj) ie9+,opera不支持
+    返回该对象，密封对象，不能添加删除属性，不能修改属性的 enumerable,writable,configurable,但可以修改value
+    var o = {prop: function(){}, name: 'bar'};
+    Object.seal(o);
+    delete o.prop; //静默失败
+    o.prop = 1; //成功
+
+Object.isExtensible(obj) ie9+
+    判断对象是否可扩展
+    对象默认情况下能扩展，但Object.preventExtensions()|seal()|freeze();可让对象变成不可扩展
+    Object.isExtensible({}); //true
+    Object.isExtensible(Object.preventExtensions({})); //false
+    Object.isExtensible(Object.seal({}));//false
+    Object.isExtensible(Object.freeze({}));//false
+
+Object.isSealed(obj)
+    结果为布尔值，判断一个对象是否被密封
+//原型对象8
+Object.getPrototypeOf(obj); ie9+
+    返回对象的原型对象
+    var proto = {};
+    Object.getPrototypeOf(Object.create(proto)) === proto;// true
+
+Object.prototype.isPrototypeOf(obj) 都支持
+    返回布尔值，检测一对象是否在另一对象的原型链上
+    function A() {}
+    var obj = new A();
+    A.prototype.isPrototypeOf(obj);//true;
+
+Object.is(value1, value2) ie,safari不支持
+    结果为布尔值，确定两值是否为相同的值
+    val为underfined,null,NaN也相等
+    Object.is(null, null); //true
+    Object.is(NaN, NaN); //true
+
+Object.prototype.propertyIsEnumerable(prop)
+    返回布尔值，当前对象的属性是否为可枚举属性(特定自身且可枚举属性)(跟Object.keys()一样，只是返回值不同)
+    var _prototype = {name: 'bar', age: 31};
+    var obj = Object.create(_prototype, {
+        class: {value: 'foo', enumerable: true, writable:true},
+        method: {
+            get: function() {return this.class},
+            set: function(x) {this.class = x}
+        }
+    });
+    obj.propertyIsEnumerable('class');//true
+    obj.propertyIsEnumerable('method');//false
+    obj.propertyIsEnumerable('name');//false
+
+Object.prototype.toString(obj) 都支持
+    返回该对象的字符串
+    var toString = Object.prototype.toString;
+    toString.call(null); //[object Null]
+    toString.call(undefined); //[object Undefined]
+    toString.call(new Date()); //[object Date]
+    toString.call(new String()); //[object String]
+    toString.call(Math); //[object Math]
+    toString.call(1); //[object Number]
+    toString.call(true); //[object Boolean]
+
+Object.prototype.valueOf(obj) 都支持
+    返回对象的原始值，若没有原始值，则返回对象自身
+    //自义定valueOf方法
+    function p(n) {
+        this.n = n;
+    }
+    p.prototype.valueOf = function() {
+        return this.n;
+    }
+    var foo = new p(3);
+    console.log(foo + 3); //6
+
+
+
+

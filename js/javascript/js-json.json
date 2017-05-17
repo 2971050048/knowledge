@@ -1,0 +1,24 @@
+// 待编辑...
+{
+	"text1":"haha",
+	"text2":[
+		{
+			"basic":{
+				"city":"huizhou",
+				"age":20
+			}
+		},
+		{
+			"basic2":"hehe"
+		}
+	]
+}
+/**
+ * js处理json时，得化成json对象，可以用typeof来判断数据是否是json对象
+ * 对象就用"."，数组就用"[0]"
+ * var json1 = JSON.parse(data);
+ * alert(typeof json1);
+ * var t1 = json1.text1;
+ * var t2_city = json1.text2[0].basic.city;
+ * var t3_basic2 = json1.text2[1].basic2;
+ */

@@ -1,0 +1,10 @@
+1.刷新dns缓存：ipconfig /flushdns
+2.更改hosts：
+    地址C:\Windows\System32\drivers\etc
+    权限设置：属性->安全->高级->添加->选择主体->高级->立即查找->users->勾选全部权限
+    内容设置: 127.0.0.1 网址，可以屏蔽相应网站
+3.关闭开机启动: msconfig-->启动； 或者软件autoruns
+4.任务管理器卸载任务出现"等待卸载或更新程序": 
+    任务管理器ctrl+shift+esc) -> dllhost.exe, 结束进程
+5.查看端口占用: netstat -ano
+    

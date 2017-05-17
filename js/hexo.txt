@@ -1,0 +1,44 @@
+1、安装准备软件 Node.js、Git、GitHub 
+2、本地搭建hexo框架、配置主题、修改参数、实现本地测试预览
+3、链接GitHub、实现在线预览
+4、购买域名并解析
+5、日后站点的管理和运营
+
+npm install -g hexo-cli //安装 Hexo
+
+//目录
+.
+├── _config.yml  //网站的配置信息
+├── package.json  //应用程序的信息
+├── scaffolds //模版文件夹
+├── source //存放用户资源
+|   ├── _drafts
+|   └── _posts
+└── themes //根据主题来生成静态页面
+
+hexo init //将当前文件夹初始化为hexo默认主题
+hexo new <title> //新建文章
+hexo gerenate //生成静态文件(简写为 g)
+hexo server //启动服务器(简写为 s)，-p(port) 可重设端口
+hexo deploy //部署网站(d)
+hexo render <file1> //渲染文件,-o(output) 设置输出路径
+hexo migrate <type> //从其他博客迁移内容
+hexo clean //清除db.json和public
+hexo list <type> //列出网站资料
+hexo version 
+hexo --safe //安全模式
+hexo --debug //调试，并记录到debug.log
+hexo --silent //简洁模式，隐藏终端信息
+hexo --config custom.yml //不使用_config.yml
+hexo --draft //显示草稿
+hexo --cwd/path/to/cwd //自定义当前工作目录
+
+在需要显示简介的地方加 <!--more-->
+
+显示云标签：hexo new page "gits"，并添加下面代码
+title: tags
+date: 2015-09-19 22:37:08
+type: "tags"
+comments: false
+
+在SublimeText（已经装了livereload）上写博文，用hexo s -g在Chrome上预览，打开Chrome的livereload插件，只需要在编辑器保存，本地server会自动更新，博客页面随即刷新，很方便 
