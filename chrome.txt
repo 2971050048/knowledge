@@ -32,12 +32,26 @@ URL命令:
   stylus:
   
 
-控制台:
-  Ctrl+Shift+I: 打开开发者工具
-  Shift+Enter: 进入多行模式
-  ctrl+shift+c: 检查元素模式
-  ctrl+l: 清除控制台历史
-  console.time()和console.timeEnd() 计算代码运行时间
+快捷键:
+  公用:
+    ctrl+pageup|down: 左|右边标签|
+    ctrl+shift+i|f2: 打开开发者工具
+    ctrl+shift+c: 检查元素模式
+    ctrl++|+|o: 放大|缩小|回复默认大小
+    console.time()和console.timeEnd() 计算代码运行时间
+    ctrl+[: 左面板
+    ctrl+p: 资源面板
+    ctrl+shift+p: 命令面板 
+    ctrl+f: 当前资源寻找
+    ctrl+shift+f: 全资源寻找
+  console: 
+    shift+enter: 进入多行模式
+    ctrl+l: 清除控制台历史
+    ctrl+'->'或tab: 接受代码提醒
+  text editor:
+    ctrl+g: 到指定行
+    
+    
 
 工作区的更改映射到源文件:
   sources面板->右键'add folder to workspace'->加入源文件

@@ -1,3 +1,6 @@
+参考
+    官方文档: https://code.visualstudio.com/docs#vscode
+    中文文档: https://jeasonstudio.gitbooks.io/vscode-cn-doc/content/
 快捷键
     切换自动换行 alt+z
     多行编辑 ctrl+alt+箭头|alt+f3
@@ -72,6 +75,11 @@ setting:
     搜索：ctrl+shift+f 可以搜索整个工作区文件，找到指定代码
 
 调试:
+    //https://code.visualstudio.com/docs/editor/debugging
+    断点: f9
+    启动调试: f5
+    停止调试: shift+f5
+    重启调试: ctrl+shift+f5
     launch.json中
         {
             "type": "node",
