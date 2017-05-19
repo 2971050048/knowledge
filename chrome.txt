@@ -34,7 +34,7 @@ URL命令:
 
 快捷键:
   公用:
-    ctrl+pageup|down: 左|右边标签|
+    ctrl+pageup|down: 左|右边标签
     ctrl+shift+i|f2: 打开开发者工具
     ctrl+shift+c: 检查元素模式
     ctrl++|+|o: 放大|缩小|回复默认大小
@@ -44,23 +44,21 @@ URL命令:
     ctrl+shift+p: 命令面板 
     ctrl+f: 当前资源寻找
     ctrl+shift+f: 全资源寻找
-  console: 
+    alt+d|f6: 定位到url
+  text editor:
+    ctrl+g: 到指定行
+
+elements
+  无法在Elements面板中通过DOM更改修改源文件，所以可以先跳转到sources面板
+console
+  快捷键: 
     shift+enter: 进入多行模式
     ctrl+l: 清除控制台历史
     ctrl+'->'或tab: 接受代码提醒
-  text editor:
-    ctrl+g: 到指定行
-    
-    
-
-工作区的更改映射到源文件:
-  sources面板->右键'add folder to workspace'->加入源文件
-  ->右键工作区文件'map to file system resource'->选择已在工作区的对应本地文件
-工作区内搜索字符串: ctrl+shift+f
-
-elements
-console
 sources
+  工作区的更改映射到源文件:
+    sources面板->右键'add folder to workspace'->加入源文件
+    ->右键工作区文件'map to file system resource'->选择已在工作区的对应本地文件
 network
 performance|timeline
 memory|profiles(轮廓，简况)
@@ -68,4 +66,13 @@ application
   网络应用清单、服务工作线程和服务工作线程缓存
 security
 audits
-
+drawer:
+  console:
+  animations:查看动画
+  history:
+  network conditions
+  remote devices
+  rendering
+  search
+  sensors
+  quick source

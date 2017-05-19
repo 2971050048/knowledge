@@ -12,12 +12,12 @@ Page1:
   thumbnail: 极小的['θʌmneɪl]
   renderer: 渲染器
   rendering engine: 浏览器内核
-  trident: 三叉戟，IE内核 ['traɪd(ə)nt]
-  gecko: 壁虎，firefox内核['gekəʊ]
+  trident: 三叉戟,IE内核 ['traɪd(ə)nt]
+  gecko: 壁虎,firefox内核['gekəʊ]
   presto: 迅速的,opera内核['prestəʊ]
-  Chakra: 脉轮，JS引擎['tʃʌkrə]
-  chrome: 铬合金，谷歌浏览器[krəʊm]
-  toggle: 开关，触发器['tɒg(ə)l] 
+  Chakra: 脉轮,JS引擎['tʃʌkrə]
+  chrome: 铬合金,谷歌浏览器[krəʊm]
+  toggle: 开关,触发器['tɒg(ə)l] 
   stack: 堆
   pane: 窗格
   collapse: 倒塌[kə'læps]
@@ -84,7 +84,7 @@ Page1:
   parse: 解析[pɑːz]
   relevant: 有意义的[ˈreləvənt]
   positive: 积极的
-  round: 圆，循环[raʊnd] 
+  round: 圆,循环[raʊnd] 
   floor: 地板[flɔː] 
   ceil: 装天花板[siːl]
   angle: 角度
@@ -125,7 +125,7 @@ Page1:
   metacharacter: 元字符
   quantifier: 数量词['kwɒntɪfaɪə]
   boundary: 边界['baʊnd(ə)rɪ]
-  assertion: 声明，主张[ə'sɜːʃ(ə)n]
+  assertion: 声明,主张[ə'sɜːʃ(ə)n]
   carriage: 运输['kærɪdʒ]
   precede: 领先[prɪ'siːd]
   backspace: 后退一格['bækspeɪs]
@@ -160,17 +160,17 @@ Page1:
   hybrid: 混血['haɪbrɪd]
   native: 本土
   Polyfill: 实现浏览器不支持的原生API代码
-  iteration: 迭代，反复
+  iteration: 迭代,反复
   rotate: 旋转[rə(ʊ)'teɪt]
   skew: 偏离[skjuː]
-  dimension: 方向，尺寸[dɪ'menʃ(ə)n]
+  dimension: 方向,尺寸[dɪ'menʃ(ə)n]
   dpi: dots per inch每英寸点数(打印机)
   ppi: pixel per inch每英寸像素(显示屏)
     对于显示屏: 分辨率是通常用每英寸所含点或像素〔dpi〕来衡量
   dpcm: dots per centimeter每厘米点数
   schema: 模式；计划；图解；概要['skiːmə]
   pertain: 关于
-  deprecated: 弃用，不赞成 [ˈdeprəkeɪtɪd]
+  deprecated: 弃用,不赞成 [ˈdeprəkeɪtɪd]
   chunk: 大块
   issue: 问题
   stash: 存放[stæʃ]
@@ -179,15 +179,15 @@ Page1:
   mount: 挂载[maʊnt]
   mustache: 胡子[mə'stɑːʃ]
   bind: 捆绑[baɪnd]
-  handlebar: 车把，八字胡 ['hænd(ə)lbɑː] 
+  handlebar: 车把,八字胡 ['hænd(ə)lbɑː] 
   uglify: 将..丑化['ʌɡlɪfaɪ]
   pedantic: 迂腐的[pɪ'dæntɪk]
-  obscure: 模糊的，晦涩的[əb'skjʊə]
+  obscure: 模糊的,晦涩的[əb'skjʊə]
   sannitize: 给..消毒['sænɪtaɪz]
   conform: 符合[kən'fɔːm]
   philosophy: 哲学[fɪ'lɒsəfɪ] 
   concise: 简介的[kən'saɪs]
-  implements: 履行，工具['ɪmplɪm(ə)nts]
+  implements: 履行,工具['ɪmplɪm(ə)nts]
   compatible: 兼容的[kəm'pætɪb(ə)l] 
   split: 分离[splɪt]
   ultimately: 基本上['ʌltɪmətlɪ]
@@ -210,19 +210,19 @@ Page1:
 
 Page2:
 mutate: 变化[mjuː'teɪt]
-process: 加工，处理['prəʊses]
+process: 加工,处理['prəʊses]
 preprocessor: 预处理器[,priː'prəʊsesə]
 persistent: 持久稳固的[pə'sɪst(ə)nt]
 progressive: 先进的[prə'gresɪv] 
-manifest: 显示，货单['mænɪfest] 
+manifest: 显示,货单['mænɪfest] 
 identity: 身份[aɪ'dentɪtɪ] 
-presentation: 展示，介绍[prez(ə)n'teɪʃ(ə)n]
-storage: 仓库，存储['stɔːrɪdʒ]
+presentation: 展示,介绍[prez(ə)n'teɪʃ(ə)n]
+storage: 仓库,存储['stɔːrɪdʒ]
 orientation: 方向[,ɔːrɪən'teɪʃ(ə)n; 
 prevent: 阻止[prɪ'vent]
-reveal: 显示，揭露[rɪ'viːl]
+reveal: 显示,揭露[rɪ'viːl]
 pending: 待定['pendɪŋ]
-initiator: 发起人，启动程序[ɪ'nɪʃɪeɪtə]
+initiator: 发起人,启动程序[ɪ'nɪʃɪeɪtə]
 plaintext: 明文[pleɪn'tekst]
 encrypt: 将..译成密码[en'krɪpt]
 encryptor: 加密机
@@ -230,13 +230,13 @@ cipher: 密码['saɪfə]
 cipher key: 密码索引
 ciphertext: 密文
 valid: 合法的['vælɪd]
-modification: 修正，改变[,mɒdɪfɪ'keɪʃ(ə)n]
+modification: 修正,改变[,mɒdɪfɪ'keɪʃ(ə)n]
 revert: 回复[rɪ'vɜːt]
 profile: 外形,轮廓['prəʊfaɪl]
 placement: 布置['pleɪsmənt]
 dock: 码头[dɒk]
 throttle: 节流['θrɒt(ə)l]
-prompt: 提示，迅速的[prɒm(p)t]
+prompt: 提示,迅速的[prɒm(p)t]
 inspect: 检查[ɪn'spekt] 
 infrastructure: 基础设施['ɪnfrəstrʌktʃə]
 CLI: commom language infrastructure
@@ -245,11 +245,13 @@ distribution: 分配[dɪstrɪ'bjuːʃ(ə)n]
 terminal: 终端['tɜːmɪn(ə)l]
 integrated: 综合的['ɪntɪgreɪtɪd]
 ship: 运送[ʃɪp]
-gutter: 槽，排水沟['gʌtə]
-navigate: 驾驶，操作['nævɪgeɪt]
+gutter: 槽,排水沟['gʌtə]
+navigate: 驾驶,操作['nævɪgeɪt]
 scaffold: 给..搭脚手架['skæfəʊld; -f(ə)ld]
 generator: 发生器['dʒenəreɪtə]
-gear: 齿轮；装置，工具[gɪə]
+gear: 齿轮,装置,工具[gɪə]
 launch: 开始[lɔːntʃ]
 attach: 附加[ə'tætʃ]
 scalable: 可扩展 ['skeɪləb(ə)l]
+sensor: 传感器['sensə]
+descendent: 派生的[dɪ'sendənt]
