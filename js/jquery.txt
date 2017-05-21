@@ -1,3 +1,5 @@
+//中文文档http://www.jquery123.com/
+
 jQuery is a JavaScript Library
 
 Basic syntax is: $(selector).action()
