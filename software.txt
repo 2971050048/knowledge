@@ -15,6 +15,9 @@
 手机:
   ss|lantern|tim|wechat|知乎|网易云|alipay
   高德地图|wifi钥匙
+  每日英语听力|quara(国际版'知乎')|kindle app|欧陆词典(代替有道词典)
+  facebook|百度贴吧
+  漫画？快图？酷市场
   ??微博国际版|weico酷安
 
 ??
@@ -24,6 +27,15 @@
   sumatraPDF(pdf阅读)
   myersplash
   种子搜索神奇
+  个人防火墙: comodo
+  网盘: owncloud
+  杀毒: ESET|小红伞
+  浏览器插件: httpseverywhere|noscript|abp??
+  同步: resilio sync(能取代坚果云？)
+  管理电子书: calibre(配合kindle)
+  音乐播放器: itunes
+  笔记: 印象笔记
+  漫画: 布卡漫画|icomic
 
 everything:
   官网: http://www.voidtools.com/

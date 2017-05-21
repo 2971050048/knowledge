@@ -14,4 +14,29 @@
     get-location|set-location d:/tools 得到当前路径|去哪个路径
     get-alias ls 获得别名ls的命令
     code . 用默认编辑器打开当前文件夹
-    
+8.快捷键:
+    alt+space+x|n: 最大|最小化窗口
+    win:
+        win+上|下箭头: 最大化窗口|恢复正常
+        win+左|右箭头: 窗口占显示屏一半
+        win+home: 最小化其他窗口
+        win+d|e|p|r|x: 查看桌面|打开'我的电脑'|外接显示|运行对话框|windows移动中心
+        win++|-: 放大镜
+        win+l: 锁定桌面
+    f:
+        f2: 重命名
+        f3: 查找所有文件(ctrl+f)
+        f11: 全屏模式
+    ctrl:
+        ctrl+z|y: 撤销|取消撤销
+        ctrl+shift: 鼠左,拖动创建快捷方式
+        ctrl+shift+n: 新建文件夹
+        ctrl+shift+esc: 打开任务管理器
+        ctrl+d|c|v|x: 删除|复制|剪切|粘贴
+        ctrl+pageup|pagedown: 同一程序不用窗口切换
+    alt: 
+        alt+d|ctrl+l: 定位到浏览器url
+        alt+d+enter: 打开与当前页面相同的新浏览器视窗
+        alt+enter: 选定对象的属性
+    shift:
+        shift+delete: 永久删除文件(不经过回收站)

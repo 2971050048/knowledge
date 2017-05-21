@@ -8,7 +8,6 @@
     复制该行 ctrl+shift+d,删除行 ctrl+shift+k
     注释 ctrl+/ 或者 ctrl+shift+/
     f2可以重命名一个变量，右键也行
-    格式化代码 ctrl+shift+f,右键也行
     代码折叠 ctrl+shift+[, 点击'-'也行
         全部打开 ctrl+k ctrl+0
         全部折叠 ctrl+k ctrl+9(自己定义的)
@@ -19,6 +18,8 @@
     全屏模式: f11
     zen模式：shift+f11 (只看代码)
     多行代码变成一行: ctrl+j
+    切换侧边栏可见性: ctrl+b
+    定位到指定行数: ctrl+g
 
 自定义快捷键
     全部折叠: ctrl+k ctrl+9

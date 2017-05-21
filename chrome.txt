@@ -2,6 +2,7 @@
   谷歌开发者工具 https://developers.google.com/web/tools/chrome-devtools/
   插件商店 https://chrome.google.com/webstore/category/extensions
   demo https://events.google.com/io2016/
+  demo-debug https://googlechrome.github.io/devtools-samples/debug-js/get-started
  */ 
 搜索命令:
   1、双引号: 完全匹配搜索。 "谷歌搜索"
@@ -47,6 +48,13 @@ URL命令:
     alt+d|f6: 定位到url
   text editor:
     ctrl+g: 到指定行
+  common: 
+    ctrl+shift+b|o: 显示隐藏书签栏|打开书签管理器
+    ctrl+h|j: 新标签页打开'历史记录'|'下载'
+    f6: 地址栏，书签栏，页面内容之间切换焦点
+    ctrl++|-|o: 放大|缩小|恢复默认大小
+    ctrl+u|d: 查看页面源代码|当前网页加入书签
+    alt+home: 当前页面打开主页
 
 elements
   无法在Elements面板中通过DOM更改修改源文件，所以可以先跳转到sources面板
@@ -59,6 +67,34 @@ sources
   工作区的更改映射到源文件:
     sources面板->右键'add folder to workspace'->加入源文件
     ->右键工作区文件'map to file system resource'->选择已在工作区的对应本地文件
+  调试:
+    操作:
+      step into|step out|step over|resume 对应快捷键ctrl+;|shift+;|'|\
+      pause on exceptions 表:发生异常时，自动暂停执行代码
+      deactivate breakpoint 表: 暂时停用所有断点
+      async 提高异步函数调用堆栈可视性
+    面板:
+      call stack: 显示调用堆栈，调试到某一断点时出现当前堆栈
+        restart frame: 返回到当前函数第一行
+        copy stack trace: 拷贝堆栈信息
+        blackbox script: 对当前js文件黑箱处理
+      breakpoints: 显示已有断点
+        remove|deactivate|disable|remove all|remove other
+      XHR breakpoints: 
+        可'+'添加string: url包含string则设为断点
+      DOM breakpoints:
+        DOM调试: 右键元素'检查'->右键'break on subtree modifications'->再触发事件就能找到对应的js代码
+          dom调试包括: 子树修改(节点子项)，属性修改，节点移除
+      global listeners:
+      event listener breakpoints:
+      scope:
+      watch:
+    先添加'event listener breakpoint'可以添加一个事件断点，然后再次触发该事件。点击代码行号在该行添加断点
+    有条件断点: 行号右键'add conditional breakpoint' 或者断点行号右键'edit breakpoint'
+    黑箱脚本: 
+      调试时跳过某脚本文件(第三方类库), 该文件右键'blackbox script',或call stack右键'blckbox script',或'setting'进行设置
+    非js文件不能直接修改？？
+    可以右键代码,'continue to here',比设置断点快多了
 network
 performance|timeline
 memory|profiles(轮廓，简况)
