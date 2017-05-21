@@ -1,0 +1,27 @@
+github
+参考:
+  小功能(知乎) https://www.zhihu.com/question/36974348
+shift+/ 显示快捷键指南:
+  s: 定位到搜索栏
+  ?: 显示帮助
+插件:
+  tracis ci: https://docs.travis-ci.com/
+  octotree: https://github.com/buunguyen/octotree
+github jobs: 
+  https://jobs.github.com/positions?description=JavaScript
+zenhub:
+  https://api.zenhub.io
+  https://www.zenhub.com/
+查看不同版本的区别:  https://github.com/vuejs/vue/compare/0.12...1.1
+github page:  
+  任意项目加"gh-pages"分支，通过'perhaps-yo.github.io/项目名称'即可访问
+
+
+
+
+
+
+
+
+
+codepen
