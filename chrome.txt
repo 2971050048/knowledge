@@ -39,7 +39,6 @@ URL命令:
     ctrl+shift+i|f2: 打开开发者工具
     ctrl+shift+c: 检查元素模式
     ctrl++|+|o: 放大|缩小|回复默认大小
-    console.time()和console.timeEnd() 计算代码运行时间
     ctrl+[: 左面板
     ctrl+p: 资源面板
     ctrl+shift+p: 命令面板 
@@ -63,6 +62,9 @@ console
     shift+enter: 进入多行模式
     ctrl+l: 清除控制台历史
     ctrl+'->'或tab: 接受代码提醒
+  api：
+    console.dir(object); //输入以js形式表示的对象
+    console.time()和console.timeEnd();//计算代码运行时间
 sources
   工作区的更改映射到源文件:
     sources面板->右键'add folder to workspace'->加入源文件
@@ -74,7 +76,7 @@ sources
       deactivate breakpoint 表: 暂时停用所有断点
       async 提高异步函数调用堆栈可视性
     面板:
-      call stack: 显示调用堆栈，调试到某一断点时出现当前堆栈
+      call stack: 显示调用堆栈，倒序形式显示将代码带到该断点的执行路径
         restart frame: 返回到当前函数第一行
         copy stack trace: 拷贝堆栈信息
         blackbox script: 对当前js文件黑箱处理
@@ -87,8 +89,8 @@ sources
           dom调试包括: 子树修改(节点子项)，属性修改，节点移除
       global listeners:
       event listener breakpoints:
-      scope:
-      watch:
+      scope: 显示该时刻已定义所有属性(脚本停止时才显示信息)
+      watch: 
     先添加'event listener breakpoint'可以添加一个事件断点，然后再次触发该事件。点击代码行号在该行添加断点
     有条件断点: 行号右键'add conditional breakpoint' 或者断点行号右键'edit breakpoint'
     黑箱脚本: 

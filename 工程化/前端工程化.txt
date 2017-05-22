@@ -20,6 +20,8 @@
     前端测试框架: Karma+Mocha+Chai
   构建工具:基于Gulp实现独立于项目的构建工具
 性能优化？？
+  https://developers.google.com/web/tools/chrome-devtools/rendering-tools/
+  https://developers.google.com/web/fundamentals/performance/
 
 Web应用是运行浏览器的软件，软件的图形用户界面（Graphical User Interface，简称GUI）即为前端
 
