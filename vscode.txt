@@ -27,6 +27,7 @@
     新建文件: ctrl+alt+n
     代码格式化: alt+c b
     color picker: alt+c p|c
+    代码提醒细节显示: ctrl+alt+space
 
 问题: 
     集成终端错位：打开命令行，右键属性->使用旧版控制台
@@ -78,10 +79,12 @@ setting:
 调试:
     //https://code.visualstudio.com/docs/editor/debugging
     断点: f9
-    启动调试: f5
-    停止调试: shift+f5
-    重启调试: ctrl+shift+f5
+    step into|out|over: f11|shift+f11|f10
+    启动|停止|重启: f5|shift+f5|ctrl+shift+f5
     launch.json中
+{
+    "version": "0.2.0",
+    "configurations": [
         {
             "type": "node",
             "request": "launch",
@@ -89,3 +92,24 @@ setting:
             "program": "${file}"//基于当前文件调试
             // "program": "${workspaceRoot}\\src\\main.js"
         }
+    ]
+}
+configurations属性
+    // 基本配置
+    type - 配置类型
+    request - 请求配置类型,值为"launch"或"attach"
+    name - 配置名称,在启动配置下拉菜单显示
+
+    // 可选择的配置
+    preLaunchTask - 调试会话开始前需运行的任务, 任务在tasks.json里
+    internalConsoleOptions - 内部调试控制台的控制行为
+    debugServer - 仅用于调试扩展开发: 如果执行端口，则尝试连接到服务器模式中的调试适配器
+
+    // 很多debug调试器用到的属性
+    program - 程序的绝对路径: 通过查看package.json的值
+    args - 传递给program的参数
+    env - 传递给program的环境变量
+    cwd - 工作目录的绝对路径current working directory
+    port - 调试要附加的端口
+    stopOnEntry - 启动后自动停止程序
+    console - 启动调试控制台的位置, 值为internalConsole, integratedTerminal, externalTerminal.

@@ -54,6 +54,7 @@ URL命令:
     ctrl++|-|o: 放大|缩小|恢复默认大小
     ctrl+u|d: 查看页面源代码|当前网页加入书签
     alt+home: 当前页面打开主页
+    alt+左箭头: 页面后退
 
 elements
   无法在Elements面板中通过DOM更改修改源文件，所以可以先跳转到sources面板
@@ -71,7 +72,7 @@ sources
     ->右键工作区文件'map to file system resource'->选择已在工作区的对应本地文件
   调试:
     操作:
-      step into|step out|step over|resume 对应快捷键ctrl+;|shift+;|'|\
+      step into|step out|step over|resume 对应快捷键ctrl+;|+shift+;|+'|+\
       pause on exceptions 表:发生异常时，自动暂停执行代码
       deactivate breakpoint 表: 暂时停用所有断点
       async 提高异步函数调用堆栈可视性
