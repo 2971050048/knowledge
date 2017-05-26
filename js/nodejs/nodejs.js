@@ -1,5 +1,7 @@
 /**
  * 教程: http://www.runoob.com/nodejs/
+ * express: http://javascript.ruanyifeng.com/nodejs/express.html
+ * 社区: https://cnodejs.org/
  */
 
 // server.js
