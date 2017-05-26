@@ -1,0 +1,2 @@
+入门: http://wiki.jikexueyuan.com/project/mongodb/mongodb-overview.html
+mongoose: https://github.com/alsotang/node-lessons/tree/master/lesson15
