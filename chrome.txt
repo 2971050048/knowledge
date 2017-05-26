@@ -29,7 +29,6 @@ URL命令:
   emmet re:view 显示在不同设备下的页面
   whatfont: 查看页面字体的种类
   turn off the light: 看视屏时选择关灯
-  infinity: 标签管理，科学上网？https://infinitysocks.com/
   stylus:
   
 

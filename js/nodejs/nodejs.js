@@ -226,15 +226,19 @@
  * 读取目录: fs.readdir(path, function(err, files)) //files为目录下文件数组列表
  * 删除目录: fs.rmdir(path, function())
  */
-var fs = require('fs');
-fs.readFile('input.txt', function(err, data) {//data是文件内容
-  if(err) console.error(err);
-  console.log('读取文件得到:' + data.toString());
-})
-fs.open('input.txt','r+',function(err, fd) {//fd是一个文件标志
-  if(err) console.error(err);
-  console.log('文件打开成功');
-})
-fs.stat('input.txt',function(err, stats){//stats为对象，有好多方法
-  console.log(stats)
-})
+  var fs = require('fs');
+  fs.readFile('input.txt', function(err, data) {//data是文件内容
+    if(err) console.error(err);
+    console.log('读取文件得到:' + data.toString());
+  })
+  fs.open('input.txt','r+',function(err, fd) {//fd是一个文件标志
+    if(err) console.error(err);
+    console.log('文件打开成功');
+  })
+  fs.stat('input.txt',function(err, stats){//stats为对象，有好多方法
+    console.log(stats)
+  })
+
+/** 
+ *
+ */
