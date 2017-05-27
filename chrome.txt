@@ -37,7 +37,7 @@ URL命令:
     ctrl+pageup|down: 左|右边标签
     ctrl+shift+i|f2: 打开开发者工具
     ctrl+shift+c: 检查元素模式
-    ctrl++|+|o: 放大|缩小|回复默认大小
+    ctrl++|-|o: 放大|缩小|回复默认大小
     ctrl+[: 左面板
     ctrl+p: 资源面板
     ctrl+shift+p: 命令面板 
