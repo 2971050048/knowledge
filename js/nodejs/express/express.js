@@ -1,5 +1,6 @@
 /*
 教程: http://www.runoob.com/nodejs/nodejs-express-framework.html
+    http://javascript.ruanyifeng.com/nodejs/express.html
 特性: 响应http请求,根据路由表执行http请求动作,动态渲染html页面
 安装: npm i express body-parser cookie-parser multer -S
    express|处理json,raw,text,url编码的数据|解析cookie|处理enctype='multipart/form-data'的表单数据
@@ -64,3 +65,12 @@ var server = app.listen(8081, function () {
   var port = server.address().port
   console.log("应用实例，访问地址为 http://%s:%s", host, port)
 })
+
+// index.js
+var express = require('express');
+var app = express();
+app.use(express.static(__dirname + '/public'))
+app.listen(8080);
+/*
+node index就可以在127.0.0.1:8080端口访问/public/index.html
+*/

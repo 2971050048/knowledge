@@ -1,4 +1,4 @@
-//http://es6.ruanyifeng.com/#docs/intro
+//http://www.ruanyifeng.com/blog/2016/01/babel.html
 Babel 是ES6 转码器
 配置文件是.babelrc，存放在项目根目录
   {

@@ -1,4 +1,4 @@
-//nvm:https://github.com/coreybutler/nvm-windows
+//nvm下载: https://github.com/coreybutler/nvm-windows/releases
 常用命令:
     安装: npm install|i <Module> (-g)
         根据package.json安装: npm i
@@ -50,9 +50,9 @@ npm模块镜像:
 
 nvm(node version management): 安装nvm-windows控制node版本：E:\software\work\nvm\nvm
     安装nodejs: nvm install latest|v6.10.3(版本)
-    使用nodejs: nvm use latest
+    使用nodejs: nvm use v7.10.0
     显示node安装列表: nvm list [available]
     允许禁止node管理: nvm on|off
     镜像: nvm node_mirror https://npm.taobao.org/mirrors/node/
-          nvm node_mirrot https://npm.taobao.org/mirrors/npm/
+          nvm npm_mirror https://npm.taobao.org/mirrors/npm/
     
