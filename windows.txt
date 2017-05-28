@@ -10,10 +10,12 @@
 6. '命令 /?' 可以查看该命令的帮助
     netstat|tasklist|taskkill
 7.powershell常用命令:
-    clear|esc 清屏|清行
-    get-location|set-location d:/tools 得到当前路径|去哪个路径
-    get-alias ls 获得别名ls的命令
-    code . 用默认编辑器打开当前文件夹
+    清屏|清行: clear|esc 
+    得到当前路径|去哪个路径: get-location|set-location d:/tools 
+    获得别名ls的命令: get-alias ls 
+    用默认编辑器打开当前文件夹 code . 
+    新建文件: new-item mongodb.log
+    新建文件夹: mkdir data
 8.快捷键:
     alt+space+x|n: 最大|最小化窗口
     win:
