@@ -12,6 +12,7 @@ git reset --hard HEAD^|commit-id //回到上个版本|回到某个版本号
 git log|reflog //提交历史|命令历史
 git checkout -- filename //撤销工作区的修改(将版本库版本替换工作区版本)
 git reset HEAD filename  //撤销暂存区的修改
+git rm -f <source> <destination> //移动文件
 
 远程库：
 本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以需要ssh key
