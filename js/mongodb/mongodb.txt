@@ -65,4 +65,3 @@ shell操作数据库:
       db.zly.find().pretty().sort({k1: -1})
 索引: 
   可选参数: 
->>>>>>> 2924b81ef2fde215e8dd3ba61f476674d87ad5c1
