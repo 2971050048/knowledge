@@ -2,6 +2,7 @@
 常用命令:
     安装: npm install|i <Module> (-g)
         根据package.json安装: npm i
+        安装指定版本依赖: npm i vue-rooter@v0.7.13 -S
     卸载: npm uninstall|un <Module> (-g)
     更新: npm update|up <Module> (-g)
         更新package.json全部: npm up

@@ -65,6 +65,7 @@
     vue
     `vue 2 snippets
     `filesize: 左下角显示文件大小，点击可显示详细信息
+    `vue-beautify`: 
 
 
 setting:
