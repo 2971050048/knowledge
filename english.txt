@@ -353,3 +353,6 @@ mess: 杂乱[mes]
 stands: 货摊，看台[stændz]
 stats: 语句
 shebang: 工作，住所[ʃɪ'bæŋ] 
+override: 推翻，践踏[əʊvə'raɪd]
+up-to-date: 最新的[,ʌp tə 'deɪt]
+yarn: 故事，奇谈 [jɑːn] 

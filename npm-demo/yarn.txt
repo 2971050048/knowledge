@@ -1,0 +1,16 @@
+概念: 用于代替npm的包管理器 
+官网: https://yarnpkg.com/zh-Hans/docs
+下载: https://yarnpkg.com/zh-Hans/docs/install
+命令: 
+  yarn == npm i
+  yarn add pkg == npm i pkg -S
+  yarn add pkg -D == npm i pkg -D
+  yarn remove pkg == npm un pkg -S|-D
+  yarn upgrade pkg@[version] == npm update pkg@[version]
+  yarn init == npm init
+镜像:
+  yarn config set registry 'https://registry.npm.taobao.org'
+
+架构设计:
+  会把所有已安装的依赖锁定在一个固定的版本上，确保每次安装所产生的 node_modules 目录的文件结构在不同机器上总是一致的
+  
