@@ -1,6 +1,6 @@
 /**
- * http://router.vuejs.org/zh-cn/
  * 用Vue.js + vue-router创建单页应用。将组件映射到路由，然后告vue-router在哪里渲染它们
+ * http://router.vuejs.org/zh-cn/
  * npm i vue vue-router -S
  */
 

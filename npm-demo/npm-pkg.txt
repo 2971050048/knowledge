@@ -1,0 +1,13 @@
+css-loader: 
+  webpack: npm i css-loader -D
+vue-loader:
+  Vue.js component loader for Webpack.
+  教程: https://vue-loader.vuejs.org/zh-cn/
+karma:
+  A simple tool that to execute JS code in multiple real browsers.
+  Karma launches an HTTP server, and generates the test runner HTML file from your testing framework. 
+  教程: https://karma-runner.github.io/latest/intro/installation.html
+postcss: 
+  Transforming styles with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more.
+postcss-loader:
+  PostCSS loader for webpack

@@ -336,3 +336,15 @@ manner: 规矩，习惯['mænə]
 downstream: 顺流的['daʊn'striːm]
 filter: 过滤['fɪltə] 
 manipulate: 操作[mə'nɪpjʊleɪt]
+assets: 资产，财务
+preserve: 保留，保存[prɪ'zɜːv]
+overlay: 覆盖图[əʊvə'leɪ]
+skip: 跳跃[skɪp]
+compress: 压缩[kəm'pres]
+mangel: 损坏 ['mæŋg(ə)l]
+identifiers: 标识符
+suffix: 后缀['sʌfɪks]
+mess: 杂乱[mes]
+stands: 货摊，看台[stændz]
+stats: 语句
+shebang: 工作，住所[ʃɪ'bæŋ] 
