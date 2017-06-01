@@ -341,3 +341,15 @@ validator: 验证程序['vali,deitə]
 mutate: 变化[mjuː'teɪt]
 nest: 嵌套,鸟窝[nest]
 sparse: 稀少的 [spɑːs]
+assets: 资产，财务
+preserve: 保留，保存[prɪ'zɜːv]
+overlay: 覆盖图[əʊvə'leɪ]
+skip: 跳跃[skɪp]
+compress: 压缩[kəm'pres]
+mangel: 损坏 ['mæŋg(ə)l]
+identifiers: 标识符
+suffix: 后缀['sʌfɪks]
+mess: 杂乱[mes]
+stands: 货摊，看台[stændz]
+stats: 语句
+shebang: 工作，住所[ʃɪ'bæŋ] 

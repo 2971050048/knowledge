@@ -3,7 +3,7 @@
   bandzip|wps|snipaste|github
   everything|xampp|ps|typora(编辑md)|sublime|坚果云
   teamviewer|xmind(思维导图)|autoruns(开机启动)|procexp
-  putty|lantern
+  putty|lantern|irfanview(图片查看)
 
 娱乐:
   ADSafe|网易云音乐|tim|potplayer|爱壁纸
