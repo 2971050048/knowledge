@@ -1,0 +1,49 @@
+教程: http://www.runoob.com/redis/redis-intro.html
+下载: https://github.com/MSOpenTech/redis/releases
+linux安装:
+  wget http://download.redis.io/releases/redis-3.2.9.tar.gz
+  tar xzf redis-3.2.9.tar.gz #解压
+  mv  redis-3.2.9/ /usr/local/redis #移动
+  mv  redis-3.2.9.tar.gz /usr/local/redis
+  cd /usr/local/redis 
+  make #编译
+  vim /etc/profile
+    export PATH=/usr/local/redis/src:$PATH #添加PATH路径，文件最后一行添加
+  source /etc/profile
+  redis-server #开启服务，"redis-server redis.conf"
+  redis-cli #交互
+
+概念: 
+  高性能的key-value数据库
+  可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用
+  支持数据的备份，即master-slave模式的数据备份
+  提供list，set，zset，hash等数据结构的存储
+开启服务:
+  设置path: E:\software\work\redis
+  打开服务端: redis-server
+  另一个终端: redis-cli | redis-cli -h host -p port -a password #默认端口6379
+数据类型:
+  string: 键名对
+    set zly1 hello
+    get zly1
+  hash: 键名对集合, 表 键 值
+    hset zly2 q w
+    hmset zly2 hello world hh qq
+    hget zly2 q //w
+    hgetall zly2 //hello world hh qq q w
+  list: 字符串列表，可以左添加或右添加
+    lpush zly3 redis
+    lpush zly3 mongodb
+    rpush zly3 mysql
+    lrange zly3 0 10 //'mongodb' 'redis' 'mysql'
+  set: 无序集合
+    sadd zly4 redis
+    sadd zly4 mongodb
+    sadd zly4 mysql
+    sadd zly4 mysql //集合的唯一性
+    smembers zly4
+  zset: 有序集合
+    zadd zly5 3 redis
+    zadd zly5 1 mongodb
+    zadd zly5 2 mysql
+    zrangebyscore zly5 0 1000 //mongodb mysql redis
