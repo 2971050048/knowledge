@@ -6,6 +6,10 @@
   使配置文件生效: grub2-mkconfig -o /boot/grub2/grub.cfg 
 常用命令:
   重命名文件夹: mv ./nodejs-v6.10.3/ ./nodejs/
+  查看占用的端口: netstat -lnp|grep 80
+  杀死pid: kill pid_num
+  杀死占用某端口的进程: sudo fuser -k 80/tcp
+
 
   启用elpore仓库:
     rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org

@@ -3,7 +3,7 @@
   gzip模块需要zlib 库
   rewrite模块需要pcre 库
   ssl功能需要openssl库
-下载: 
+下载安装: 
   安装编译工具及库文件: yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
   安装PCRE: 
     wget http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz
@@ -17,7 +17,7 @@
     pcre-config --version
   安装nginx：
     cd /
-    wget http://nginx.org/download/nginx-1.6.2.tar.gz
+    wget http://nginx.org/download/nginx-1.12.0.tar.gz
     mv nginx* /usr/local/src
     rm nginx-1.6.2.tar.gz
     cd /usr/local/src
@@ -27,101 +27,92 @@
     make
     make install
     /usr/local/webserver/nginx/sbin/nginx -v
-配置:
-  创建Nginx运行使用的用户www
-    /usr/sbin/groupadd www 
-    /usr/sbin/useradd -g www www
-  配置nginx.conf
-    rm /usr/local/webserver/nginx/conf/nginx.conf
-    vim /usr/local/webserver/nginx/conf/nginx.conf
-
-user www www;
-worker_processes 4; #设置值和CPU核心数一致
-error_log /usr/local/webserver/nginx/logs/nginx_error.log crit; #日志位置和日志级别
-pid /usr/local/webserver/nginx/nginx.pid;
-#Specifies the value for maximum file descriptors that can be opened by this process.
-worker_rlimit_nofile 65535;
-events
-{
-  use epoll;
-  worker_connections 65535;
-}
-http
-{
-  include mime.types;
-  default_type application/octet-stream;
-  log_format main  '$remote_addr - $remote_user [$time_local] "$request" '
-               '$status $body_bytes_sent "$http_referer" '
-               '"$http_user_agent" $http_x_forwarded_for';
-  
-#charset gb2312;
-     
-  server_names_hash_bucket_size 128;
-  client_header_buffer_size 32k;
-  large_client_header_buffers 4 32k;
-  client_max_body_size 8m;
-     
-  sendfile on;
-  tcp_nopush on;
-  keepalive_timeout 60;
-  tcp_nodelay on;
-  fastcgi_connect_timeout 300;
-  fastcgi_send_timeout 300;
-  fastcgi_read_timeout 300;
-  fastcgi_buffer_size 64k;
-  fastcgi_buffers 4 64k;
-  fastcgi_busy_buffers_size 128k;
-  fastcgi_temp_file_write_size 128k;
-  gzip on; 
-  gzip_min_length 1k;
-  gzip_buffers 4 16k;
-  gzip_http_version 1.0;
-  gzip_comp_level 2;
-  gzip_types text/plain application/x-javascript text/css application/xml;
-  gzip_vary on;
  
-  #limit_zone crawler $binary_remote_addr 10m;
-  #下面是server虚拟主机的配置
-  server{
-    listen 80;#如果是https, 则替换80为443
-    server_name *.blogperhaps.cn blogperhaps.cn;#替换域名
-    root /usr/www/blog/front/dist;#替换路径为构建出来的dist路径
-    set $node_port 3000;
-    set $ssr_port 8080;
+启动nginx:  
+  vim /etc/profile
+    export PATH=/usr/local/webserver/nginx/sbin:$PATH #添加PATH路径，文件最后一行添加
+  source /etc/profile
+  检查配置文件:nginx -t
+  启动: nginx
+  停止: nginx -s stop
+  重新启动: nginx -s reopen
+  重新载入配置文件: nginx -s reload
 
-    location ^~ / {
-      proxy_http_version 1.1;
-      proxy_set_header Connection "upgrade";
-      proxy_pass http://127.0.0.1:$ssr_port;
-      proxy_redirect off;
-    }
+传文件:
+  pscp -P 29487 -r D:\demo\blog\ root@138.128.207.165:/usr/www/blog/
+  pscp -P 29487 -r D:\demo\blog\admin\dist root@138.128.207.165:/usr/www/blog/admin/
 
-    location ^~ /proxyPrefix/ {
-      rewrite ^/proxyPrefix/(.*) /$1 break;
-      proxy_http_version 1.1;
-      proxy_set_header Connection "upgrade";
-      proxy_pass http://127.0.0.1:$node_port;
-      proxy_redirect off;
-    }
+打开最大文件数: ulimit -n 65536
 
-    location ^~ /dist/ {
-      rewrite ^/dist/(.*) /$1 break;
-      etag         on;
-      expires      max;
-    }
+配置: 查看nginx-conf.txt
 
-    location ^~ /static/ {
-      etag         on;
-      expires      max;
-    }
-  } 
-}
+location的写法:
+  =: 精确匹配,如A只匹配根目录结尾的请求，后面不能带任何字符串
+  ^~: uri以某常规字符串开头，不是正则匹配
+  ~: 区分大小写的正则匹配;
+  ~*: 开头表示不区分大小写的正则匹配
+  /: 通用匹配, 如果没有其它匹配,任何请求都会匹配到
 
-  检查配置文件
-    /usr/local/webserver/nginx/sbin/nginx -t
+  location  = / { # 精确匹配 / ，主机名后面不能带任何字符串
+    [ configuration A ] 
+  }
+  location  / {
+    # 因为所有的地址都以 / 开头，所以这条规则将匹配到所有请求
+    # 但是正则和最长字符串会优先匹配
+    [ configuration B ] 
+  }
+  location /documents/ {
+    # 匹配任何以 /documents/ 开头的地址，匹配符合以后，还要继续往下搜索
+    # 只有后面的正则表达式没有匹配到时，这一条才会采用这一条
+    [ configuration C ] 
+  }
+  location ~ /documents/Abc {
+    # 匹配任何以 /documents/ 开头的地址，匹配符合以后，还要继续往下搜索
+    # 只有后面的正则表达式没有匹配到时，这一条才会采用这一条
+    [ configuration CC ] 
+  }
+  location ^~ /images/ {
+    # 匹配任何以 /images/ 开头的地址，匹配符合以后，停止往下搜索正则，采用这一条。
+    [ configuration D ] 
+  }
+  location ~* \.(gif|jpg|jpeg)$ {
+    # 匹配所有以 gif,jpg或jpeg 结尾的请求
+    # 然而，所有请求 /images/ 下的图片会被 config D 处理，因为 ^~ 到达不了这一条正则
+    [ configuration E ] 
+  }
+  location /images/ {
+    # 字符匹配到 /images/，继续往下，会发现 ^~ 存在
+    [ configuration F ] 
+  }
+  location /images/abc {
+    # 最长字符匹配到 /images/abc，继续往下，会发现 ^~ 存在
+    # F与G的放置顺序是没有关系的
+    [ configuration G ] 
+  }
+  location ~ /images/abc/ {
+    # 只有去掉 config D 才有效：先最长匹配 config G 开头的地址，继续往下搜索，匹配到这一条正则，采用
+      [ configuration H ] 
+  }
+  location ~* /js/.*/\.js
 
-启动nginx:  /usr/local/webserver/nginx/sbin/nginx
-其他命令:
-  /usr/local/webserver/nginx/sbin/nginx -s reload            # 重新载入配置文件
-  /usr/local/webserver/nginx/sbin/nginx -s reopen            # 重启 Nginx
-  /usr/local/webserver/nginx/sbin/nginx -s stop              # 停止 Nginx
+// location实际使用建议：
+  #直接匹配网站根，通过域名访问网站首页比较频繁，使用这个会加速处理，官网如是说。
+  #这里是直接转发给后端应用服务器了，也可以是一个静态首页
+  # 第一个必选规则
+  location = / {
+      proxy_pass http://tomcat:8080/index
+  }
+  # 第二个必选规则是处理静态文件请求，这是nginx作为http服务器的强项
+  # 有两种配置模式，目录匹配或后缀匹配,任选其一或搭配使用
+  location ^~ /static/ {
+      root /webroot/static/;
+  }
+  location ~* \.(gif|jpg|jpeg|png|css|js|ico)$ {
+      root /webroot/res/;
+  }
+  #第三个规则就是通用规则，用来转发动态请求到后端应用服务器
+  #非静态文件请求就默认是动态请求，自己根据实际把握
+  #毕竟目前的一些框架的流行，带.php,.jsp后缀的情况很少了
+  location / {
+      proxy_pass http://tomcat:8080/
+  }
