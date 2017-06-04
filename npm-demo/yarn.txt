@@ -13,4 +13,7 @@
 
 架构设计:
   会把所有已安装的依赖锁定在一个固定的版本上，确保每次安装所产生的 node_modules 目录的文件结构在不同机器上总是一致的
+
+centos安装:
+  sudo wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
   
