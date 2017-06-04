@@ -10,6 +10,7 @@
     mv pcre* /usr/local/src
     cd /usr/local/src
     tar zxvf pcre-8.35.tar.gz
+    rm pcre-8.35.tar.gz
     cd pcre-8.35
     ./configure
     make && make install
@@ -18,6 +19,7 @@
     cd /
     wget http://nginx.org/download/nginx-1.6.2.tar.gz
     mv nginx* /usr/local/src
+    rm nginx-1.6.2.tar.gz
     cd /usr/local/src
     tar zxvf nginx-1.6.2.tar.gz
     cd nginx-1.6.2

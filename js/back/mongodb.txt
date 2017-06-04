@@ -17,9 +17,22 @@ mongoose: https://github.com/alsotang/node-lessons/tree/master/lesson15
   添加path: D:\software\work\mongodb\bin
   创建数据目录: mongod --dbpath c:\data\db
   写日志:  mongod --logappend --logpath 'mongodb.log'
-  指定监听端口打开服务器: mongod --port 8080
+  指定监听端口打开服务器: mongod --port 8080 #默认是27017
   启动: mongod 
   shell连接数据库: mongo
+linux安装:
+  curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz    # 下载
+  tar -zxvf mongodb-linux-x86_64-3.0.6.tgz                                   # 解压
+  mv  mongodb-linux-x86_64-3.0.6/ /usr/local/mongodb                         # 将解压包拷贝到指定目录
+  mv  mongodb-linux-x86_64-3.0.6.tar.gz /usr/local/mongodb
+  vim /etc/profile
+    export PATH=/usr/local/mongodb/bin:$PATH #添加PATH路径，文件最后一行添加
+  source /etc/profile
+  mkdir -p /data/db #创建数据库目录
+  mongod #启动mongodb
+  mongo #js交互
+  mongod --rest #启用http用户界面，进行测试
+  blogperhaps.cn:28017 即可访问
 
 shell操作数据库:
   显示已有数据库: show dbs

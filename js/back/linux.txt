@@ -1,0 +1,14 @@
+找文件: find / -name '*grub*'   表示在/目录下找包含grub名字的文件
+升级内核
+  查看内核版本: uname -r
+  查看内核配置文件: cat /boot/grub2/grub.cfg
+  修改配置文件: vim /etc/default/grub 
+  使配置文件生效: grub2-mkconfig -o /boot/grub2/grub.cfg 
+常用命令:
+  重命名文件夹: mv ./nodejs-v6.10.3/ ./nodejs/
+
+  启用elpore仓库:
+    rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+    rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+  安装最新的主线稳定内核：
+    yum --enablerepo=elrepo-kernel install kernel-ml
