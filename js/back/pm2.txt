@@ -1,0 +1,2 @@
+安装: npm i pm2 -g
+使用: pm2 start app.js
