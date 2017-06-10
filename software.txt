@@ -46,3 +46,64 @@ everything:
     设置: 搜索->'正则'+'所有'
   开启ftp|http服务器:
     设置: 工具->选项->http->接口为ip地址
+
+youtube-dl: (最好ss设置为全局模式)
+  E:\download\you-dl
+  ./you-dl URL
+  ./you-dl URL -F //查看可下载的资源
+  ./you-dl URL -f format_code|bestvideo+bestaudio --merge-output-format mkv|mp4|ogg|webm|flv //下载视频+音频，合并为对应格式，
+  ./you-dl URL -f 'bestvideo[height>=?2000]'  //下载4k视频
+  常用：  ./you-dl -f 'bestvideo+bestaudio' --merge-output-format mkv URL 
+
+  参数:
+    --help : 查看所有可用的參數及說明。
+    -U : 更新 youtube-dl。
+    -F 影片網址 : 只顯示指定網址影片提供了哪些格式。
+    -f 影片格式代碼 : 指定要下載的影片格式，預設是用最高解析度，要注意有些格式只有影像，不含聲音。
+    -a 文字檔檔名 : 批次下載影片(文字檔內一行一部影片的網址)。
+    -o : 設定儲存時的檔名「格式」，預設是儲存在目前目的資料夾中，用 "標題-ID.格式副檔名" ，也就是「-o "%(title)s--%(id)s.%(ext)s"」。
+    如果只想用標題不想加上 ID，而且想儲存在 vidoe 資料夾中，可以利用底下的參數：
+    -o "video/%(title)s.%(ext)s"
+    -x : 只下載聲音。
+    --audio-format : 指定聲音的格式，例如：--audio-format mp3，不過必須在目錄中有影音轉檔的程式 ffmpeg 或 avconv 搭配使用。
+    --audio-quality : 設定聲音轉檔時的音質，0～9 ，數字愈小，品質愈高。預設值是 5 (128K)。
+    --playlist-start : 指定 Youtube 播放清單由第幾部影片開始。
+    --playlist-end : 指定 Youtube 播放清單到第幾部影片。
+    --no-playlist : 不以 Youtube 播放清單來下載，只下載目前的影片。
+    --no-warnings : 不要顯示錯誤訊息。
+    --list-extractors : 列出 youtube-dl 可解析的網站。
+
+
+迅雷9去广告:
+  C:\Windows\System32\drivers\etc, 打开hosts
+  # (迅雷)
+  127.0.0.1 pc.xunlei.com
+  127.0.0.1 plugin.xl7.xunlei.com
+  127.0.0.1 home.xl9.xunlei.com
+  127.0.0.1 misc.xl9.xunlei.com
+  127.0.0.1 admin.static.xl9.xunlei.com
+  127.0.0.1 act.niu.xunlei.com
+  127.0.0.1 resource.niu.xunlei.com
+  127.0.0.1 v2.boxcfg.niu.xunlei.com
+  127.0.0.1 static2.ssp.xunlei.com
+  127.0.0.1 adsp.xunlei.com
+  127.0.0.1 dm.xiazaibao.xunlei.com
+  127.0.0.1 api-xl9-ssl.xunlei.com
+  127.0.0.1 etl-xlmc-ssl.xunlei.com
+  127.0.0.1 misc-xl9-ssl.xunlei.com
+  127.0.0.1 static-xl9-ssl.xunlei.com
+  127.0.0.1 api-shoulei-ssl.xunlei.com
+  安装目录，删除文件:
+  Thunder9\Data\AdBrowser\Images
+  Thunder9\Data\AdBrowser\Scenes
+  Thunder9\Data\AdDownloadTranscript\Icon
+  Thunder9\Data\AdPlatform\Icons
+  Thunder9\Data\AdPlatform\Scenes
+  Thunder9\Data\AdTaskList\Banners
+  Thunder9\Data\AdTaskList\Icons
+  Thunder9\Data\AdTaskList\Scenes
+  Thunder9\Data\AdTaskListTextLink
+  Thunder9\Profiles\XLBrowserApp\thunder_adlist.txt
+
+potplayer:
+  载入音轨: 右键->打开->载入音轨
