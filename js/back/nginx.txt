@@ -33,10 +33,15 @@
     export PATH=/usr/local/webserver/nginx/sbin:$PATH #添加PATH路径，文件最后一行添加
   source /etc/profile
   检查配置文件:nginx -t
-  启动: nginx
+  启动: nginx||nginx -c conf\my.conf
   停止: nginx -s stop
   重新启动: nginx -s reopen
   重新载入配置文件: nginx -s reload
+
+  windows下: 
+  cd c:users/administrator/nginx
+  ./nginx -c conf/my.conf
+    
 
 传文件:
   pscp -P 29487 -r D:\demo\blog\ root@138.128.207.165:/usr/www/blog/

@@ -59,3 +59,28 @@ nvm(node version management): 安装nvm-windows控制node版本：E:\software\wo
     镜像: nvm node_mirror https://npm.taobao.org/mirrors/node/
           nvm npm_mirror https://npm.taobao.org/mirrors/npm/
     
+linux安装:
+  安装node:
+    wget https://nodejs.org/dist/v8.0.0/node-v8.0.0.tar.gz
+    tar -zxvf node-v8.0.0.tar.gz
+    mv node-v8.0.0/ /usr/local/src/nodejs
+    rm node-v8.0.0.tar.gz
+    cd /usr/local/src/nodejs
+    ./configure
+    make
+    make install
+    vim /etc/profile
+      export PATH=/usr/local/nodejs:$PATH #添加PATH路径，文件最后一行添加
+    source /etc/profile
+    node -v
+  卸载node:
+    npm ls -g --depth=0 #查看已经安装在全局的模块
+    sudo rm -rf /usr/local/lib/node_modules #删除全局 node_modules 目录
+    sudo rm /usr/local/bin/node #删除node
+    cd  /usr/local/bin && ls -l | grep "../lib/node_modules/" | awk '{print $9}'| xargs rm #删除全局 node 模块注册的软链
+  安装nvm:
+    wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+    source ~/.bashrc
+    command -v nvm #得到nvm表示安装成功
+    nvm install node #安装node
+    nvm use node #使用node

@@ -10,7 +10,7 @@ linux安装:
   vim /etc/profile
     export PATH=/usr/local/redis/src:$PATH #添加PATH路径，文件最后一行添加
   source /etc/profile
-  redis-server #开启服务，"redis-server redis.conf"
+  redis-server #开启服务，"redis-server redis.conf||redis-server e:\software\work\redis\redis.windows.conf"
   redis-cli #交互
 
 概念: 

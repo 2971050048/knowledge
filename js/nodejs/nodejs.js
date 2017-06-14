@@ -3,19 +3,6 @@
  * express: http://javascript.ruanyifeng.com/nodejs/express.html
  * 社区: https://cnodejs.org/
  * api: https://nodejs.org/api/
- * linux安装:
- *  wget https://nodejs.org/dist/v6.10.3/node-v6.10.3.tar.gz
- *  tar -zxvf node-v6.10.3.tar.gz
- *  mv node-v6.10.3/ /usr/local/src/nodejs
- *  rm node-v6.10.3.tar.gz
- *  cd /usr/local/src/nodejs
- *  ./configure
- *  make
- *  make install
- *  vim /etc/profile
-      export PATH=/usr/local/nodejs:$PATH #添加PATH路径，文件最后一行添加
-    source /etc/profile
- *  node -v
  */
 
 // server.js
