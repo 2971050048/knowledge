@@ -1,3 +1,6 @@
+常用命令: http://www.cnblogs.com/laov/p/3541414.html#zhiling
+putty下载: https://www.chiark.greenend.org.uk/~sgtatham/putty/
+
 找文件: find / -name '*grub*'   表示在/目录下找包含grub名字的文件
 升级内核
   查看内核版本: uname -r
@@ -16,3 +19,4 @@
     rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
   安装最新的主线稳定内核：
     yum --enablerepo=elrepo-kernel install kernel-ml
+

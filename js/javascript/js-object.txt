@@ -67,7 +67,7 @@ Object.prototype.hasOwnProperty 都支持
 
 Object.assign(target, ...sources) ie不支持
 
-    结果为对象,将所有可枚举属性的值从源对象复制到目标对象。返回目标对象。
+    结果为对象,将自身可枚举属性的值从源对象复制到目标对象。返回目标对象。
     //合并object
     var o1 = { a: 1 }, o2 = { b: 2 }, o3 = { c: 3 };
     var obj = Object.assign(o1, o2, o3);
@@ -159,7 +159,7 @@ Object.is(value1, value2) ie,safari不支持
     Object.is(NaN, NaN); //true
 
 Object.prototype.propertyIsEnumerable(prop)
-    返回布尔值，当前对象的属性是否为可枚举属性(特定自身且可枚举属性)(跟Object.keys()一样，只是返回值不同)
+    返回布尔值，当前对象的属性是否为可枚举属性(特定自身且可枚举属性)
     var _prototype = {name: 'bar', age: 31};
     var obj = Object.create(_prototype, {
         class: {value: 'foo', enumerable: true, writable:true},

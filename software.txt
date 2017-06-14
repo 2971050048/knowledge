@@ -10,7 +10,7 @@
   audacity(音频编辑)|OBSstudio(直播录像)
 
 下载工具:
-  迅雷精简版|IDE|youtube-dl
+  迅雷9|IDE|youtube-dl
 
 手机:
   ss|lantern|tim|wechat|知乎|网易云|alipay
@@ -46,3 +46,8 @@ everything:
     设置: 搜索->'正则'+'所有'
   开启ftp|http服务器:
     设置: 工具->选项->http->接口为ip地址
+
+adobe软件: http://www.lookae.com/cc2017/
+
+snipaste教程: https://docs.snipaste.com/#/zh-cn/getting-started
+
