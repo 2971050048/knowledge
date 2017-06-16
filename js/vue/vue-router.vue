@@ -5,6 +5,7 @@
  */
 
 //html文件
+<template>
     <div id="app">
     <h1>Hello App!</h1>
     <p>
@@ -15,8 +16,10 @@
     路由匹配到的组件将渲染在这里
     <router-view></router-view>
     </div>
+</template>
 
 //js文件
+<script>    
     import Vue from 'vue';
     import VueRouter from 'vue-router';
 
@@ -258,3 +261,4 @@
 //对组件注入
     $router //router实例
     $route //当前激活的路由信息对象,属性是只读的
+</script>
