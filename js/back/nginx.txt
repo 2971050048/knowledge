@@ -1,7 +1,7 @@
 教程: http://www.runoob.com/linux/nginx-install-setup.html
 安装所需模块:
-  gzip模块需要zlib 库
-  rewrite模块需要pcre 库
+  gzip模块需要zlib库
+  rewrite模块需要pcre库
   ssl功能需要openssl库
 下载安装: 
   安装编译工具及库文件: yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
@@ -46,6 +46,7 @@
 传文件:
   pscp -P 29487 -r D:\demo\blog\ root@138.128.207.165:/usr/www/blog/
   pscp -P 29487 -r D:\demo\blog\admin\dist root@138.128.207.165:/usr/www/blog/admin/
+  pscp -P 29487 -r D:\demo\blog\front\static\ root@138.128.207.165:/usr/www/blog/front/static/
 
 打开最大文件数: ulimit -n 65536
 

@@ -35,6 +35,7 @@ XMLHttpRequest属性:
     5xx：服务器端错误– 服务器未能实现合法的请求
       500: 内部服务器错误
       503: 服务器当前不能处理请求
+      504: 网关超时, 服务器正在作为一个网关或代理来完成客户访问所需网址的请求
   responseText  //回应字符串数据
   responseXML   //回应XML数据
   statusText    //"OK"|"Not Found"
