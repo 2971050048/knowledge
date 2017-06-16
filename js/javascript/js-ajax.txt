@@ -78,13 +78,67 @@ HTTP协议:
   随机数的作用？？？？？
 
 JS跨域
-  同源策略
-  限制:
-    协议和端口造成的跨域"前台"没办法
-    只识别URL首部，不判断是否同ip
-      URL首部 = window.location.protocol + window.location.host
-  1. 主域相同子域不同: 
-    思路: document.domain+iframe的contentDocument
+  同源策略: 对XHR的约束，即"相同的协议、域、端口"才能通信
+  CORS: 跨域资源共享，使用自定义的HTTP头部让浏览器和服务器沟通
+    使用:  
+      跟同源请求是相同的接口，xhr对象原生支持CORS，ie8通过XDomainRequest对象支持。
+      由于同源请求和跨域请求都是相同接口，所以对于本地资源使用相对URL，对远程资源使用绝对URL
+    安全限制:
+      不能使用setRequestHeader()
+      不能发送接收cookie
+      调用getAllRequestHeaders()返回空字符创
+    举例:
+      let xhr = XMLHttpRequest();
+      xhr.onreadystatechange = () => {
+        if(xhr.readyState == 4) {
+          if(xhr.status >= 200 && xhr.status < 300 || xhr.status == 304) {
+            console.log(xhr.responseText);
+          } else {
+            console.log(xhr.status);
+          }
+        }
+      }
+      xhr.open('get', url, true);
+      xhr.send(null);
+  其他跨域技术: 图像Ping和JSONP
+    图像ping
+      概念：与服务器进行简单、单向的跨域通信的方式
+      使用：使用img标签。浏览器得不到任何具体数据，但通过load和error事件，能知道何时接收到响应
+      用途: 动态广告曝光次数和跟踪用户点击页面次数
+      缺点: 只能发送get请求，无法访问服务器响应的文本
+      举例: 
+        let img = new Image()
+        img.onload = img.onerror = () => console.log('done')
+        img.src = ''
+    JSONP：
+      概念：在回调函数中调用JSON
+      使用：使用动态的script标签，为src属性指定跨域的URL(url添加callback参数)
+      举例：
+        let cb = (res) => console.log(res.ip, res.city)
+        let script = document.createElement('script')
+        script.src = 'http://sss.com?callback=cb'
+        document.body.insert(script, document.body.firstChild)
+      优点: 能直接访问响应文本,支持浏览器和服务器的双向通信
+  comet:
+    实现方式: 长轮询和http流
+      长轮询: 页面发送请求到服务器，服务器一直保持连接打开，直到有数据可发送。发送数据完，浏览器再开启新连接
+      http流：在整个页面生命周期只使用一个http连接
+    api接口：SSE(服务器发送事件), Web Sockets
+      SSE:
+        举例：
+          let source = new EventSource('h.php')
+          source.message = (event) => {
+            let data = event.data
+            //处理数据
+          }
+        属性方法:
+          source.readyState. 0表连接到服务器，1表打开了连接，2表关闭了连接
+          source.open|message|error事件，分别在建立连接是触发，接收到新事件触发，无法连接触发
+      Web Sockets:
+        用途：由于传递的数据包小，适合于移动应用
+        优点：双向通信，有速度优势，适合聊天室等应用
+        缺点：不使用普通服务器，需要构建Web Sockets服务器
+
 
 相对协议URL
   浏览器遇到相对URL，会根据当前的网页协议，自动在//前面加上相同的协议。如当前网页是http 访问，那么所有的相对引用//都会变成http://。https同理。如果在本地查看，协议就会变成 file:/
