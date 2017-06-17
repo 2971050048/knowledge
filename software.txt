@@ -82,7 +82,7 @@ youtube-dl: (最好ss设置为全局模式)
 
 迅雷9去广告:
   C:\Windows\System32\drivers\etc, 打开hosts
-  # (迅雷)
+  # 迅雷
   127.0.0.1 pc.xunlei.com
   127.0.0.1 plugin.xl7.xunlei.com
   127.0.0.1 home.xl9.xunlei.com
@@ -100,15 +100,11 @@ youtube-dl: (最好ss设置为全局模式)
   127.0.0.1 static-xl9-ssl.xunlei.com
   127.0.0.1 api-shoulei-ssl.xunlei.com
   安装目录，删除文件:
-  Thunder9\Data\AdBrowser\Images
-  Thunder9\Data\AdBrowser\Scenes
-  Thunder9\Data\AdDownloadTranscript\Icon
-  Thunder9\Data\AdPlatform\Icons
-  Thunder9\Data\AdPlatform\Scenes
-  Thunder9\Data\AdTaskList\Banners
-  Thunder9\Data\AdTaskList\Icons
-  Thunder9\Data\AdTaskList\Scenes
+  Thunder9\Data\AdBrowser
+  Thunder9\Data\AdPlatform
+  Thunder9\Data\AdTaskList
   Thunder9\Data\AdTaskListTextLink
+  Thunder9\Data\AdDownloadTranscript\Icon
   Thunder9\Profiles\XLBrowserApp\thunder_adlist.txt
 
 potplayer:
@@ -120,3 +116,14 @@ IDM:
   代理服务器: http://127.0.0.1:1080/pac?t=201706131301363141
   破解版: http://www.pc6.com/softview/SoftView_24680.html#download
   
+BSplayer:
+  http://bsplayer.com/bsplayer-chinese/download-free.html
+
+VRplayer:
+  http://www.haosevr.com/4856.html#prettyphoto[group]/1/
+  
+provrplayer分享:
+  链接: https://pan.baidu.com/s/1eRI5RNW 密码: bb7g
+VR资源:
+  http://www.utovr.com/
+  https://tieba.baidu.com/p/4559428852
