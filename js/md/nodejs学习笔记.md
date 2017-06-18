@@ -1,7 +1,9 @@
 nodejs的基本应用，交互式解释器常用命令，事件循环，EventEmitter函数，Buffer类(缓存区)，stream流，全局对象
 <!--more-->
-# 基本应用
-```
+
+## 基本应用
+
+```javascript
 // server.js
 var http = require('http');
 http.createServer(function (request, response) {
@@ -15,8 +17,9 @@ console.log('Server running at http://127.0.0.1:8888/');
 console.log(' ');
 ```
 
-# REPL(read eval print loop)交互式解释器常用命令
-```
+## REPL(read eval print loop)交互式解释器常用命令
+
+```bash
 node - 进入repl环境
 ctrl+c - 退出当前终端
 ctrl+c 按两次 - 退出REPL
@@ -31,10 +34,12 @@ tab  - 列出当前命令
 下划线变量获取运算结果
 ```
 
-# 事件循环
+## 事件循环
+
 Node.js是单线程应用程序，通过事件和回调支持并发; 每个API都是异步的，并作为一个独立线程运行，使用异步函数调用。
 多数事件机制用观察者模式实现。每个异步事件(handler函数)都生成一个事件观察者，如果有事件发生就调用该回调函数.
-```
+
+```javascript
 // main.js
 var events = require('events');
 var eventEmitter = new events.EventEmitter();
@@ -52,10 +57,11 @@ console.log(' ');
 // node main.js 得到结果"连接成功 数据接收成功 程序执行完毕"
 ```
 
-# EventEmitter函数
+## EventEmitter函数
 事件触发和监听器功能的分装
 支持事件响应的核心模块都是EventEmitter的子类，如fs,net,http
-```
+
+```javascript
 // main.js
 var events = require('events');
 var eventEmitter = new events.EventEmitter();
@@ -79,11 +85,13 @@ console.log("程序执行完毕。");
 console.log(' ');
 ```
 
-# Buffer类(缓存区)
+## Buffer类(缓存区)
+
 js语言自身只有字符串数据类型，没有二进制数据类型。在处理像TCP流或文件流时，必须使用到二进制数据。
 Node.js的Buffer类用来创建存放二进制数据的缓存区。
 Node.js中处理I/O操作中移动数据时，有可能使用Buffer库
-```
+
+```javascript
 var buf = new Buffer(10);//var buf = new Buffer('hello nodejs','utf-8');//创建buffer实例
 buf.write('hello nodejs');//写入缓冲区
 // console.log(buf.toString());//从缓冲区读取数据
@@ -91,7 +99,9 @@ console.log(buf.toJSON());//转为json对象，结果{type:'Buffer',data:[104,10
 console.log(' ');
 ```
 
-# stream流
+## stream流
+
+```javascript
 // main.js
 var fs = require("fs");
 var readerStream = fs.createReadStream('input.txt');// 创建一个可读流
@@ -100,9 +110,9 @@ var writerStream = fs.createWriteStream('output.txt');// 创建一个可写流
 readerStream.pipe(writerStream);
 console.log("程序执行完毕");
 console.log();
-
-
 ```
+
+```javascript
 //compress.js
 var fs = require("fs");
 var zlib = require('zlib');
@@ -113,7 +123,7 @@ console.log("文件压缩完成。");
 console.log(' ');
 ```
 
-```
+```javascript
 // decompress.js
 var fs = require('fs');
 var zlib = require('zlib');
@@ -124,25 +134,32 @@ console.log('文件解压完成');
 console.log(' ');
 ```
 
-# 全局对象
-## console对象
-```
+## 全局对象
+### console对象
+
+```javascript
 console.log|info|error|warn([data][, ...]) 打印字符并以换行符结束|信息性消息|错误消息|警告消息
 console.dir(obj[, options]) 对一个对象进行检查（inspect）
 console.time|timeEnd(label)  输出时间，表示计时开始|结束时间，表示计时结束
 console.trace(message[, ...]) 当前执行的代码在堆栈中的调用路径
 console.assert(value[, message][, ...]) 判断某表达式或变量是否为真，接手两个参数，第一个参数是表达式，第二个参数是字符串。只有当第一个参数为false，才会输出第二个参数，否则不会有任何结果
 ```
-## progress对象: 
+
+### progress对象: 
+
 描述当前Node.js进程状态的对象，提供一个与操作系统的简单接口
-### 事件
+
+#### 事件
+
 ```
 exit 进程准备退出时触发
 beforeExit 当node清空事件循环，且没有其他安排时触发这个事件。
 uncaughtException 当异常冒泡回到事件循环，触发这个事件
 signal 进程接收到信号时触发
 ```
-### 属性
+
+#### 属性
+
 ```
 stdin|stdout|stderr: 标准输入|输出|错误流
 argv: 返回数组，由命令行执行脚本时的参数组成。第一个成员是node，第二个成员是脚本文件名，其余成员是脚本文件参数
@@ -157,7 +174,9 @@ arch: 当前CPU架构：'arm'、'ia32' 或者 'x64'。
 platform: 运行程序所在的平台系统 'darwin', 'freebsd', 'linux', 'sunos' 或 'win32'
 mainModule: require.main 的备选方法。
 ```
-### 方法
+
+#### 方法
+
 ```
 abort(): 让node退出并生成一个核心文件
 chdir(directory): 改变当前工作进程的目录，如果操作失败抛出异常
@@ -199,11 +218,13 @@ console.log(__dirname);//当前文件路径
   // C: \Program Files\nodejs\node.exe win32
 ```
 
-#util 对象
+## util 对象
+
 - util.inherits(子函数，母函数); //实现对象间原型继承
 - util.inspect(object[,showHidden][,depth][,colors]); //将对象转化为字符串
 - util.isArray(obj)|isRegExp(obj)|isDate(obj)|isError(obj)
-```
+
+```javascript
 var util = require('util');
 function Foo() {
   this.name = 'foo';
@@ -228,19 +249,21 @@ var u5 = util.isError(new Error());
 console.log(u1, u2, u3, u4, u5);
 ```
 
-# 文件系统
-* 读文件: fs.readFile(path, function(err, data)) //data是文件内容
-* 打开文件: fs.open(path, flags[, mode], function(err,fd)) //fd是一个文件标志
-* 获取文件信息: fs.stat(path, function(err,stats))
-* 写入文件: fs.writeFile(file, data[, options], function（err))
-* 读取文件: fs.read(fd, buffer, offset, length, position, function(err,bytesRead,buffer))
-* 关闭文件: fs.close(fd, function())
-* 截取文件: fs.ftruncate(fd, len, function())
-* 删除文件: fs.unlink(path, function())
-* 创建目录: fs.mkdir(path[,mode], function())
-* 读取目录: fs.readdir(path, function(err, files)) //files为目录下文件数组列表
-* 删除目录: fs.rmdir(path, function())
-```
+## 文件系统
+
+- 读文件: fs.readFile(path, function(err, data)) //data是文件内容
+- 打开文件: fs.open(path, flags[, mode], function(err,fd)) //fd是一个文件标志
+- 获取文件信息: fs.stat(path, function(err,stats))
+- 写入文件: fs.writeFile(file, data[, options], function（err))
+- 读取文件: fs.read(fd, buffer, offset, length, position, function(err,bytesRead,buffer))
+- 关闭文件: fs.close(fd, function())
+- 截取文件: fs.ftruncate(fd, len, function())
+- 删除文件: fs.unlink(path, function())
+- 创建目录: fs.mkdir(path[,mode], function())
+- 读取目录: fs.readdir(path, function(err, files)) //files为目录下文件数组列表
+- 删除目录: fs.rmdir(path, function())
+
+```javascript
 var fs = require('fs');
 fs.readFile('input.txt', function(err, data) {//data是文件内容
   if(err) console.error(err);

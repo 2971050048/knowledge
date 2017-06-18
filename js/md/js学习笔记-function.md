@@ -1,13 +1,13 @@
 js function的属性和方法小结
 <!--more-->
-# 属性
-## Function.length
+## 属性
+### Function.length
 - 支持: 浏览器支持未知
 - 作用: 指明函数形参的个数
 - 例子: (function(a, b){}).length //2
 
-# 方法
-## Function.prototype.apply(作用域, [可选]参数数组或类数组对象) 
+## 方法
+### Function.prototype.apply(作用域, [可选]参数数组或类数组对象) 
 - 支持: 浏览器支持未知
 - 作用: 指定作用域调用某个函数，作用域为this时表调用该函数的对象
 - 例子: 
@@ -26,7 +26,7 @@ function minOfArray(arr) {
 }
 ```
 
-## Function.prototype.call(作用域, [可选]参数列表)
+### Function.prototype.call(作用域, [可选]参数列表)
 - 作用: 指定作用域调用某个函数(跟apply方法的区别是第二个参数为参数列表)
 - 例子: 
 ```
@@ -42,7 +42,7 @@ for(var i = 0, len = animals.length; i < len; i++) {
 }
 ```
 
-## Function.prototype.bind(作用域, [可选]参数列表)
+### Function.prototype.bind(作用域, [可选]参数列表)
 - 作用: 返回新函数，当绑定函数被调用时，作用域会作为原函数运行时的this指向。当使用new操作符调用绑定函数时，作用域无效。
 - 例子: 配合setTimeout，一秒钟后显示文字 'I love (1,13] flower'
 
@@ -77,7 +77,7 @@ slice2 = Function.prototype.apply.bind(slice);
 slice2(arguments);
 ```
 
-## Function.prototype.toString()
+###Function.prototype.toString()
 返回当前函数源代码的字符串
 ​    
 > 参考文档: [https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function)

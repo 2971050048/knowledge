@@ -2,12 +2,17 @@
 <!--more-->
 >参考教程: http://router.vuejs.org/zh-cn/
 
-# 作用
+## 作用
+
 用Vue.js + vue-router创建单页应用。将组件映射到路由，然后告vue-router在哪里渲染它们
-# 安装
+
+## 安装
+
 `npm i vue vue-router -S`
-# 基本使用
-```
+
+## 基本使用
+
+```html
 //html文件
 <div id="app">
 <h1>Hello App!</h1>
@@ -20,7 +25,8 @@
 <router-view></router-view>
 </div>
 ```
-```
+
+```javascript
 //js文件
 import Vue from 'vue';
 import VueRouter from 'vue-router';
@@ -48,9 +54,11 @@ const app = new Vue({
 }).$mount('#app')
 ```
 
-## 动态路由配置: 
+### 动态路由配置: 
+
 匹配到的路由映射到同个组件
-```
+
+```javascript
 const router2 = new VueRouter({
   routes: [
     // 动态路径参数 以冒号开头
@@ -59,186 +67,196 @@ const router2 = new VueRouter({
 })
 ```
 
-## 嵌套路由:
-```
+### 嵌套路由:
+
+```javascript
 const User = {
 template: `
-    <div class="user">
-    <h2>User {{ $route.params.id }}</h2>
-    <router-view></router-view>
-    </div>
+  <div class="user">
+  <h2>User {{ $route.params.id }}</h2>
+  <router-view></router-view>
+  </div>
 `
 };
 const router3 = new VueRouter({
-    routes: [{ 
-        path: '/user/:id', 
-        component: User,
-        children: [
-            {
-                // 当 /user/:id/profile 匹配成功，UserProfile被渲染在User的<router-view>中
-                path: 'profile',
-                component: UserProfile
-            },
-            {
-                path: 'posts',
-                component: UserPosts
-            }
-        ]
-    }]
+  routes: [{ 
+    path: '/user/:id', 
+    component: User,
+    children: [
+      {
+        // 当 /user/:id/profile 匹配成功，UserProfile被渲染在User的<router-view>中
+        path: 'profile',
+        component: UserProfile
+      },
+      {
+        path: 'posts',
+        component: UserPosts
+      }
+    ]
+  }]
 })
 ```
 
-## 编程式导航
+### 编程式导航
+
 router.push(location)//向history栈添加一个新的记录,等同于router-link中的to导航
-    router.push('home');  // 字符串
-    router.push({ path: 'home' });// 对象
-    router.push({ name: 'user', params: { userId: 123 }});// 命名的路由
-    router.push({ path: 'register', query: { plan: 'private' }}); // 带查询参数，变成 /register?plan=private
+  router.push('home');  // 字符串
+  router.push({ path: 'home' });// 对象
+  router.push({ name: 'user', params: { userId: 123 }});// 命名的路由
+  router.push({ path: 'register', query: { plan: 'private' }}); // 带查询参数，变成 /register?plan=private
 router.replace(location)//替换掉当前的history 记录
 router.go(n);//参数是整数，在history记录中向前或者后退多少步
 
-```
+```javascript
 //命名路由: 在routes数组中的每个对象添加name属性
-    const router4 = new VueRouter({
-        routes: [
-            { path: 'user/:id', name: 'user', component: '组件1...' },
-            { path: 'about', name: 'about', component: '组件2...' }
-        ]
-    });
-    //html文件,此时是":to"而不是"to" 
-  /*<router-link :to="{ name: 'user', params: { id: 123 }}">bar</router-link>
-    <router-link :to="{ name: 'about'}">foo</router-link> */
+const router4 = new VueRouter({
+  routes: [
+    { path: 'user/:id', name: 'user', component: '组件1...' },
+    { path: 'about', name: 'about', component: '组件2...' }
+  ]
+});
+//html文件,此时是":to"而不是"to" 
+/*<router-link :to="{ name: 'user', params: { id: 123 }}">bar</router-link>
+  <router-link :to="{ name: 'about'}">foo</router-link> */
 ```
-```
+
+```javascript
 //命名视图:同时展示多个视图
-    const router5 = new VueRouter({
-        routes: [
-            { 
-                path: '/', 
-                components: {
-                    default: componentA,
-                    b: componentB,
-                    c: componentC
-                }
-            }
-        ]
-    });
-    //html文件
-    <router-link to='/'>home</router-link>
-    <router-view></router-view>//name默认为default
-    <router-view name='b'></router-view>
-    <router-view name='c'></router-view>
+const router5 = new VueRouter({
+  routes: [
+    { 
+      path: '/', 
+      components: {
+        default: componentA,
+        b: componentB,
+        c: componentC
+      }
+    }
+  ]
+});
+//html文件
+<router-link to='/'>home</router-link>
+<router-view></router-view>//name默认为default
+<router-view name='b'></router-view>
+<router-view name='c'></router-view>
 ```
-```
+
+```javascript
 //重定向和别名
-    const router6 = new VueRouter({
-        base: __dirname,
-        routes: [
-            { 
-                path: '/home', 
-                component: '组件Home',
-                children: [
-                    { path: 'foo', component: '组件Foo', alias: 'foo-alias'},//别名为foo-alias
-                    { path: 'bar', component: '组件Bar', alias: ['bar-alias1', 'bar-alias2']}
-                ]
-            },
-            {
-                path: '/about',
-                component: '组件About',
-                children: [
-                    { path: 'baz', component: '组件baz', redirect: '/home/foo'},//重定向到home/foo
-                    { 
-                        path: 'dynamic/:id', 
-                        redirect: to => {//动态返回重定向目标
-                            const { hash, params, query } = to
-                            if(query.to === 'foo') {
-                                return { path: 'foo', query: null}
-                            }
-                            if(hash === '#baz') {
-                                return { path: '/about/baz', hash: ''}
-                            }
-                            if(params.id) {
-                                return '/about/user/:id'
-                            } else {
-                                return '/home/bar'
-                            }
-                        }
-                    }
-                ]
+const router6 = new VueRouter({
+  base: __dirname,
+  routes: [
+    { 
+      path: '/home', 
+      component: '组件Home',
+      children: [
+        { path: 'foo', component: '组件Foo', alias: 'foo-alias'},//别名为foo-alias
+        { path: 'bar', component: '组件Bar', alias: ['bar-alias1', 'bar-alias2']}
+      ]
+    },
+      {
+        path: '/about',
+        component: '组件About',
+        children: [
+          { path: 'baz', component: '组件baz', redirect: '/home/foo'},//重定向到home/foo
+          { 
+            path: 'dynamic/:id', 
+            redirect: to => {//动态返回重定向目标
+              const { hash, params, query } = to
+              if(query.to === 'foo') {
+                return { path: 'foo', query: null}
+              }
+              if(hash === '#baz') {
+                return { path: '/about/baz', hash: ''}
+              }
+              if(params.id) {
+                return '/about/user/:id'
+              } else {
+                return '/home/bar'
+              }
             }
+          }
         ]
-    })
+      }
+  ]
+})
 ```
-```
+
+```javascript
 //html5 history模式
-    const router7 = new VueRouter({
-        mode: 'history',//路由的history模式
-        routes: []
-    })
-    //还需要后台配置
-        //Apache
-        /*
-            <IfModule mod_rewrite.c>
-            RewriteEngine On
-            RewriteBase /
-            RewriteRule ^index\.html$ - [L]
-            RewriteCond %{REQUEST_FILENAME} !-f
-            RewriteCond %{REQUEST_FILENAME} !-d
-            RewriteRule . /index.html [L]
-            </IfModule>
-        */
+const router7 = new VueRouter({
+  mode: 'history',//路由的history模式
+  routes: []
+})
+//还需要后台配置
+  //Apache
+  /*
+    <IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.html [L]
+    </IfModule>
+  */
 
-        //nginx
-            /*
-            location / {
-                try_files $uri $uri/ /index.html;
-            }
-            */
+  //nginx
+    /*
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+    */
 
-        // Node.js (Express)
-            // https://github.com/bripkens/connect-history-api-fallback
+  // Node.js (Express)
+    // https://github.com/bripkens/connect-history-api-fallback
 ```
 
-# 路由信息对象: 当前激活路由的状态信息
+## 路由信息对象: 当前激活路由的状态信息
 
 使用场景:
-* 组件内的this.$route和$route watcher回调; 
-* router.match(location)的返回值 
-* 导航钩子的参数：
-* router.beforeEach((to, from, next) => { // to 和 from 都是 路由信息对象 })
-```
+
+- 组件内的this.$route和$route watcher回调
+- router.match(location)的返回值
+- 导航钩子的参数：
+- router.beforeEach((to, from, next) => { // to 和 from 都是 路由信息对象 })
+
+```javascript
 const router = new VueRouter({ 
   scrollBehavior (to, from, savedPosition) { //to和from都是路由信息对象 } 
 })
 ```
-## 属性
-* $route.path: string，当前路由的绝对路径，如"/foo/bar"
-* $route.params: Object，key/value对象，包含了动态片段和全匹配片段
-* $route.fullPath: string，完成解析后的URL，含查询参数和hash完整路径。
-* $route.query: Object，key/value对象，表URL查询参数。如路径/foo?user=1，则$route.query.user = 1
-* $route.hash: string，当前路由的hash值 (带 #)
-* $route.name，当前路由的名称
-* $route.matched: Array<RouteRecord>，包含当前路由的所有嵌套路径片段的路由记录 。路由记录就是routes配置数组中的对象副本（还有在children数组）
-```
+
+### 属性
+
+- $route.path: string，当前路由的绝对路径，如"/foo/bar"
+- $route.params: Object，key/value对象，包含了动态片段和全匹配片段
+- $route.fullPath: string，完成解析后的URL，含查询参数和hash完整路径。
+- $route.query: Object，key/value对象，表URL查询参数。如路径/foo?user=1，则$route.query.user = 1
+- $route.hash: string，当前路由的hash值 (带 #)
+- $route.name，当前路由的名称
+- $route.matched: Array<RouteRecord>，包含当前路由的所有嵌套路径片段的路由记录 。路由记录就是routes配置数组中的对象副本（还有在children数组）
+
+```javascript
 const router = new VueRouter({
-    routes: [
-        // 下面的对象就是 route record
-        { 
-            path: '/foo', 
-            component: Foo,
-            children: [
-                // 这也是个 route record
-                { path: 'bar', component: Bar }
-            ]
-        }
-    ]
+  routes: [
+    // 下面的对象就是 route record
+    { 
+      path: '/foo', 
+      component: Foo,
+      children: [
+        // 这也是个 route record
+        { path: 'bar', component: Bar }
+      ]
+    }
+  ]
 })
 //当URL为/foo/bar，$route.matched包含从上到下的所有对象（副本）
 ```
 
+## router构造配置
 
-# router构造配置
-```
+```javascript
 const router8 = new VueRouter({
   routes: [{
     path: string,
@@ -259,21 +277,28 @@ const router8 = new VueRouter({
 })
 ```
 
-# router实例
-## 属性
+## router实例
+
+### 属性
+
 router.app|mode|currentRoute; 配置了router的vue根实例|路由模式|路由对象信息
-## 方法
+
+### 方法
+
 - router.beforeEach(guard)|afterEach(hook)
 - router.push(location)|replace(location)|go(n)
 - router.back()|forward()
 - router.getMatchedComponents(location)//动态的导航到一个新url
 
-## 返回目标位置或当前路由匹配的组件数组
-是数组的定义/构造类，不是实例,通常在服务端渲染的数据预加载时时候。
+### 返回目标位置或当前路由匹配的组件数组
+
+是数组的定义/构造类，不是实例,通常在服务端渲染的数据预加载时时候
+
 - router.resolve(location, current, append)
 - router.addRoutes(routes)//解析目标位置
 - router.onReady(callback)//第一次路由跳转完成时被调用的回调函数
 
 对组件注入
+
 - $router //router实例
 - $route //当前激活的路由信息对象,属性是只读的

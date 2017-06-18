@@ -1,7 +1,7 @@
 利用浏览器创建的XMLHttpRequest对象实现ajax技术，小结了些XMLHttpRequest对象的方法属性，以及http协议中post，get方法的优缺点
 <!--more-->
 
-# XMLHttpRequest方法:
+## XMLHttpRequest方法:
 - new XMLHttpRequest()
 
 - send()  //发送GET请求给服务端
@@ -12,7 +12,7 @@
 - getAllResponseHeaders() 
 - open(method, url, async, user, psw) //GET|POST, url, true|false, optional username, optional password
 
-# XMLHttpRequest属性:
+## XMLHttpRequest属性:
 1. onreadystatechange //当readyState状态变化时执行函数
 2. readyState //XMLHttpRequest请求状态
 ```
@@ -58,8 +58,8 @@ function myAjax(){
 }
 ```
 
-# HTTP协议:
-## POST与GET区别
+## HTTP协议:
+### POST与GET区别
 GET优点:
 - GET减少不必要的带宽浪费
 - GET可被缓存,可被收藏为书签,会保留在浏览器历史记录中,POST不会。
@@ -69,22 +69,22 @@ GET优点:
 - GET请求长度有限制,URL数据是ASCII字符,POST请求没有限制。
   POST优点: POST请求数据写在HTTP请求头,安全性略高于GET请求
 
-## cookie与session区别
+### cookie与session区别
 使用原因: HTTP是无状态连接,客户端每次读取web页面,服务器都认为是新会话,Cookie和Session持久保存某些信息。
 区别: 
 - cookie保存在客户端,session在服务器
 - 单个cookie的大小为4kb,每站点cookie数量一般为20个
 - session可设置超时时间,以免长期占用服务端内存
 
-## https:
+### https:
 - 客户端发送随机数和支持的加密方式列表
 - 服务端将证书、公钥和另一随机数发送给客户端
 - 客户端用公钥将信息加密,密文发送给服务端
 - 服务端用私钥解密,再将返回数据用私钥加密发回客户端
 - 客户端用公钥解密
 
-## JS跨域
-### 同源策略
+### JS跨域
+#### 同源策略
 存在原因: 
 - 协议和端口造成的跨域"前台"没办法
 - 只识别URL首部，不判断是否同ip

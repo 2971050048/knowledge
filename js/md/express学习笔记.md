@@ -1,9 +1,9 @@
 响应http请求,根据路由表执行http请求动作,动态渲染html页面,安装和使用
 <!--more-->
-# 特性
+## 特性
 响应http请求,根据路由表执行http请求动作,动态渲染html页面
 
-# 安装
+## 安装
 ```
 npm i express body-parser cookie-parser multer -S
 ```
@@ -11,7 +11,7 @@ npm i express body-parser cookie-parser multer -S
 -`cookie-parser`解析cookie
 -`multer`处理enctype='multipart/form-data'的表单数据
 
-# 使用
+## 使用
 
 ```
 // 路由demo

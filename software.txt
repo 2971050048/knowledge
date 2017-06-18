@@ -83,7 +83,7 @@ youtube-dl: (最好ss设置为全局模式)
 
 迅雷9去广告:
   C:\Windows\System32\drivers\etc, 打开hosts
-  # (迅雷)
+  # 迅雷
   127.0.0.1 pc.xunlei.com
   127.0.0.1 plugin.xl7.xunlei.com
   127.0.0.1 home.xl9.xunlei.com
@@ -101,15 +101,11 @@ youtube-dl: (最好ss设置为全局模式)
   127.0.0.1 static-xl9-ssl.xunlei.com
   127.0.0.1 api-shoulei-ssl.xunlei.com
   安装目录，删除文件:
-  Thunder9\Data\AdBrowser\Images
-  Thunder9\Data\AdBrowser\Scenes
-  Thunder9\Data\AdDownloadTranscript\Icon
-  Thunder9\Data\AdPlatform\Icons
-  Thunder9\Data\AdPlatform\Scenes
-  Thunder9\Data\AdTaskList\Banners
-  Thunder9\Data\AdTaskList\Icons
-  Thunder9\Data\AdTaskList\Scenes
+  Thunder9\Data\AdBrowser
+  Thunder9\Data\AdPlatform
+  Thunder9\Data\AdTaskList
   Thunder9\Data\AdTaskListTextLink
+  Thunder9\Data\AdDownloadTranscript\Icon
   Thunder9\Profiles\XLBrowserApp\thunder_adlist.txt
 
 potplayer:
@@ -120,8 +116,31 @@ sumatraPDF: https://www.sumatrapdfreader.org/download-free-pdf-viewer.html
 IDM: 
   代理服务器: http://127.0.0.1:1080/pac?t=201706131301363141
   破解版: http://www.pc6.com/softview/SoftView_24680.html#download
+  添加idm插件到chrome：
+    在安装目录找到"IDMGCExt.crx"文件，改成"IDMGCExt.zip",解压后打开文件，删除"_metadata"文件夹。
+    在chrome设置里，勾选"开发者模式","加载已解压的扩展程序",勾选文件，搞定
   
 百度云网页在线下载破解：
   下载时: 得到链接地址，再用迅雷或idm下载
   上传时，超快
   https://chrome.google.com/webstore/detail/%E7%99%BE%E5%BA%A6%E4%BA%91%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E7%A0%B4%E8%A7%A3/jnodfjpjimimdaikplcmpoknojongked?utm_source=chrome-app-launcher-info-dialog
+
+VR:
+  BSplayer:
+    http://bsplayer.com/bsplayer-chinese/download-free.html
+
+  VRplayer:
+    http://www.haosevr.com/4856.html#prettyphoto[group]/1/
+    
+  provrplayer分享:
+    链接: https://pan.baidu.com/s/1eRI5RNW 密码: bb7g
+  VR资源:
+    http://www.utovr.com/
+    https://tieba.baidu.com/p/4559428852
+  ffmpeg: 混流技术
+    教程: http://blog.sina.com.cn/s/blog_4618a6280100vwux.html
+    命令详解: http://blog.csdn.net/leixiaohua1020/article/details/12751349
+    ffmpeg -i 酷爱-2008-视频.mp4 -i 酷爱-2008-音频.m4a -vcodec copy -acodec copy 酷爱-2008.mp4
+    ffmpeg -i 轩动心弦-2010-视频.mp4 -i 轩动心弦-2010-音频.m4a -vcodec copy -acodec copy 轩动心弦-2010.mp4
+    ffmpeg -i 风起了-视频.webm -i 风起了-音频.webm -vcodec copy -acodec copy 风起了.mp4
+  得到弹唱: you-dl+ffmpeg得到webp视频，在用格式工厂转为avi视频，用provrplayer播放

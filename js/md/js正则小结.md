@@ -3,11 +3,11 @@
 
 > [js正则可视化工具](https://jex.im/regulex/)
 
-# RegExp对象方法
+## RegExp对象方法
 
 >使用: `/pattern/.test|exec(string)`
 
-## test(): 
+### test(): 
 返回值是布尔值
 
 ```javascript
@@ -18,7 +18,7 @@ if(pettern.test('12345678901')) {
 }
 ```
 
-## exec()
+### exec()
 
 返回一个数组,数组中的第一个条目是第一个匹配,其他的是反向引用
 还包括两额外属性: index和input。index表匹配在字符串中的位置，input表输入的字符串
@@ -30,7 +30,7 @@ console.log(g.index, g.input, g[0], g[1], g[2])
 //7 'hello, zly and lizi and foo, welcome' 'zly and lizi and foo' 'and lizi and foo' 'and foo'
 ```
 
-# RegExp对象属性
+## RegExp对象属性
 
 基于执行的最近一次正则表达式，将有下列属性
 
@@ -52,8 +52,8 @@ if(pattern.test('hello, zly and lizi and foo, welcome')) {
 }
 ```
 
-# String正则
-## str.match(pattern)  
+## String正则
+### str.match(pattern)  
 正则表达式没有g标志，则str.match()返回和RegExp.exec()相同的结果。还包括两额外属性: index和input。index表匹配在字符串中的索引，input表输入的字符串。
 如果正则表达式包含g标志，则返回一个Array，它包含所有匹配的子字符串而不是匹配对象
 
@@ -69,7 +69,7 @@ console.log(found);
 //        input: 'hello, zly and lizi and foo, welcome' ]
 ```
 
-## str.replace(pattern, replacement|function)
+### str.replace(pattern, replacement|function)
 返回由替换值替换pattern后的新字符串
 
 字符串为第二个参数时
@@ -101,10 +101,10 @@ let f2c = (x) => String(x).replace(/(\d+(?:\.\d*)?)[F|f]\b/g, (str, p1, offset, 
 f2c('98F')//36.666666666666664C
 ```
 
-## str.search(pattern)
+### str.search(pattern)
 如果匹配成功，返回pattern在字符串中首次匹配项的索引。否则返回-1
 
-## str.split(pattern)  
+### str.split(pattern)  
 返回字符串按pattern拆分的数组
 
 ```javascript
@@ -113,7 +113,7 @@ let names = "Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand ";
 let nameList = names.split(/\s*;\s*/);//["Harry Trump", "Fred Barney", "Helen Rigby", "Bill Abel", "Chris Hand "]
 ```
 
-# exec()和match()的区别
+## exec()和match()的区别
 
 - exec:返回数组,与第一个匹配相关的信息
 - match:没有g属性时同exec(); 有g属性时,返回所有匹配字符串合成的数组
@@ -126,17 +126,17 @@ var outCome_matc=someText.match(pattern);//['web2.0','net2.0']
 What is outCome_exec[1] and outCome_matc[1]? //'web','net2.0
 ```
 
-# /pattern/flags
+## /pattern/flags
 
-## flags:
+### flags:
 
 - i: 大小写不敏感
 - g: global, find all matches
 - m: multiline
 
-## pattern:
+### pattern:
 
-### 基本
+#### 基本
 
 ```
 .   character except newline
@@ -147,7 +147,7 @@ a*  0 or more a's
 \   Escapes a special character
 ```
 
-### 量词
+#### 量词
 
 ```
 ?       0 or 1
@@ -158,7 +158,7 @@ a*  0 or more a's
 {2,}    2 or more
 ```
 
-### 组
+#### 组
 
 ```
 (...)   Capturing group
@@ -166,7 +166,7 @@ a*  0 or more a's
 \Y      Match the Y'th captured group
 ```
 
-### 类
+#### 类
 
 ```
 [ab-d]  One character of: a, b, c, d
@@ -180,7 +180,7 @@ a*  0 or more a's
 \W  One non-word character
 ```
 
-### 声明
+#### 声明
 
 ```
 ^ Start of string
@@ -191,7 +191,7 @@ $ End of string
 (?!...) Negative lookahead    
 ```
 
-### 特殊字符
+#### 特殊字符
 
 ```
 \n  Newline
@@ -204,7 +204,7 @@ $ End of string
 \cY     Control character Y
 ```
 
-### replacement:
+#### replacement:
 
 ```
 $$  Inserts $
@@ -214,7 +214,7 @@ $'  Insert following string
 $Y  Insert Y'th captured group
 ```
 
-# 参考文档
+## 参考文档
 
 > javascript高级程序设计
 

@@ -2,7 +2,7 @@ Vue.js专注于MVVM模型的ViewModel层。通过双向数据绑定把View层和
 <!--more-->
 >参考教程: [https://cn.vuejs.org/v2/guide/](https://cn.vuejs.org/v2/guide/)
 
-# DOM上的指令
+## DOM上的指令
 Vue.js专注于MVVM模型的ViewModel层。通过双向数据绑定把View层和Model层连接起来。实际的DOM封装和输出被抽象为Directives和Filters
 
 - 直接文本插值: {{message}}
@@ -15,7 +15,7 @@ Vue.js专注于MVVM模型的ViewModel层。通过双向数据绑定把View层和
 - 双向绑定: v-model, 从view层到model层
 - 更新元素innerHTML: v-html
 
-```
+```vue
 <template>
   <div id="app">
     <!-- S = 指令 -->
@@ -62,11 +62,11 @@ Vue.js专注于MVVM模型的ViewModel层。通过双向数据绑定把View层和
 </script>
 ```
 
-# vue实例的生命周期钩子：
+## vue实例的生命周期钩子：
+
 不能使用箭头函数定义生命周期方法,理由是箭头函数绑定了父级作用域的上下文，所以this将不会按照期望指向 Vue 实例
 
 - beforecreate: 实例初始化后，数据观测和event/watcher事件配置之前被调用
-
 - created: 实例创建完成后被调用,已完成:数据观测、属性和方法运算、watch/event事件回调
 - beforeMount:
 - mounted: 挂载元素，获取到DOM节点
@@ -78,10 +78,11 @@ Vue.js专注于MVVM模型的ViewModel层。通过双向数据绑定把View层和
 - destroyed: Vue实例指示的所有东西都会解绑定
 - nextTick: 更新数据后立即操作dom
 
+## 计算属性computed和methods对比
 
-# 计算属性computed和methods对比: 
 计算属性只有在相关依赖发生改变时才会重新求值
-```
+
+```vue
 <template>
   <div id="app">
     <p>{{message}}</p>
@@ -103,173 +104,189 @@ new Vue({
   },
 })
 </script>
+
 ```
-# class与style绑定
+## class与style绑定
 在v-bind用于class和style时，表达式除了字符串，还可以是对象或数组
-```
-  <template>
-    <div id="app">
-      <div :style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
-      <div :class="[ activeClass, errorClass]"></div>
-      <div :class="{ active: isActived, 'text-danger': hasError }" class="static"></div>
-      <div :class="classObject"></div><!-- 配合computed属性 -->
-    </div>
-  </template>
-  <style lang="">
-    .active {
-      color: #FFFFFF;
-    }
-    .text-danger {
-      color: #F00;
-    }
-  </style>
-  <script>
-    new Vue({
-      el: "#app",
-      data: {
-        activeColor: #FFF,
-        fontSize: 13,
-        activeClass: 'active',
-        errorClass: 'text-danger'
-        isActived: true,
-        hasError: true,
-        error: null,
-      },
-      computed: {
-        classObject: function() {
-          return {
-            active: this.isActived && !this.error,
-            'text-danger': this.error
-          }
+
+```vue
+<template>
+  <div id="app">
+    <div :style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+    <div :class="[ activeClass, errorClass]"></div>
+    <div :class="{ active: isActived, 'text-danger': hasError }" class="static"></div>
+    <div :class="classObject"></div><!-- 配合computed属性 -->
+  </div>
+</template>
+<style lang="">
+  .active {
+    color: #FFFFFF;
+  }
+  .text-danger {
+    color: #F00;
+  }
+</style>
+<script>
+  new Vue({
+    el: "#app",
+    data: {
+      activeColor: #FFF,
+      fontSize: 13,
+      activeClass: 'active',
+      errorClass: 'text-danger'
+      isActived: true,
+      hasError: true,
+      error: null,
+    },
+    computed: {
+      classObject: function() {
+        return {
+          active: this.isActived && !this.error,
+          'text-danger': this.error
         }
       }
-    })
-  </script>
+    }
+  })
+</script>
 ```
-# 组件(尽量使用短横线隔开式)
-## 基本模板
-1. 全局组件: Vue.component(id, [definition]); 
-2. 局部组件: new Vue({components: {id: definition}})
-3. 组件限制: <ul>,<ol>,<table>,<select> 限制了能被包裹的元素,像 <option> 这样的元素只能出现在某些其它元素内部
-- 方案1,使用is属性: <table> <tr is="my-row"></tr> </table>
-- 方案2,模板<script type="text/x-template">|JavaScript内联模版字符串|.vue 组件
 
-4. 组件data必须是函数
-5. 父子组件关系: props down, events up
+## 组件(尽量使用短横线隔开式)
+
+### 基本模板
+
+1.全局组件: Vue.component(id, [definition])
+
+2.局部组件: new Vue({components: {id: definition}})
+
+3.组件限制: ul,ol,table,select 限制了能被包裹的元素,像 <option> 这样的元素只能出现在某些其它元素内部
+
+- 方案1,使用is属性: `<table> <tr is="my-row"></tr> </table>`
+- 方案2,模板`<script type="text/x-template">|JavaScript内联模版字符串|.vue 组件`
+
+4.组件data必须是函数
+
+5.父子组件关系: props down, events up
   prop是单向绑定，父组件变化传递给子组件，子组件若想修改得到的prop值，可用"局部变量"或"局部+计算属性"
   prop验证，传入的数据不符合规格，Vue会发出警告
     type可为：Number|String|Boolean|Object|Function|Array
+
+```vue
+//模板1：
+<template>
+  <div id="list">
+    <input type="text" v-model="newText" @keyup.enter="addNewText" placeholder="add new text">
+    <ol>
+      <!-- 组件属性title是为了获取数组元素值，remove是自定义事件，是为了控制父组件 -->
+      <li is="list-item" v-for="(todo, index) in todos" :title="todo" @remove="todos.splice(index, 1)"></li> 
+    </ol>
+  </div>
+</template>
+<script>
+// 组件全局注册
+Vue.component('list-item', {
+  template: '<li>{{title}}<button @click="$emit(\'remove\')">X</button></li>'
+  props: {
+    'title': String,
+    'prop2': [Number, String],
+    'prop3': {//必传字符串
+      type: String,
+      required: true
+    },
+    'prop4': {//数字，默认值为1
+      type: Number,
+      default: 1
+    },
+    'prop5': {//对象|数组的默认值为函数
+      type: Object,
+      default: function() {
+        return { message: 'vue' }
+      }
+    },
+    'prop6': {//自定义校验
+      type: Number,
+      default: 1,
+      required: true,
+      validator: function(value) {
+        return value > 0
+      }
+    }
+  },
+})
+new Vue({
+  el: '#list',
+  data: {
+    newText: '',
+    todos: [
+      'hello perhaps',
+      'it is a nice day',
+      'love you'
+    ]
+  },
+  methods: {
+    addNewText: function() {
+      this.todos.push(this.newText),
+      this.newText=''
+    }
+  },
+  // 组件局部注册
+  components: {
+    'list-item2': {
+      props: ['title'],
+      template: '<li>{{title}}<button @click="$emit(\'remove\')">X</button></li>'
+    }
+  }
+})
+</script>
 ```
- //模板1：
-  <template>
-    <div id="list">
-      <input type="text" v-model="newText" @keyup.enter="addNewText" placeholder="add new text">
-      <ol>
-        <!-- 组件属性title是为了获取数组元素值，remove是自定义事件，是为了控制父组件 -->
-        <li is="list-item" v-for="(todo, index) in todos" :title="todo" @remove="todos.splice(index, 1)"></li> 
-      </ol>
-    </div>
-  </template>
-  <script>
-  // 组件全局注册
-  Vue.component('list-item', {
-    template: '<li>{{title}}<button @click="$emit(\'remove\')">X</button></li>'
-    props: {
-      'title': String,
-      'prop2': [Number, String],
-      'prop3': {//必传字符串
-        type: String,
-        required: true
-      },
-      'prop4': {//数字，默认值为1
-        type: Number,
-        default: 1
-      },
-      'prop5': {//对象|数组的默认值为函数
-        type: Object,
-        default: function() {
-          return { message: 'vue' }
-        }
-      },
-      'prop6': {//自定义校验
-        type: Number,
-        default: 1,
-        required: true,
-        validator: function(value) {
-          return value > 0
-        }
+
+### 组件自定义事件
+
+自定义事件: $on(eventName)监听事件, $emit(eventName)触发事件
+
+```vue
+// 模板2
+<template>
+  <div id="counter-event">
+    <p>{{ total }}</p>
+    <button-counter @increment="incrementTotal"></button-counter><!-- 监听自定义事件 -->
+    <button-counter @increment="incrementTotal"></button-counter>
+  </div>
+</template>
+<script>
+  Vue.component('button-counter', {
+    template: '<button @click="incre">{{ counter }}</button>',
+    data: function() {
+      return {
+        counter: 1
       }
     },
-  })
-  new Vue({
-    el: '#list',
-    data: {
-      newText: '',
-      todos: [
-        'hello perhaps',
-        'it is a nice day',
-        'love you'
-      ]
-    },
-    methods: {
-      addNewText: function() {
-        this.todos.push(this.newText),
-        this.newText=''
-      }
-    },
-    // 组件局部注册
-    components: {
-      'list-item2': {
-        props: ['title'],
-        template: '<li>{{title}}<button @click="$emit(\'remove\')">X</button></li>'
+    methods: {//自定义事件
+      incre: function() {
+        this.counter+=1,
+        this.$emit('increment')
       }
     }
   })
-  </script>
-```
-## 组件自定义事件
-自定义事件: $on(eventName)监听事件, $emit(eventName)触发事件
-```
-  // 模板2
-  <template>
-    <div id="counter-event">
-      <p>{{ total }}</p>
-      <button-counter @increment="incrementTotal"></button-counter><!-- 监听自定义事件 -->
-      <button-counter @increment="incrementTotal"></button-counter>
-    </div>
-  </template>
-  <script>
-    Vue.component('button-counter', {
-      template: '<button @click="incre">{{ counter }}</button>',
-      data: function() {
-        return {
-          counter: 1
-        }
-      },
-      methods: {//自定义事件
-        incre: function() {
-          this.counter+=1,
-          this.$emit('increment')
-        }
+  new Vue({
+    el: '#counter-event',
+    data: {
+      total: 2
+    },
+    methods: {
+      incrementTotal: function() {
+        this.total+=1
       }
-    })
-    new Vue({
-      el: '#counter-event',
-      data: {
-        total: 2
-      },
-      methods: {
-        incrementTotal: function() {
-          this.total+=1
-        }
-      }
-    })
-  </script>
+    }
+  })
+</script>
 ```
-## v-model表单控件
-  `<input v-model="something">` 相当于语法糖 
-  `<input :value="something" @input="something = $event.target.value">`
-```
+
+### v-model表单控件
+
+`<input v-model="something">` 相当于语法糖 
+`<input :value="something" @input="something = $event.target.value">`
+
+```vue
 <template>
   <div id="app">
     <currency-input label="Price" v-model="price" ></currency-input>
@@ -324,7 +341,7 @@ new Vue({
       }
     }
   })
-  
+
   new Vue({
     el: '#app',
     data: {
@@ -345,27 +362,34 @@ new Vue({
     }
   })
 </script>
+
 ```
-# 事件处理v-on
-1. v-on: 事件.修饰符;  在vue实例上放在methods对象中
-2. $event可以访问原生dom事件. <button @click='fun($event)'></button>
-3. 事件修饰符: 
-  .stop: 阻止事件冒泡
-  .prevent: 不重载页面
-  .capture: 使用事件捕获模式
-  .self: 事件在该元素本身才触发(而不是子元素)
-  .once: 事件只触发一次
-4. keyup事件修饰符:
+
+## 事件处理v-on
+
+1.v-on: 事件.修饰符;  在vue实例上放在methods对象中
+
+2.$event可以访问原生dom事件. <button @click='fun($event)'></button>
+
+3.事件修饰符: 
+- stop: 阻止事件冒泡
+- prevent: 不重载页面
+- capture: 使用事件捕获模式
+- self: 事件在该元素本身才触发(而不是子元素)
+- once: 事件只触发一次
+
+4.keyup事件修饰符:
   esc|tab|shift|ctrl|meta|alt|space|enter|delete(删除和退格)|f1|up|down|left|right
   其中shift|ctrl|meta|alt也能监听鼠标事件
 
-# 表单控件绑定 v-model
-修饰符: 
+## 表单控件绑定 v-model
+
+修饰符:
 `.lazy`: 让v-model在change事件中同步(默认是input事件)
 `.number`: 自动将用户的输入值转为Number类型
 `.trim`: 自动过滤用户输入的首尾空格
 
- ```
+ ```vue
 <template>
 <div id="app">
   <!-- 复选框绑定到数组 -->
