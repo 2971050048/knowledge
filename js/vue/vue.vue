@@ -1,6 +1,7 @@
 //vuejs教程: https://cn.vuejs.org/v2/guide/
 //vue-loader: http://vue-loader.vuejs.org/zh-cn/
 //jsFiddle: https://jsfiddle.net/50wL7mdz/32671/
+// cdn: https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js
 /** DOM上的指令
   Vue.js专注于MVVM模型的ViewModel层。通过双向数据绑定把View层和Model层连接起来。实际的DOM封装和输出被抽象为Directives和Filters
   DOM上的指令

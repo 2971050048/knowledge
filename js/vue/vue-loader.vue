@@ -3,7 +3,7 @@ vue-loader是Webpack的loader，将Vue组件转换为JS模块
 教程: https://vue-loader.vuejs.org/zh-cn/
 特性:
   ES2015 默认支持;
-  允许对style使用SASS和对template使用Jade
+  允许对style使用SASS和对template使用Pug
   .vue 允许自定义节点，使用自定义的loader处理
   把style和template中的静态资源当作模块来对待，并使用Webpack loaders进行处理；
   每个组件模拟出CSS作用域
@@ -13,7 +13,7 @@ vue-loader是Webpack的loader，将Vue组件转换为JS模块
   npm install -g vue-cli
   vue init webpack-simple hello-vue
   cd hello-vue
-  npm install
+  yarn
   npm run dev
 
  */
