@@ -144,3 +144,5 @@ VR:
     ffmpeg -i 轩动心弦-2010-视频.mp4 -i 轩动心弦-2010-音频.m4a -vcodec copy -acodec copy 轩动心弦-2010.mp4
     ffmpeg -i 风起了-视频.webm -i 风起了-音频.webm -vcodec copy -acodec copy 风起了.mp4
   得到弹唱: you-dl+ffmpeg得到webp视频，在用格式工厂转为avi视频，用provrplayer播放
+
+WPS去广告: https://mopiaoyao.ctfile.com/dir/4187640-18229844-2c0b88/
