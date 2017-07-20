@@ -1,24 +1,40 @@
 # ant-design 2
 
-## 色彩
+对于IE系列浏览器,使用`babel-polyfill`和`babel-plugin-transform-runtime`
+
+## dva
 
 ---
 
-- 色板
+- 简介
 
-8中基本色彩组成，每种基本色（第6格）衍生出10种渐变色。
+dva是轻量应用框架，基于react和redux。支持side effects、热替换、动态加载、react-native、SSR。
 
-部分色彩的默认场景
+- dva-cli的使用
 
-Red：热情、警示
-Green：成功、通过、安全
-Blue：专业、科技
-Pink：典雅、明快、女性
-Orange：醒目、温暖
-Purple：高雅、浪漫
-Yellow：活力、提示
-Cyan：清新、冷静、结构化
-Grey：平稳、中性
+```shell
+npm i dva-cli -g
+dva new dva-demo
+cd dva-demo
+npm start
+```
+
+- 使用antd
+
+```shell
+npm i antd babel-plugin-import -S
+```
+
+babel-plugin-import是用来按需加载antd脚本和样式
+
+- 编辑`.roadhogrc`，使`babel-plugin-import`插件生效。
+
+```js
+"extraBabelPlugins": [
+  "transform-runtime",
+  ["import", { "libraryName": "antd", "style": "css" }]
+],
+```
 
 > 参考文档
 
