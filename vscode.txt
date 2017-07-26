@@ -117,3 +117,6 @@ configurations属性
     port - 调试要附加的端口
     stopOnEntry - 启动后自动停止程序
     console - 启动调试控制台的位置, 值为internalConsole, integratedTerminal, externalTerminal.
+
+查找时正则的使用:
+    （(.+?)） 替换成 ($1)
