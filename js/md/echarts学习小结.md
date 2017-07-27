@@ -23,7 +23,7 @@ ECharts3支持直角坐标系(catesian，同grid)、极坐标系(polar)、地理
 ---
 
 ```javascript
-let echarts = require('echarts');
+import echarts from 'echarts'
 let myChart = echarts.init(document.getElementById('main')); // 绑定dom元素
 let options = {}; // 图表组件
 let myChart.setOption(options); // 绘制图表
@@ -88,6 +88,13 @@ shadowOffsetY: <number>
 shadowBlur: <number>
 ```
 
+- border属性
+
+```javascript
+borderColor
+borderWidth
+```
+
 ### 2. title 组件属性(标题)
 
 ---
@@ -100,7 +107,7 @@ subtext,subStyle,sublink,subtarget,itemGap
 - 盒子
 
 left,top,padding,,textAlign,textBaseline</br>
-shadow,borderWidth,borderColor,backgroundColor
+shadow,border,backgroundColor
 
 - 其他
 
@@ -117,7 +124,7 @@ data[{name,icon,textStyle}],textStyle,itemGap
 - 盒子
 
 width,height,left,top,padding</br>
-shadow,borderWidth,borderColor,backgroundColor
+shadow,border,backgroundColor
 
 - 单个图例
 
@@ -129,7 +136,25 @@ selected,selectedMode,inactiveColor
 
 show,z,zlevel,tooltip
 
-### 4. 
+### 4. tooltip 组件属性(提示框)
 
 ---
+
+- 文本
+
+formatter
+
+- 显示
+
+trigger,triggerOn,showContent,alwaysShowContent,
+showDelay,hideDelay
+
+- 盒子
+
+extraCssText,padding,position
+border,backgroundColor
+
+- axisPointer
+
+type, crossStyle,label{show, formatter}
 

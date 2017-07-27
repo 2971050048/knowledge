@@ -7,6 +7,7 @@
 ---
 
 ```shell
+yarn init -y
 yarn add webpack
 yarn add webpack-dev-server
 ```
