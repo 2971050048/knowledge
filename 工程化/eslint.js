@@ -1,4 +1,6 @@
 /*
+参考：http://blog.guowenfh.com/2016/09/29/eslint-config-npmbace/
+http://www.cnblogs.com/le0zh/p/5619350.html
 作用: 代码风格检测工具。在JS代码中识别模式匹配的工具，目标是保证代码的一致性和避免错误
 规则: http://eslint.cn/docs/rules/
 配置文件:　.eslintrc.js
@@ -6,6 +8,7 @@
 其他:
   可在js文件使用注释来指定环境  //eslint-env node, mocha 
   standard扩展规则: https://github.com/standard/standard/blob/master/docs/RULES-zhcn.md
+使用：eslint --init
 */
 
 // 块注释临时禁止规则出现警告: eslint-disable

@@ -126,3 +126,6 @@ location的写法:
 window使用nginx
 安装: 官网下载(http://nginx.org/en/download.html)，解压后，./nginx就能启动
 问题1: /nginx.pid failed  命令: ./nginx -c ./conf/nginx.conf
+
+杀死所有跟nginx.exe有关的进程
+taskkill /fi "imagename eq nginx.exe" /F

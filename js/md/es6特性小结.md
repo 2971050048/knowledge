@@ -1,10 +1,12 @@
+# es6特性小结
+
 ES6总体上来说：添加了块级作用域，增加了一些语法糖，增强了字符串的处理，引入Generator函数控制函数内部状态的变化，原生提供Promise对象，引入Class的概念，并在语言规格层面上实现了模块功能
 
 <!--more-->
 
 ES6是是一种新的javascript规范, 2015年出现，因此也称为ECMAScript2015
 
-** js发展历史 **
+> js发展历史
 
 - 1995：JavaScript诞生，它的初始名叫LiveScript
 - 1997：ECMAScript标准确立。
@@ -15,6 +17,8 @@ ES6是是一种新的javascript规范, 2015年出现，因此也称为ECMAScript
 
 ## 默认参数
 
+---
+
 可以直接把默认值放在函数申明里
 
 ```javascript
@@ -24,6 +28,8 @@ var link = function(height = 50, color = 'red', url = 'http://azat.co') {
 ```
 
 ## 模板文本
+
+---
 
 使用新的语法${NAME}，并放在反引号里
 
@@ -37,6 +43,8 @@ console.log(name, url) // Your name is zly lizi.  http://localhost:3000/api/mess
 ```
 
 ## 多行字符串
+
+---
 
 反引号来表示字符串，且可以表示多行字符串
 
@@ -52,6 +60,8 @@ var fourAgreements = `You have the right to be you.
 ```
 
 ## 解构赋值
+
+---
 
 ```javascript
 // es5，对象属性
@@ -70,6 +80,8 @@ console.log(q, w) // 1 2
 
 ## 增强的对象文本
 
+---
+
 ```javascript
 var serviceBase = { port: 3000, url: 'azat.co' }
 var accountService = {
@@ -83,6 +95,8 @@ console.log(accountService)
 ```
 
 ## 箭头函数
+
+---
 
 身处箭头函数里面，this还是原来的this
 
@@ -98,8 +112,11 @@ var messages = ids.map(value => `ID is ${value}`)
 
 ## Promises
 
+---
 
 ## 块作用域构造Let and Const
+
+---
 
 在ES5中，块级作用域起不了任何作用,var只是限制函数作用域
 ES6中，大括号定义的代码块，用let和const限制块级作用域
@@ -130,10 +147,12 @@ console.log(amount(true)); // 0
 
 ## 类
 
+---
+
 ```javascript
 class baseModel {
   constructor(options, data) {
-    this.name = `Base`;
+    this.name = `Base`; // 默认name和url
     this.url = `http://azat.co/api`;
     this.data = data;
     this.options = options;
@@ -145,10 +164,10 @@ class baseModel {
 class LiziModel extends baseModel {
   constructor(options, data) {
     super({ lizi: true }, [`123`, `345`]) // 用super调用父类的constructor方法
-    this.name = `zly`
+    this.name = `zly`; // 重写name和url
     this.url += `/accounts/`
   }
-  get accountsData() { //calculated attribute getter
+  get accountsData() { //计算属性getter
     // ... make XHR
     return this.data
   }
@@ -159,6 +178,8 @@ console.log(`Data is ${lizi.accountsData}`) // Data is 123,345
 ```
 
 ## 模块
+
+---
 
 ```javascript
 // module.js
@@ -176,6 +197,6 @@ console.log(service.port) // 3000
 
 > 参考文档
 
-> [http://www.alloyteam.com/2016/03/es6-front-end-developers-will-have-to-know-the-top-ten-properties/](http://www.alloyteam.com/2016/03/es6-front-end-developers-will-have-to-know-the-top-ten-properties/)
-
-> [http://web.jobbole.com/87140/](http://web.jobbole.com/87140/)
+[阮一峰：ECMAScript6入门](http://es6.ruanyifeng.com/)</br>
+[腾讯全端：前端开发者不得不知的es6十大特性](http://www.alloyteam.com/2016/03/es6-front-end-developers-will-have-to-know-the-top-ten-properties/)</br>
+[伯乐在线：JS开发者必须知道的十个ES6新特性](http://web.jobbole.com/87140/)

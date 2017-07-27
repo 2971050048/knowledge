@@ -45,3 +45,9 @@ hello[^hello]
 <br>
 <br>
 [^hello]: hi
+
+> [语法教程](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+> [markdownlint使用](http://thisdavej.com/build-an-amazing-markdown-editor-using-visual-studio-code-and-pandoc/)
+
+换行：空格+空格+回车或者<br/>
