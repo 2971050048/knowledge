@@ -8,6 +8,8 @@
 4.任务管理器卸载任务出现"等待卸载或更新程序": 
     任务管理器ctrl+shift+esc) -> dllhost.exe, 结束进程
 5.查看端口占用: netstat -ano|findstr '445'
+    netstat -ano|findstr '8080' # 找到对应pid为13784
+    taskkill /PID 13784 /F
 6. '命令 /?' 可以查看该命令的帮助
     netstat|tasklist|taskkill
 7.powershell常用命令:
@@ -43,3 +45,4 @@
         alt+enter: 选定对象的属性
     shift:
         shift+delete: 永久删除文件(不经过回收站)
+9. 远程桌面: win+r -> mstsc

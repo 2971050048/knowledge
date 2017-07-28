@@ -1,25 +1,30 @@
+# nginx 服务器学习笔记
+
 nginx在windows和linux环境下的安装和使用，以及nginx.conf中server.location的配置
 
 <!--more-->
 
 ## windows使用nginx
 
-安装: 官网下载 [http://nginx.org/en/download.html](http://nginx.org/en/download.html ) 
+---
+
+安装: [官网下载](http://nginx.org/en/download.html ) 
 
 使用: 解压后，打开powersehll，在nginx目录输入命令`./nginx`就能启动。(其实`./nginx`相当于 `./nginx -c ./conf/nginx.conf`，意思是指定配置文件)
 
 ## linux使用nginx
 
-1.安装所需模块： gzip模块需要zlib库，ssl功能需要openssl库
+---
+
+1. 安装所需模块： gzip模块需要zlib库，ssl功能需要openssl库
 
 ```yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel```
 
-2.安装pcre：rewrite模块需要pcre库
+2. 安装pcre：rewrite模块需要pcre库
 
 `yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel`
 
-```bash
-
+```shell
 wget http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz
 tar zxvf pcre-8.35.tar.gz  #解压安装包
 rm pcre-8.35.tar.gz  #删除安装包
@@ -28,7 +33,6 @@ cd /usr/local/src/pcre-8.35
 ./configure 
 make && make install #编译
 pcre-config --version #查看版本
-
 ```
 
 3. 安装nginx: 需先到官网查看最新版本
@@ -46,7 +50,7 @@ make && make install
 
 ```
 
-4.启动nginx
+4. 启动nginx
 
 ```bash
 
@@ -57,7 +61,7 @@ nginx #启动nginx服务器
 
 ```
 
-5.其他命令
+5. 其他命令
 
 ```bash
 
@@ -69,7 +73,7 @@ nginx #启动nginx服务器
 
 ```
 
-6.传文件到远程服务器。使用putty自带的pscp.exe进行传输
+6. 传文件到远程服务器。使用putty自带的pscp.exe进行传输
 
 ```bash
 
@@ -80,6 +84,8 @@ pscp -P 29487 -r D:\demo\blog\admin\dist root@138.128.207.165:/usr/www/blog/admi
 ```
 
 ## location的写法
+
+---
 
 配置nginx文件夹的conf/nignx.conf文件，server中location的配置规则。
 

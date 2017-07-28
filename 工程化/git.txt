@@ -5,6 +5,27 @@
 版本库：.git文件。包括暂存区和分区(master等)
 忽略文件时: .gitignore
 
+配置：得到的配置文件在用户目录下的.gitconfig。打开git bash
+git config --global user.name "perhaps"
+git config --global user.email "perhapszql@gmail.com"
+ssh-keygen -t rsa -C "perhapszql@gmail.com" # 生成ssh密钥对在用户目录，公钥打开全选复制到github中
+
+
+配置别名：
+方法：git config --global alias.ci commit
+或直接在C:\Users\Administrator\.gitconfig文件进行添加
+[alias] 
+    st = status -sb
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    ad = add
+    cp = cherry-pick
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    alias = config --get-regexp 'alias.*'
+
+
 基本命令：
 git add|rm|diff|commit|status //增加文件|删除文件|difference|提交文件|状态
     git add . //add所有改动
@@ -21,15 +42,15 @@ git mv -f -r <source> <destination> //移动文件夹
     git mv -f -r koa/app.js koa/perhaps ./    //移动到当前目录下
 
 远程库：
-本地Git仓库和GitHub仓库之间的传输是通过SSH加密的，所以需要ssh key
-$ ssh-keygen -t rsa -C "1728947130@qq.com" //生成ssh密钥对
-关联远程库：git remote add origin git@github.com:perhaps-yo/markdownlint.git
+拷贝远程库 git clone git@github.com:perhaps-yo/knowledge.git
+关联远程库：git remote add origin git@github.com:perhaps-yo/knowledge.git
 取消关联：  git remote rm origin
 推送到远程库：git push origin master //第一次才要"-u"参数
 拉取到本地：git pull origin master
 查看远程库信息: git remote -v
 本地创建分支和远程分支对应: git checkout -b branch-name origin/branch-name
 本地建立和远程分支的关联:   git branch --set-upstream branch-name origin/branch-name
+删除远程分支： git push origin :gh-pages
 
 分支管理策略：
 1.master用于正式发布，dev(develop)用于日常开发
@@ -110,16 +131,3 @@ $ ssh-keygen -t rsa -C "1728947130@qq.com" //生成ssh密钥对
     git tag -d <tagname>      //删除一个本地标签；
     git push origin :refs/tags/<tagname> //删除一个远程标签。
 
-别名：
-方法：git config --global alias.ci commit
-或直接在C:\Users\Administrator\.gitconfig文件进行添加
-[alias] 
-    st = status -sb
-    ci = commit
-    br = branch
-    co = checkout
-    df = diff
-    ad = add
-    cp = cherry-pick
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    alias = config --get-regexp 'alias.*'
