@@ -4,6 +4,7 @@
     权限设置：属性->安全->高级->添加->选择主体->高级->立即查找->users->勾选全部权限
     内容设置: 127.0.0.1 网址，可以屏蔽相应网站
 3.关闭开机启动: msconfig-->启动； 或者软件autoruns
+  win10添加开机启动: `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp`添加快捷方式即可
 4.任务管理器卸载任务出现"等待卸载或更新程序": 
     任务管理器ctrl+shift+esc) -> dllhost.exe, 结束进程
 5.查看端口占用: netstat -ano|findstr '445'
