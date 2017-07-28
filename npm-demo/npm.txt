@@ -1,4 +1,6 @@
-//nvm下载: https://github.com/coreybutler/nvm-windows/releases
+// nvm下载: https://github.com/coreybutler/nvm-windows/releases
+// nvm教程: https://github.com/coreybutler/nvm-windows
+// npm教程: http://coloration.cc/npmjs-documentation/2016/03/29/creatingNodejsModules.html
 常用命令:
     安装: npm install|i <Module> (-g)
         根据package.json安装: npm i
