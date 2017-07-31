@@ -1,24 +1,36 @@
+# mongodb学习笔记
+
 MongoDB是跨平台、面向文档的数据库。MongoDB的运行基于集合（collection）与文档（document）。linux和windows环境下的安装，和基本的shell命令操作数据库
 <!--more-->
-## 基本概念
-mongodb:MongoDB是跨平台、面向文档的数据库。MongoDB的运行基于集合（collection）与文档（document）
-数据库:数据库是集合的容器。一个MongoDB服务器有多个数据库
-集合:是一组MongoDB文档。相当于关系型数据库中表的概念。集合不能执行模式（schema）。存储在集合中的数据都是BSON格式。BSON是一种类json的一种二进制形式的存储格式,简称Binary JSON。
-文档:一组键值对,有着动态的模式
 
-## 安装使用:
+## 基本概念
+
+---
+
+mongodb:MongoDB是跨平台、面向文档的数据库。MongoDB的运行基于集合（collection）与文档（document)</br>
+数据库:数据库是集合的容器。一个MongoDB服务器有多个数据库</br>
+集合:是一组MongoDB文档。相当于关系型数据库中表的概念。集合不能执行模式（schema）。存储在集合中的数据都是BSON格式。BSON是一种类json的一种二进制形式的存储格式,简称Binary JSON。</br>
+文档:一组键值对,有着动态的模式</br>
+
+## 安装使用
+
+---
+
 ### windows安装
-```
+
+```shell
 官网下载: https://www.mongodb.com/
 添加path: D:\software\work\mongodb\bin
 创建数据目录: mongod --dbpath c:\data\db
 写日志:  mongod --logappend --logpath 'mongodb.log'
 指定监听端口打开服务器: mongod --port 8080 #默认是27017
-启动: mongod 
+启动: mongod
 shell连接数据库: mongo
 ```
-### linux安装:
-```
+
+### linux安装
+
+```shell
 curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz  #下载
 tar -zxvf mongodb-linux-x86_64-3.0.6.tgz #解压
 mv  mongodb-linux-x86_64-3.0.6/ /usr/local/mongodb #将解压包拷贝到指定目录
@@ -33,8 +45,11 @@ mongod --rest #启用http用户界面，进行测试
 #ip地址:28017 即可访问
 ```
 
-## shell操作数据库:
-```
+## shell操作数据库
+
+---
+
+```shell
 显示已有数据库: show dbs
 显示当前数据库名字: db
 创建数据库: use db-name
@@ -50,8 +65,9 @@ mongod --rest #启用http用户界面，进行测试
 索引: db.col-name.ensureIndex({k1: 1}) //1位升序，-1位降序
 ```
 
-### 插入文档:
-```
+### 插入文档
+
+```shell
 > perhaps=({
   title: 'MongoDB 教程', 
   description: 'MongoDB 是一个 Nosql 数据库',
@@ -62,8 +78,10 @@ mongod --rest #启用http用户界面，进行测试
 });
 > db.zly.insert(perhaps)
 ```
-### 查询文档: 
-```
+
+### 查询文档
+
+```shell
 and条件: db.zly.find({k1: v1, k2: v2}).pretty()
 or条件: db.zly.find($or:[{k1: v1}, {k2: v2}]).pretty()
 and和or: db.zly.find({k1: v1, $or:[{k2: v2}, {k3: v3}]}).pretty()
@@ -79,7 +97,8 @@ and和or: db.zly.find({k1: v1, $or:[{k2: v2}, {k3: v3}]}).pretty()
   db.zly.find().pretty().sort({k1: -1})
 ```
 
->参考文档
->入门: [http://www.runoob.com/mongodb/mongodb-tutorial.html](http://www.runoob.com/mongodb/mongodb-tutorial.html)
-> mongodb+nodejs: [http://mongodb.github.io/node-mongodb-native/2.2/tutorials/main/](http://mongodb.github.io/node-mongodb-native/2.2/tutorials/main/)
-> mongoose: [https://github.com/alsotang/node-lessons/tree/master/lesson15](https://github.com/alsotang/node-lessons/tree/master/lesson15)
+> 参考文档
+
+[入门](http://www.runoob.com/mongodb/mongodb-tutorial.html)</br>
+[mongodb+nodejs](http://mongodb.github.io/node-mongodb-native/2.2/tutorials/main/)</br>
+[mongoose](https://github.com/alsotang/node-lessons/tree/master/lesson15)</br>

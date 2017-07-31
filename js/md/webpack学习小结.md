@@ -61,7 +61,6 @@ module.exports = {
 };
 ```
 
-
 > 参考文档
 
 [官网教程](https://doc.webpack-china.org/)
