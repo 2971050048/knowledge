@@ -16,11 +16,11 @@ nginx在windows和linux环境下的安装和使用，以及nginx.conf中server.l
 
 ---
 
-1. 安装所需模块： gzip模块需要zlib库，ssl功能需要openssl库
+1.安装所需模块： gzip模块需要zlib库，ssl功能需要openssl库
 
 ```yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel```
 
-2. 安装pcre：rewrite模块需要pcre库
+2.安装pcre：rewrite模块需要pcre库
 
 `yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel`
 
@@ -35,10 +35,9 @@ make && make install #编译
 pcre-config --version #查看版本
 ```
 
-3. 安装nginx: 需先到官网查看最新版本
+3.安装nginx: 需先到官网查看最新版本
 
-```linux
-
+```shell
 wget http://nginx.org/download/nginx-1.12.0.tar.gz
 tar zxvf nginx-1.6.2.tar.gz
 rm nginx-1.6.2.tar.gz
@@ -47,40 +46,33 @@ cd /usr/local/src/nginx-1.6.2
 ./configure --prefix=/usr/local/webserver/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre-8.35
 make && make install
 /usr/local/webserver/nginx/sbin/nginx -v
-
 ```
 
-4. 启动nginx
+4.启动nginx
 
-```bash
-
+```shell
 vim /etc/profile #添加内容
   export PATH=/usr/local/webserver/nginx/sbin:$PATH #添加PATH路径，文件最后一行添加
 source /etc/profile #使得配置生效
 nginx #启动nginx服务器
-
 ```
 
-5. 其他命令
+5.其他命令
 
-```bash
-
+```shell
 检查配置文件:nginx -t
 指定配置文件启动: nginx -c conf\my.conf
 停止: nginx -s stop
 重新启动: nginx -s reopen
 重新载入配置文件: nginx -s reload
-
 ```
 
-6. 传文件到远程服务器。使用putty自带的pscp.exe进行传输
+6.传文件到远程服务器。使用putty自带的pscp.exe进行传输
 
 ```bash
-
 pscp -P 29487 -r D:\demo\blog\ root@138.128.207.165:/usr/www/blog/
 29487是连接服务器的端口，跟putty连接端口一样，然后是windows文件目录，和远程服务器目录(用root访问)
 pscp -P 29487 -r D:\demo\blog\admin\dist root@138.128.207.165:/usr/www/blog/admin/
-
 ```
 
 ## location的写法
@@ -90,17 +82,15 @@ pscp -P 29487 -r D:\demo\blog\admin\dist root@138.128.207.165:/usr/www/blog/admi
 配置nginx文件夹的conf/nignx.conf文件，server中location的配置规则。
 
 ```nginx.conf
-
 =: 精确匹配,如A只匹配根目录结尾的请求，后面不能带任何字符串
 ^~: uri以某常规字符串开头，不是正则匹配
 ~: 区分大小写的正则匹配;
 ~*: 开头表示不区分大小写的正则匹配
 /: 通用匹配, 如果没有其它匹配,任何请求都会匹配到
-
 ```
 
-```nginx.conf
-
+```shell
+# nginx.conf
 location  = / { ## 精确匹配 / ，主机名后面不能带任何字符串
   [ configuration A ] 
 }
@@ -142,27 +132,25 @@ location ~ /images/abc/ {
   [ configuration H ] 
 }
 location ~* /js/.*/.js
-
 ```
 
 ### location实际使用建议
 
 第一个必选规则
 
-```nginx.conf
-
+```shell
+# nginx.conf
 location = / {
   proxy_pass http://tomcat:8080/index
 }
-
 ```
 
 第二个必选规则是处理静态文件请求，这是nginx作为http服务器的强项
 
 有两种配置模式，目录匹配或后缀匹配,任选其一或搭配使用
 
-```nginx.conf
-
+```shell
+# nginx.conf
 location ^~ /static/ {
   root /webroot/static/;
 }
@@ -177,11 +165,11 @@ location ~* .(gif|jpg|jpeg|png|css|js|ico)$ {
 毕竟目前的一些框架的流行，带.php,.jsp后缀的情况很少了
 
 ```nginx.conf
-
 location / {
   proxy_pass http://tomcat:8080/
 }
-
 ```
 
->参考文档: [http://www.runoob.com/linux/nginx-install-setup.html](http://www.runoob.com/linux/nginx-install-setup.html)
+> 参考文档
+
+[http://www.runoob.com/linux/nginx-install-setup.html](http://www.runoob.com/linux/nginx-install-setup.html)</br>

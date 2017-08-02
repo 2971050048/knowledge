@@ -1,4 +1,6 @@
-//
+// 官网： https://git-scm.com/
+// 下载：https://git-for-windows.github.io/
+// git常用命令： http://www.cnblogs.com/cspku/articles/Git_cmds.html
 工作区: 当前工程(不包括.git)；
 版本库：.git文件。包括暂存区和分区(master等)
 忽略文件时: .gitignore
@@ -48,6 +50,7 @@ git mv -f -r <source> <destination> //移动文件夹
 查看远程库信息: git remote -v
 本地创建分支和远程分支对应: git checkout -b branch-name origin/branch-name
 本地建立和远程分支的关联:   git branch --set-upstream branch-name origin/branch-name
+删除远程分支： git push origin :gh-pages
 
 分支管理策略：
 1.master用于正式发布，dev(develop)用于日常开发
