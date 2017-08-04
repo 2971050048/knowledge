@@ -59,7 +59,7 @@ if(pattern.test('1,2,3,4,5')) {
 
 包括4个方法 `match, replace, search, split`
 
-- `str.match(pattern)`
+1、str.match(pattern)`
 
 正则表达式没有g标志，则str.match()返回和RegExp.exec()相同的结果。还包括两额外属性: index和input。index表匹配在字符串中的索引，input表输入的字符串。
 如果正则表达式包含g标志，则返回一个Array，它包含所有匹配的子字符串而不是匹配对象
