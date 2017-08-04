@@ -384,3 +384,8 @@ simiulated: 模仿的['sɪmjʊleɪtɪd]
 loosely: 宽松的['lu:slɪ]
 pseudo: 假冒['sjuːdəʊ]
 encapsulation: 封装[ɪn,kæpsə'leɪʃən]
+preset: 预先装置
+retrieve: 恢复，重新得到[rɪ'triːv]
+fetch: 取得[fetʃ]
+shiny: 晴朗的['ʃaɪnɪ]
+fiddle: 瞎搞['fɪd(ə)l]

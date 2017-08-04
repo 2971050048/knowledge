@@ -1,38 +1,39 @@
+# js正则小结
+
 小结了javascript的RegExp对象方法和属性，String正则的方法，以及pattern所有语法
+
 <!--more-->
 
-> [js正则可视化工具](https://jex.im/regulex/)
+## 一、RegExp对象方法
 
-## RegExp对象方法
+---
 
->使用: `/pattern/.test|exec(string)`
+`/pattern/.test|exec(string)`
 
-### test(): 
-返回值是布尔值
+`test()`: 返回值是布尔值
 
 ```javascript
 //验证手机号
-let pattern = /\d{11}/
+var pattern = /\d{11}/;
 if(pettern.test('12345678901')) {
-  console.log('yes')
+  console.log('yes');
 }
 ```
 
-### exec()
-
-返回一个数组,数组中的第一个条目是第一个匹配,其他的是反向引用
-还包括两额外属性: index和input。index表匹配在字符串中的位置，input表输入的字符串
+`exec()`: 返回数组, 包括匹配项和反向引用。额外属性: index和input。index表匹配项在字符串的位置，input表输入的字符串</br>
 
 ```javascript
-let pattern = /zly (and lizi( and foo)?)?/gi
-let g = pattern.exec('hello, zly and lizi and foo, welcome')
-console.log(g.index, g.input, g[0], g[1], g[2])
-//7 'hello, zly and lizi and foo, welcome' 'zly and lizi and foo' 'and lizi and foo' 'and foo'
+var pattern = /2,(3,(4)?)?/;
+var g = pattern.exec('1,2,3,4,5');
+console.log(g[0], g[1], g[2]); // '2,3,4' '3,4' '4'
+console.log(g.index, g.input); // 2 '1,2,3,4,5,'
 ```
 
-## RegExp对象属性
+## 二、RegExp对象属性
 
-基于执行的最近一次正则表达式，将有下列属性
+---
+
+基于执行的最近一次正则表达式，`Regexp` 将有下列属性
 
 - input 输入的字符串
 - lastMatch 匹配项
@@ -42,18 +43,24 @@ console.log(g.index, g.input, g[0], g[1], g[2])
 - multiline 返回布尔值，是否使用了多行模式，ie和opera不支持
 
 ```javascript
-let pattern = /(.)izi/gi
-let r = RegExp
-if(pattern.test('hello, zly and lizi and foo, welcome')) {
-  console.log(r.input, r.lastMatch, r.lastParen)
-  //'hello, zly and lizi and foo, welcome' 'lizi' l
-  console.log(r.leftContext, r.rightContext, r.multiline)
-  //'hello, zly and' 'and foo, welcome' underfined
+var pattern = /(,)3/gi;
+if(pattern.test('1,2,3,4,5')) {
+  var r = RegExp;
+  console.log(r.input); // '1,2,3,4,5'
+  console.log(r.lastMatch, r.lastParen); // ',3' ','
+  console.log(r.leftContext, r.rightContext, r.multiline);
+  //'1,2' ',4,5' undefined
 }
 ```
 
-## String正则
-### str.match(pattern)  
+## 三、String正则
+
+---
+
+包括4个方法 `match, replace, search, split`
+
+- `str.match(pattern)`
+
 正则表达式没有g标志，则str.match()返回和RegExp.exec()相同的结果。还包括两额外属性: index和input。index表匹配在字符串中的索引，input表输入的字符串。
 如果正则表达式包含g标志，则返回一个Array，它包含所有匹配的子字符串而不是匹配对象
 
@@ -70,6 +77,7 @@ console.log(found);
 ```
 
 ### str.replace(pattern, replacement|function)
+
 返回由替换值替换pattern后的新字符串
 
 字符串为第二个参数时
@@ -97,7 +105,7 @@ var newString = 'abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer);//'abc
 ```
 
 ```javascript
-let f2c = (x) => String(x).replace(/(\d+(?:\.\d*)?)[F|f]\b/g, (str, p1, offset, s) => ((p1-32) * 5/9) + "C")
+var f2c = (x) => String(x).replace(/(\d+(?:\.\d*)?)[F|f]\b/g, (str, p1, offset, s) => ((p1-32) * 5/9) + "C")
 f2c('98F')//36.666666666666664C
 ```
 
@@ -109,8 +117,8 @@ f2c('98F')//36.666666666666664C
 
 ```javascript
 //移除分号前后的空格
-let names = "Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand ";
-let nameList = names.split(/\s*;\s*/);//["Harry Trump", "Fred Barney", "Helen Rigby", "Bill Abel", "Chris Hand "]
+var names = "Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand ";
+var nameList = names.split(/\s*;\s*/);//["Harry Trump", "Fred Barney", "Helen Rigby", "Bill Abel", "Chris Hand "]
 ```
 
 ## exec()和match()的区别
@@ -126,7 +134,9 @@ var outCome_matc=someText.match(pattern);//['web2.0','net2.0']
 What is outCome_exec[1] and outCome_matc[1]? //'web','net2.0
 ```
 
-## /pattern/flags
+## 四、/pattern/flags
+
+---
 
 ### flags:
 
@@ -214,12 +224,12 @@ $'  Insert following string
 $Y  Insert Y'th captured group
 ```
 
-## 参考文档
+## 五、参考文档
 
-> javascript高级程序设计
+---
 
-> [http://www.cnblogs.com/xiehuiqi220/archive/2008/12/01/1327487.html](http://www.cnblogs.com/xiehuiqi220/archive/2008/12/01/1327487.html)
-
-> [https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match)
-
-> [http://www.regexlab.com/zh/regref.htm](http://www.regexlab.com/zh/regref.htm)
+- javascript高级程序设计</br>
+- [领悟javascript中的exec与match方法](http://www.cnblogs.com/xiehuiqi220/archive/2008/12/01/1327487.html)</br>
+- [MDN: String.prototype.match()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match)</br>
+- [正则表达式规则](http://www.regexlab.com/zh/regref.htm)</br>
+- [正则可视化Regulex](https://jex.im/regulex/)</br>

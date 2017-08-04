@@ -15,7 +15,7 @@ ES6是是一种新的javascript规范, 2015年出现，因此也称为ECMAScript
 - 2009： ES5出现，（就是我们大多数人现在使用的）例如foreach，Object.keys，Object.create和JSON标准。
 - 2015：ES6/ECMAScript2015出现。
 
-## 默认参数
+## 1. 默认参数
 
 ---
 
@@ -27,7 +27,7 @@ var link = function(height = 50, color = 'red', url = 'http://azat.co') {
 }
 ```
 
-## 模板文本
+## 2. 模板文本
 
 ---
 
@@ -42,7 +42,7 @@ var url = `http://localhost:3000/api/messages/${id}`
 console.log(name, url) // Your name is zly lizi.  http://localhost:3000/api/messages/js
 ```
 
-## 多行字符串
+## 3. 多行字符串
 
 ---
 
@@ -59,7 +59,7 @@ var fourAgreements = `You have the right to be you.
     You can only be you when you do your best.`;
 ```
 
-## 解构赋值
+## 4. 解构赋值
 
 ---
 
@@ -78,7 +78,7 @@ var [q, w] = n
 console.log(q, w) // 1 2
 ```
 
-## 增强的对象文本
+## 5. 增强的对象文本
 
 ---
 
@@ -94,7 +94,7 @@ var accountService = {
 console.log(accountService)
 ```
 
-## 箭头函数
+## 6. 箭头函数
 
 ---
 
@@ -110,11 +110,11 @@ var messages = ids.map(function (value) {
 var messages = ids.map(value => `ID is ${value}`)
 ```
 
-## Promises
+## 7. Promises
 
 ---
 
-## 块作用域构造Let and Const
+## 8. 块作用域构造Let and Const
 
 ---
 
@@ -145,7 +145,7 @@ function amount (vip) {
 console.log(amount(true)); // 0
 ```
 
-## 类
+## 9. 类
 
 ---
 
@@ -177,7 +177,7 @@ lizi.getName(); // Class name: zly
 console.log(`Data is ${lizi.accountsData}`) // Data is 123,345
 ```
 
-## 模块
+## 10. 模块
 
 ---
 
@@ -195,8 +195,19 @@ import * as service from 'module'
 console.log(service.port) // 3000
 ```
 
+## 11. 正则
+
+---
+
+```js
+let r1 = new RegExp(/xyz/i); // r1 = /xyz/i
+let r2 = new RegExp(/xyz/i, 'g'); // r2 = /xyz/g
+let r3 = new RegExp('xyz', 'i'); // r3 = /xyz/i
+```
+
 > 参考文档
 
 [阮一峰：ECMAScript6入门](http://es6.ruanyifeng.com/)</br>
 [腾讯全端：前端开发者不得不知的es6十大特性](http://www.alloyteam.com/2016/03/es6-front-end-developers-will-have-to-know-the-top-ten-properties/)</br>
-[伯乐在线：JS开发者必须知道的十个ES6新特性](http://web.jobbole.com/87140/)
+[伯乐在线：JS开发者必须知道的十个ES6新特性](http://web.jobbole.com/87140/)</br>
+[react native社区: es6写法参照表](http://bbs.reactnative.cn/topic/15/react-react-native-%E7%9A%84es5-es6%E5%86%99%E6%B3%95%E5%AF%B9%E7%85%A7%E8%A1%A8)</br>
