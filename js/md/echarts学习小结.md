@@ -158,3 +158,8 @@ border,backgroundColor
 
 type, crossStyle,label{show, formatter}
 
+## 地图
+
+---
+
+`import 'echarts/map/js/world.js'`

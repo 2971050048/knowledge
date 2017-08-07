@@ -59,28 +59,23 @@ if(pattern.test('1,2,3,4,5')) {
 
 包括4个方法 `match, replace, search, split`
 
-1、str.match(pattern)`
+1、`str.match(pattern)`
 
-正则表达式没有g标志，则str.match()返回和RegExp.exec()相同的结果。还包括两额外属性: index和input。index表匹配在字符串中的索引，input表输入的字符串。
-如果正则表达式包含g标志，则返回一个Array，它包含所有匹配的子字符串而不是匹配对象
+若pattern没有g标志，则str.match()返回和RegExp.exec()相同的结果。还包括两额外属性: index和input。</br>
+若pattern有g标志，则返回Array，包含所有匹配的子字符串而不是匹配对象。
 
 ```javascript
-var str = 'hello, zly and lizi and foo, welcome';
-var re = /zly (and lizi( and foo)?)?/;
-var found = str.match(re);
-console.log(found);
-// logs [ 'zly and lizi and foo',
-//        ' and lizi and foo',
-//        ' and foo',
-//        index: 7,
-//        input: 'hello, zly and lizi and foo, welcome' ]
+var str = '1,2,3,4,3,5';
+str.match(/(,)3/g); // [",3", ",3"]
+str.match(/(,)3/);
+// logs [ ',3', ',', index: 3, input: '1,2,3,4,3,5' ]
 ```
 
-### str.replace(pattern, replacement|function)
+2、`str.replace(pattern, string|function)`
 
-返回由替换值替换pattern后的新字符串
+返回替换后的新字符串
 
-字符串为第二个参数时
+第二个参数为string时
 
 ```javascript
 //所有'apples'变为'oranges'
@@ -93,26 +88,30 @@ var newstr = str.replace(/apples/gi, "oranges");
 var newstr = "John Smith".replace(/(\w+)\s(\w+)/re, "$2, $1");//'Smith John'
 ```
 
-函数为第二个参数时: function(match, p1, p2, offset, string), 分别为匹配的子串; 对应$1,$2; 子串在原字符串的偏移量，原字符串
+第二个参数为函数时: `function(match, p1, p2, index, input)`。 分别为匹配的子串; 对应$1,$2; 子串在原字符串的偏移量，原字符串
 
 ```javascript
 //分割不同类型的字符
 function replacer(match, p1, p2, p3, offset, string) {
-  // p1 is nondigits, p2 digits, and p3 non-alphanumerics
   return [p1, p2, p3].join(' - ');
 }
-var newString = 'abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer);//'abc - 12345 - #$*%'
+// p1非数字, p2数字, p3非单词。
+var newString = 'abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer);
+// abc - 12345 - #$*%
 ```
 
 ```javascript
+// 华氏度转为摄氏度
 var f2c = (x) => String(x).replace(/(\d+(?:\.\d*)?)[F|f]\b/g, (str, p1, offset, s) => ((p1-32) * 5/9) + "C")
 f2c('98F')//36.666666666666664C
 ```
 
-### str.search(pattern)
+3、`str.search(pattern)`
+
 如果匹配成功，返回pattern在字符串中首次匹配项的索引。否则返回-1
 
-### str.split(pattern)  
+4、`str.split(pattern)`
+
 返回字符串按pattern拆分的数组
 
 ```javascript
@@ -121,7 +120,7 @@ var names = "Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand ";
 var nameList = names.split(/\s*;\s*/);//["Harry Trump", "Fred Barney", "Helen Rigby", "Bill Abel", "Chris Hand "]
 ```
 
-## exec()和match()的区别
+exec()和match()的区别
 
 - exec:返回数组,与第一个匹配相关的信息
 - match:没有g属性时同exec(); 有g属性时,返回所有匹配字符串合成的数组
@@ -138,17 +137,17 @@ What is outCome_exec[1] and outCome_matc[1]? //'web','net2.0
 
 ---
 
-### flags:
+### flags
 
 - i: 大小写不敏感
 - g: global, find all matches
 - m: multiline
 
-### pattern:
+### pattern
 
 #### 基本
 
-```
+```shell
 .   character except newline
 a   character a
 ab  string ab
@@ -159,7 +158,7 @@ a*  0 or more a's
 
 #### 量词
 
-```
+```shell
 ?       0 or 1
 +       1 or more
 *       0 or more
@@ -170,7 +169,7 @@ a*  0 or more a's
 
 #### 组
 
-```
+```shell
 (...)   Capturing group
 (?:...) Non-capturing group
 \Y      Match the Y'th captured group
@@ -178,7 +177,7 @@ a*  0 or more a's
 
 #### 类
 
-```
+```shell
 [ab-d]  One character of: a, b, c, d
 [^ab-d] One character except: a, b, c, d
 [\b]    Backspace character
@@ -192,18 +191,18 @@ a*  0 or more a's
 
 #### 声明
 
-```
+```shell
 ^ Start of string
 $ End of string
 \b  Word boundary
 \B  Non-word boundary
 (?=...) Positive lookahead
-(?!...) Negative lookahead    
+(?!...) Negative lookahead
 ```
 
 #### 特殊字符
 
-```
+```shell
 \n  Newline
 \r  Carriage return
 \t  Tab
@@ -214,9 +213,9 @@ $ End of string
 \cY     Control character Y
 ```
 
-#### replacement:
+#### replacement
 
-```
+```shell
 $$  Inserts $
 $&  Insert entire match
 $`  Insert preceding string

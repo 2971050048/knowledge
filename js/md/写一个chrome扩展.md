@@ -4,6 +4,8 @@
 
 ## manifest.json
 
+---
+
 声明该扩展的作用和取得相应权限。
 
 ```json
@@ -45,13 +47,19 @@
 
 ## icon.png
 
+---
+
 19*19像素的图像
 
 ## popup.html
 
+---
+
 ## 参考文档
 
-[官网: 入门教程](https://developer.chrome.com/extensions/getstarted)</br>
-[官网: chrome开发者](https://developer.chrome.com/extensions)</br>
-[知乎: 从零开始写一个 Chrome 扩展](https://www.zhihu.com/question/20179805)</br>
-[dom api](https://www.w3schools.com/jsref/dom_obj_document.asp)</br>
+---
+
+- [官网: 入门教程](https://developer.chrome.com/extensions/getstarted)</br>
+- [官网: chrome开发者](https://developer.chrome.com/extensions)</br>
+- [知乎: 从零开始写一个 Chrome 扩展](https://www.zhihu.com/question/20179805)</br>
+- [dom api](https://www.w3schools.com/jsref/dom_obj_document.asp)</br>
