@@ -1,10 +1,18 @@
-有个很要好的朋友，很喜欢林俊杰，jj的<<弹唱>>使用了vr技术拍摄成全景视频，想给她看4k的版本，所以就研究了下如何下载youtube的4k视频，并能在本地播放
-<!--more-->
+<!-- 2017/6/2  -->
 
-## 为什么要去youtube
+# 下载VR视频并本地播放
+
+有个很要好的朋友，很喜欢林俊杰，jj的<<弹唱>>使用了vr技术拍摄成全景视频，想给她看4k的版本，所以就研究了下如何下载youtube的4k视频，并能在本地播放
+
+## 一、为什么要去youtube
+
+---
+
 其实国内也有一些vr视频网站，像这个 [utovr](http://www.utovr.com/) ，里面的资源也很多，但jj的<<弹唱>>在这里看感觉效果没达到我的要求，所以就去 [youtube](https://www.youtube.com/) 下载4k画质的视屏。
 
-## 工具
+## 二、工具
+
+---
 
 - shadowsocks，科学上网
 - ffmpeg, 作用是将视频音频混流，下载地址为: [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)
@@ -12,7 +20,10 @@
 - GoPro VR Player, 作用是本地播放vr视频，下载地址为: [http://www.kolor.com/gopro-vr-player/download/](http://www.kolor.com/gopro-vr-player/download/)
 - 格式工厂，转化为视频格式
 
-## 研究过程
+## 三、研究过程
+
+---
+
 首先要下载youtube视频，是需要科学上网，我租了国外服务器，利用shadowsocks就能让整个寝室一起访问国外资源。
 
 ffmpeg, 下载后将bin文件夹放到环境变量中。因为从youtube下载的视频和音频是分开的，所以需要借助这个工具用混流技术合并音视频
@@ -21,7 +32,9 @@ ffmpeg, 下载后将bin文件夹放到环境变量中。因为从youtube下载�
 - 命令详解: [http://blog.csdn.net/leixiaohua1020/article/details/12751349](http://blog.csdn.net/leixiaohua1020/article/details/12751349)
 - 使用举例，将"视频.mp4"和"音频.m4a"合并成"合并.mp4"
 
-`ffmpeg -i 视频.mp4 -i 音频.m4a -vcodec copy -acodec copy 合并.mp4`
+```bash
+ffmpeg -i 视频.mp4 -i 音频.m4a -vcodec copy -acodec copy 合并.mp4
+```
 
 youtube-dl，这个强大的命令行工具可以下载大部分视频网站的视频，使用教程可以看 github的readme.md文件: [https://github.com/rg3/youtube-dl](https://github.com/rg3/youtube-dl)。使用前shadowsocks需要开启"全局模式"。
 

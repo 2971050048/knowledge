@@ -1,8 +1,10 @@
+<!-- 2017/8/4 -->
+
 # chrome扩展
 
 准备一个空文件，新建文件`manifest.json`,
 
-## manifest.json
+## 一、manifest.json
 
 ---
 
@@ -45,17 +47,17 @@
 }
 ```
 
-## icon.png
+## 二、icon.png
 
 ---
 
 19*19像素的图像
 
-## popup.html
+## 三、popup.html
 
 ---
 
-## 参考文档
+## 四、参考文档
 
 ---
 

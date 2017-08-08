@@ -1,8 +1,8 @@
+<!-- 2017/5/20  -->
+
 # js正则小结
 
 小结了javascript的RegExp对象方法和属性，String正则的方法，以及pattern所有语法
-
-<!--more-->
 
 ## 一、RegExp对象方法
 
@@ -120,7 +120,7 @@ var names = "Harry Trump ;Fred Barney; Helen Rigby ; Bill Abel ;Chris Hand ";
 var nameList = names.split(/\s*;\s*/);//["Harry Trump", "Fred Barney", "Helen Rigby", "Bill Abel", "Chris Hand "]
 ```
 
-exec()和match()的区别
+5、exec()和match()的区别
 
 - exec:返回数组,与第一个匹配相关的信息
 - match:没有g属性时同exec(); 有g属性时,返回所有匹配字符串合成的数组
@@ -137,15 +137,15 @@ What is outCome_exec[1] and outCome_matc[1]? //'web','net2.0
 
 ---
 
-### flags
+flags
 
 - i: 大小写不敏感
 - g: global, find all matches
 - m: multiline
 
-### pattern
+pattern
 
-#### 基本
+1、基本
 
 ```shell
 .   character except newline
@@ -156,7 +156,7 @@ a*  0 or more a's
 \   Escapes a special character
 ```
 
-#### 量词
+2、量词
 
 ```shell
 ?       0 or 1
@@ -167,19 +167,18 @@ a*  0 or more a's
 {2,}    2 or more
 ```
 
-#### 组
+3、组
 
 ```shell
 (...)   Capturing group
 (?:...) Non-capturing group
-\Y      Match the Y'th captured group
+$Y      Match the Y'th captured group
 ```
-
-#### 类
+4、类
 
 ```shell
-[ab-d]  One character of: a, b, c, d
-[^ab-d] One character except: a, b, c, d
+[a-d]  One character of: a, b, c, d
+[^a-d] One character except: a, b, c, d
 [\b]    Backspace character
 \d  One digit
 \D  One non-digit
@@ -189,7 +188,7 @@ a*  0 or more a's
 \W  One non-word character
 ```
 
-#### 声明
+5、声明
 
 ```shell
 ^ Start of string
@@ -200,7 +199,7 @@ $ End of string
 (?!...) Negative lookahead
 ```
 
-#### 特殊字符
+6、特殊字符
 
 ```shell
 \n  Newline
@@ -213,7 +212,7 @@ $ End of string
 \cY     Control character Y
 ```
 
-#### replacement
+7、replacement
 
 ```shell
 $$  Inserts $
@@ -227,8 +226,8 @@ $Y  Insert Y'th captured group
 
 ---
 
-- javascript高级程序设计</br>
-- [领悟javascript中的exec与match方法](http://www.cnblogs.com/xiehuiqi220/archive/2008/12/01/1327487.html)</br>
-- [MDN: String.prototype.match()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match)</br>
-- [正则表达式规则](http://www.regexlab.com/zh/regref.htm)</br>
-- [正则可视化Regulex](https://jex.im/regulex/)</br>
+- javascript高级程序设计
+- [领悟javascript中的exec与match方法](http://www.cnblogs.com/xiehuiqi220/archive/2008/12/01/1327487.html)
+- [MDN: String.prototype.match()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/match)
+- [正则表达式规则](http://www.regexlab.com/zh/regref.htm)
+- [正则可视化Regulex](https://jex.im/regulex/)

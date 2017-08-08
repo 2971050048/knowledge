@@ -1,6 +1,8 @@
+<!-- 2017/8/7  -->
+
 # Android Studio
 
-## 配置jdk
+## 一、配置jdk
 
 ---
 
@@ -16,11 +18,11 @@
 
 在 android studio 中更改jdk位置: `file` -> `other settings` -> `jdk location`
 
-## 配置android studio
+## 二、配置android studio
 
 ---
 
-打开软件: 安装目录下的 `studio.exe` 文件 </br>
+打开软件: 安装目录下的 `bin\studio64.exe` 文件 </br>
 代理配置:  `Tools` -> `Options` -> `Android SDK Manager` -> `Setting`
 
 ## 参考文档

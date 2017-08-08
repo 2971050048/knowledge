@@ -1,10 +1,12 @@
+<!-- 2017/6/5  -->
+
 # html5新特性
 
 HTML5是HTML第五代标准，小结了7个特性和一些新标签，还storage的使用
 
 <!--more-->
 
-## 新特性
+## 一、新特性
 
 ---
 
@@ -16,7 +18,7 @@ HTML5是HTML第五代标准，小结了7个特性和一些新标签，还storage
 - 连接特性, 更有效的连接工作效率, 更快速的网页游戏体验, 更优化的在线交流和实时聊天。HTML5拥有更有效的服务器推送技术, `Server-Sent Event` 和` WebSockets` 能 实现服务器将数据"推送"到客户端
 - 新的跨域通信机制 `window.postMessage`
 
-## 新增标签
+## 二、新增标签
 
 ---
 
@@ -24,7 +26,7 @@ HTML5是HTML第五代标准，小结了7个特性和一些新标签，还storage
 - 新表单元素：`<datalist>,<output>,<keygen>`
 - 新文档节段和纲要: `<header>,<section>,<aside>,<article>,<footer>`
 
-## input新特性
+## 三、input新特性
 
 ---
 
@@ -40,7 +42,7 @@ HTML5是HTML第五代标准，小结了7个特性和一些新标签，还storage
 - url 输入网址
 - week 选择周和年
 
-## 兼容ie9
+## 四、兼容ie9
 
 ---
 
@@ -52,11 +54,11 @@ HTML5是HTML第五代标准，小结了7个特性和一些新标签，还storage
 </head>
 ```
 
-## cookie、localStorage、sessionStorage和indexedDB的区别
+## 五、cookie、localStorage、sessionStorage和indexedDB的区别
 
 ---
 
-cookies
+1、cookies
 
 - 概念: 文档内存储字符串数据，服务端发cookies给客户端，客户端存储下来在请求中发回给服务端，用户管理用户会话。
 - 优点: 服务器通信，过期时可以重新设置
@@ -70,7 +72,7 @@ document.cookie = "user_name=perhaps;user_age=0;secure"; // update
 document.cookie = "user_name=perhaps;expires=Thu,01 Jan 1970 00:00:01 GMT"; // delete
 ```
 
-local storage
+2、local storage
 
 - IE8+
 - 概念:  在浏览器端存储键值对数据，代替cookies存储数据，更安全直观。只存字符串，可用 `JSON.stringify()` 和 `JSON.parse()` 存储JSON数据
@@ -87,17 +89,19 @@ localStorage.setItem('user',JSON.stringify(user))// 更新
 localStorage.removeItem('user') // 删除
 ```
 
-session storage
+3、session storage
 
 - 概念: 类似local storage，区别是只存储当前会话页，用户关闭当前页则数据被清除
 
-indexedDB
+4、indexedDB
 
 - IE10+
 - 概念: 基于javascript，面向对象和数据库，易存储检索关键字索引的数据
 - 优点: 处理更复杂和结构化数据，更大存储空间，更多交互控制
 - 缺点: 更难于应用
 
-## 参考文档
+## 六、参考文档
 
-[简书: HTML5新特性](http://www.jianshu.com/p/c435f52fb95f)</br>
+---
+
+- [简书: HTML5新特性](http://www.jianshu.com/p/c435f52fb95f)

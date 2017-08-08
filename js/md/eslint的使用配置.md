@@ -1,14 +1,20 @@
+<!-- 2017/5/10  -->
+
+# eslint的配置
+
 eslint是代码风格检测工具。是在JS代码中识别模式匹配的工具，目标是保证代码的一致性和避免错误。
-<!--more-->
 
-> 规则: [http://eslint.cn/docs/rules/](http://eslint.cn/docs/rules/)
+[规则](http://eslint.cn/docs/rules/)
 
-> 配置文件: .eslintrc.js
+配置文件: .eslintrc.js
 
-> 忽略特定文件和目录: .eslintignore
+忽略特定文件和目录: .eslintignore
 
-## 通过注释来禁止规则出现警告
-块注释: `eslint-disable`
+## 一、通过注释来禁止规则出现警告
+
+---
+
+1、块注释: `eslint-disable`
 
 ```javascript
 /* eslint-disable no-alert */
@@ -16,13 +22,15 @@ alert('foo');
 /* eslint-enable no-alert*/
 ```
 
-行注释: `eslint-disable-line` 或 `eslint-disable-next-line`
+2、行注释: `eslint-disable-line` 或 `eslint-disable-next-line`
 
 ```javascript
 alert('foo'); // eslint-disable-line no-alert
 ```
 
-## 具体规则和中文解释
+## 二、具体规则和中文解释
+
+---
 
 ```javascript
 // 具体规则和注释(.eslintrc.js文件)
@@ -71,6 +79,9 @@ module.exports = {
 }
 ```
 
-> standard扩展规则详解: [https://github.com/standard/standard/blob/master/docs/RULES-zhcn.md](https://github.com/standard/standard/blob/master/docs/RULES-zhcn.md)
+## 三、参考文档
 
-> 参考文档: [http://eslint.cn/docs/user-guide/configuring](http://eslint.cn/docs/user-guide/configuring)
+---
+
+- [standard扩展规则详解](https://github.com/standard/standard/blob/master/docs/RULES-zhcn.md)
+- [eslint官网](http://eslint.cn/docs/user-guide/configuring)

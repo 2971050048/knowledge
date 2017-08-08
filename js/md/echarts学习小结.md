@@ -1,24 +1,26 @@
+<!-- 2017/8/2  -->
+
 # ECharts学习小结
 
 ECharts是纯Javascript图表库，可流畅运行在PC和移动设备上，兼容当前绝大部分浏览器(IE8+)，底层依赖Canvas类库ZRender
 
-## 特性
+## 一、特性
 
 ---
 
-- 图表类型
+1、图表类型
 
-折线图，柱状图，散点图，饼图，K线图</br>
-用于统计的盒形图</br>
-用于地理数据可视化的地图，热力图，线图</br>
-用于关系数据可视化的关系图，treemap，多维数据可视化的平行坐标</br>
-还有用于BI的漏斗图，仪表盘，并支持图与图间的混搭。
+- 折线图，柱状图，散点图，饼图，K线图。
+- 用于统计的盒形图。
+- 用于地理数据可视化的地图，热力图，线图。
+- 用于关系数据可视化的关系图，treemap，多维数据可视化的平行坐标。
+- 还有用于BI的漏斗图，仪表盘，并支持图与图间的混搭。
 
-- 坐标系
+2、坐标系
 
 ECharts3支持直角坐标系(catesian，同grid)、极坐标系(polar)、地理坐标系(geo)。
 
-## 使用
+## 二、使用
 
 ---
 
@@ -29,15 +31,15 @@ let options = {}; // 图表组件
 let myChart.setOption(options); // 绘制图表
 ```
 
-## options包括的组件
+## 三、options包括的组件
 
 ---
 
-### 1. 组件常用的属性
+3.1 组件常用的属性
 
 ---
 
-- color类型
+（1）color类型
 
 ```javascript
 color: '#f00'|'rgba(255,0,0,0.5)'|<object>
@@ -69,7 +71,7 @@ color: {
 }
 ```
 
-- font四属性
+（2）font四属性
 
 ```javascript
 // 默认属性为第一项
@@ -79,7 +81,7 @@ fontSize: 18|<number>
 fontFamily: 'sans-serif'
 ```
 
-- shadow四属性
+（3）shadow四属性
 
 ```javascript
 shadowColor
@@ -88,14 +90,14 @@ shadowOffsetY: <number>
 shadowBlur: <number>
 ```
 
-- border属性
+（4）border属性
 
 ```javascript
 borderColor
 borderWidth
 ```
 
-### 2. title 组件属性(标题)
+3.2 title 组件属性(标题)
 
 ---
 
@@ -113,7 +115,7 @@ shadow,border,backgroundColor
 
 show,z,zlevel
 
-### 3. legend 组件属性(图例)
+3.3 legend 组件属性(图例)
 
 ---
 
@@ -136,30 +138,28 @@ selected,selectedMode,inactiveColor
 
 show,z,zlevel,tooltip
 
-### 4. tooltip 组件属性(提示框)
+3.4 tooltip 组件属性(提示框)
 
 ---
 
-- 文本
+文本：formatter
 
-formatter
-
-- 显示
-
-trigger,triggerOn,showContent,alwaysShowContent,
+显示：trigger,triggerOn,showContent,alwaysShowContent,
 showDelay,hideDelay
 
-- 盒子
-
-extraCssText,padding,position
+盒子：extraCssText,padding,position
 border,backgroundColor
 
-- axisPointer
+axisPointer：type, crossStyle,label{show, formatter}
 
-type, crossStyle,label{show, formatter}
-
-## 地图
+## 四、地图
 
 ---
 
 `import 'echarts/map/js/world.js'`
+
+## 五、参考文档
+
+---
+
+- [百度echarts官网](http://echarts.baidu.com/option.html#title)

@@ -1,6 +1,8 @@
+<!-- 2017/8/2  -->
+
 # ant-design 1
 
-## 简介
+## 一、简介
 
 ---
 
@@ -10,7 +12,7 @@
 
 基本理念：追求用户、设计者和开发者的使用体验。注重细节和设计原则。
 
-## 设计原则
+## 二、设计原则
 
 ---
 
@@ -105,7 +107,7 @@
 点击刷新</br>
 定时刷新
 
-## 色彩
+## 三、色彩
 
 ---
 
@@ -124,7 +126,9 @@ Grey：平稳、中性
 
 界面用色建议不超过三种
 
-> 参考文档
+## 四、参考文档
 
-[知乎：如何评价ant design这个项目](https://www.zhihu.com/question/33629737?rf=46426597)</br>
-[官网教程](https://ant.design/docs/spec/introduce-cn)
+---
+
+- [知乎：如何评价ant design这个项目](https://www.zhihu.com/question/33629737?rf=46426597)
+- [官网教程](https://ant.design/docs/spec/introduce-cn)
