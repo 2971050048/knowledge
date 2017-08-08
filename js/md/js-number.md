@@ -1,3 +1,5 @@
+<!-- 2017/5/31  -->
+
 # js学习小结-Number
 
 通过学习[MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number)文档和js高程，总结了Number对象的属性和方法
