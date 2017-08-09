@@ -1,4 +1,12 @@
-//- api官网: https://pugjs.org/api/getting-started.html
+<!-- 2017/6/18  -->
+
+# pug 学习笔记
+
+## 一、语法
+
+---
+
+```pug
 doctype html
 html(lang="en")
   head
@@ -15,7 +23,9 @@ html(lang="en")
       p.
         Pug is a terse and simple templating language with a
         strong focus on performance and powerful features.
+```
 
+```pug
 doctype html
 html(lang='en')
   head
@@ -27,8 +37,9 @@ html(lang='en')
     #container.col
       p You are amazing
       p Pug is a terse and simple templating language with a strong focus on performance and powerful features.
+```
 
-
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,13 +56,10 @@ html(lang='en')
     </div>
   </body>
 </html>
+```
 
+## 二、参考文档
 
-api
-//- template.pug
-p #{name}'s pug source code'
-//- .js
-const pug = require('pug');
-console.log(pug.renderFile('template.pug', {
-  name: 'perhaps'
-}))  
+---
+
+- [官网](https://pugjs.org/api/getting-started.html)

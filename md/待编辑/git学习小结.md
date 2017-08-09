@@ -1,6 +1,5 @@
-// 官网： https://git-scm.com/
-// 下载：https://git-for-windows.github.io/
-// git常用命令： http://www.cnblogs.com/cspku/articles/Git_cmds.html
+# git学习小结
+
 工作区: 当前工程(不包括.git)；
 版本库：.git文件。包括暂存区和分区(master等)
 忽略文件时: .gitignore
@@ -131,3 +130,10 @@ git mv -f -r <source> <destination> //移动文件夹
     git tag -d <tagname>      //删除一个本地标签；
     git push origin :refs/tags/<tagname> //删除一个远程标签。
 
+## 参考文档
+
+---
+
+- [官网](https://git-scm.com/)
+- [下载](https://git-for-windows.github.io/)
+- [git常用命令](http://www.cnblogs.com/cspku/articles/Git_cmds.html)

@@ -8,8 +8,6 @@ Babel用于将es6代码转为es5
 
 ---
 
----
-
 ```shell
 yarn add babel-loader babel-core babel-preset-env
 yarn add babel-runtime babel-plugin-transform-runtime

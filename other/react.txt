@@ -12,13 +12,6 @@ react特点:
   组件: React构建组件,代码复用
   单向响应的数据流: 减少重复代码,比传统数据绑定更简单
 
-react库
-  react.min.js       //核心库
-  react-dom.min.js   //提供与DOM相关的功能
-  babel.min.js       //
-    Babel可将ES6代码转为ES5,就可在不支持ES6 浏览器执行React代码
-    Babel内嵌了对JSX的支持
-
 react JSX: <script type="text/babel">code...</script>
   特点:
     React用JSX来替代常规的JS,JSX是JS语法扩展

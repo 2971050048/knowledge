@@ -1,3 +1,5 @@
+# webpack学习笔记(添加)
+
 CommonJS规范:
 概述:
   Node由模块组成,用CommonJS模块规范: 每个文件是一个模块,有自己的作用域
