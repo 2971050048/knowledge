@@ -1,5 +1,10 @@
+<!-- 2017/6/2  -->
+
+# package.json
+
+```json
 {
-  "name": "Hello World",
+  "name": "hello world",
   "version": "0.0.1",
   "author": "perhaps",
   "description": "learn how to write package.json",
@@ -63,3 +68,4 @@ latest：安装最新版本。
     "grunt-browserify": "~1.3.0"
   }
 }
+```
