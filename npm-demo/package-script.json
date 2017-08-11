@@ -8,19 +8,18 @@
  *   console.log(process.env.npm_package_name);//得到'vue-demo'
  *   process.env.npm_package_scripts_dev; //得到'node server'
  */
-
 //package.json
 {
-    "scripts": {
-        //常用脚本
-        "clean": "rimraf dist/*",// 删除目录
-        "serve": "http-server -p 9090 dist/",// 本地搭建一个 HTTP 服务
-        "open:dev": "opener http://localhost:9090",// 打开浏览器
-        "livereload": "live-reload --port 9091 dist/",// 实时刷新
-        "build:html": "jade index.jade > dist/index.html",// 构建 HTML 文件
-        "watch:css": "watch 'npm run build:css' assets/styles/",// 只要 CSS 文件有变动，就重新执行构建
-        "watch:html": "watch 'npm run build:html' assets/html",// 只要 HTML 文件有变动，就重新执行构建
-        "deploy:prod": "s3-cli sync ./dist/ s3://example-com/prod-site/",// 部署到 Amazon S3
-        "build:favicon": "node scripts/favicon.js"// 构建 favicon
-    }
+  "scripts": {
+    //常用脚本
+    "clean": "rimraf dist/*", // 删除目录
+    "serve": "http-server -p 9090 dist/", // 本地搭建一个 HTTP 服务
+    "open:dev": "opener http://localhost:9090", // 打开浏览器
+    "livereload": "live-reload --port 9091 dist/", // 实时刷新
+    "build:html": "jade index.jade > dist/index.html", // 构建 HTML 文件
+    "watch:css": "watch 'npm run build:css' assets/styles/", // 只要 CSS 文件有变动，就重新执行构建
+    "watch:html": "watch 'npm run build:html' assets/html", // 只要 HTML 文件有变动，就重新执行构建
+    "deploy:prod": "s3-cli sync ./dist/ s3://example-com/prod-site/", // 部署到 Amazon S3
+    "build:favicon": "node scripts/favicon.js" // 构建 favicon
+  }
 }
