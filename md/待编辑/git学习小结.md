@@ -1,36 +1,61 @@
+<!-- 2017/5/29  -->
+
 # git学习小结
 
-工作区: 当前工程(不包括.git)；
-版本库：.git文件。包括暂存区和分区(master等)
-忽略文件时: .gitignore
+## 一. 配置和原理
 
-配置：得到的配置文件在用户目录下的.gitconfig。打开git bash
+---
+
+1.1 安装
+
+`sudo apt-get install git`
+
+1.2 基本配置
+
+配置文件 `.gitconfig` 在用户目录下
+
+```shell
+# 用户名和密码
 git config --global user.name "perhaps"
 git config --global user.email "perhapszql@gmail.com"
-ssh-keygen -t rsa -C "perhapszql@gmail.com" # 生成ssh密钥对在用户目录，公钥打开全选复制到github中
+# 生成ssh密钥对在用户目录，公钥打开全选复制到github中
+ssh-keygen -t rsa -C "perhapszql@gmail.com"
+```
 
+1.3 配置别名
 
-配置别名：
-方法：git config --global alias.ci commit
-或直接在C:\Users\Administrator\.gitconfig文件进行添加
-[alias] 
-    st = status -sb
-    ci = commit
-    br = branch
-    co = checkout
-    df = diff
-    ad = add
-    cp = cherry-pick
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    alias = config --get-regexp 'alias.*'
+打开 `.gitconfig` 文件进行添加
 
+```shell
+[alias]
+  st = status -sb
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  ad = add
+  cp = cherry-pick
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  alias = config --get-regexp 'alias.*'
+```
 
-基本命令：
+## 二. 基本命令
+
+---
+
+2.1 git原理
+
+- 工作区: 当前工程(不包括.git)；
+- 版本库：.git文件。包括暂存区和分区(master等)
+- 忽略文件时: .gitignore
+
+2.2 基本命令
+
 git add|rm|diff|commit|status //增加文件|删除文件|difference|提交文件|状态
-    git add . //add所有改动
-    git diff          //是暂存区和工作区比较
-    git diff --cached //是暂存区和分支比较
-    git rm -f -r <file> //递归删除文件夹
+  git add . //add所有改动
+  git diff          //是暂存区和工作区比较
+  git diff --cached //是暂存区和分支比较
+  git rm -f -r <file> //递归删除文件夹
 git reset --hard HEAD^|commit-id //回到上个版本|回到某个版本号
 git log|reflog //提交历史|命令历史
 git checkout -- filename //撤销工作区的修改(将版本库版本替换工作区版本)
