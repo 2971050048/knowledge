@@ -12,7 +12,8 @@
 ## 二. 有用的软件
 
 ```shell
-# redshift
+# redshift, 配置文件在 `~/.config/redshift.conf`
+# 配置文件参考：https://github.com/Arondight/profile/blob/master/redshift/redshift.conf
 sudo apt-get install redshift gtk-redshift
 ```
 

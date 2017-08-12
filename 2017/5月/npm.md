@@ -12,6 +12,13 @@ node version management
 
 [nvm-win下载](https://github.com/coreybutler/nvm-windows/releases)
 
+```shell
+nvm node_mirror https://npm.taobao.org/mirrors/node/ # node镜像
+nvm npm_mirror https://npm.taobao.org/mirrors/npm/ # npm镜像
+nvm install v8.3.0 # 安装nodejs
+nvm use 8.3.0 #使用node
+```
+
 2、linux安装
 
 ```shell
@@ -19,18 +26,14 @@ node version management
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 source ~/.bashrc
 command -v nvm #得到nvm表示安装成功
-nvm install node #安装node
-nvm use node #使用node
+export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node/ # 设置node镜像
+nvm install v8.3.0 #安装node
+nvm use 8.3.0 #使用node
 ```
 
 3、配置
 
 ```shell
-nvm node_mirror https://npm.taobao.org/mirrors/node/ # node镜像
-nvm npm_mirror https://npm.taobao.org/mirrors/npm/ # npm镜像
-nvm install latest|v6.10.3 # 安装nodejs
-nvm ls # 显示node安装列表
-nvm use 6.10.3 # 使用对应的nodejs
 npm config set registry "https://registry.npm.taobao.org/"
 ```
 

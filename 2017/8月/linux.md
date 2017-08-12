@@ -91,7 +91,8 @@ sudo apt install shadowsocks-qt5
 sudo apt install python-pip
 sudo pip install genpac
 pip install --upgrade genpac # 安裝genpac
-genpac --proxy="SOCKS5 127.0.0.1:1080" --gfwlist-local=~/document/gfwlist.txt --update-gfwlist-local --user-rule-from='~/document/gfwlist-user.txt'
+genpac -p="SOCKS5 127.0.0.1:1080" -o=~/document/gfwoutput.txt 
+# 网络 -> 网络代理 -> 配置URL -> file:///home/perhaps/document/gfwoutput.txt
 
 # 安裝 kcptun
 mkdir ~/kcptun
