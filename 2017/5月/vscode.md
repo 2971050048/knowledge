@@ -122,8 +122,10 @@ color picker: alt+c p|c
 15、settings sync
 
 - 同步vscode的设置，
+- 设置权限：`chmod x+ /home/perhaps/.vscode/extensions/Shan.code-settings-sync-2.8.2/node_modules/opn/xdg-open`
 - 先在github gist中得到token值，vscode命令面板 `sync:upload settings` 上传设置，另一电脑 `sync:download settings` 输入gist值获取设置
-- github token: 7bc113e706424e2cbb84558968d6b005e309cffa
+- github token: 63b24465c362d768ea0dbffa12b9907b242c4f84
+- github gist: 5a60a18a38b5ec12456cf18bdfa68358 (lattop)
 
 16、reactjs code snippets
 

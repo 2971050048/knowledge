@@ -98,7 +98,7 @@ sudo apt install shadowsocks-qt5
 sudo apt install python-pip
 sudo pip install genpac
 pip install --upgrade genpac # 安裝genpac
-genpac -p="SOCKS5 127.0.0.1:1080" -o=~/document/gfwoutput.txt 
+genpac -p="SOCKS5 127.0.0.1:1080" -o=~/document/gfwoutput.txt
 # 网络 -> 网络代理 -> 配置URL -> file:///home/perhaps/document/gfwoutput.txt
 
 # 安裝 kcptun
@@ -106,14 +106,14 @@ mkdir ~/kcptun
 cd ~/kcptun
 wget https://github.com/xtaci/kcptun/releases/download/v20170525/kcptun-linux-386-20170525.tar.gz
 tar -zxvf kcptun-linux-386-20170525.tar.gz
-rm kcptun-linux-386-20170525.tar.gz 
+rm kcptun-linux-386-20170525.tar.gz
 ```
 
 ## 四、脚本设置和开机启动
 
 ```shell
 # 网络
-vim ~/script/network.sh 
+vim ~/script/network.sh
 # start
 sudo service network-manager restart
 sudo ip addr flush enp2s0
@@ -121,7 +121,7 @@ sudo systemctl restart networking.service # 重启网卡
 # end
 
 # ss加速
-vim ~/script/kcpstart.sh 
+vim ~/script/kcpstart.sh
 # start
 cd ~/kcptun
 sudo ./client_linux_386 -r "138.128.207.165:4003" -l ":0104" -mode fast2
@@ -137,7 +137,7 @@ echo 'kcptun stop success'
 chmod a+x *.sh
 
 # 快捷方式
-vim ~/.bash_aliases 
+vim ~/.bash_aliases
 # start
 alias kcpstart='~/script/kcpstart.sh'
 alias kcpstop='~/script/kcpstop.sh'
