@@ -123,6 +123,7 @@ color picker: alt+c p|c
 
 - 同步vscode的设置，
 - 先在github gist中得到token值，vscode命令面板 `sync:upload settings` 上传设置，另一电脑 `sync:download settings` 输入gist值获取设置
+- github token: 7bc113e706424e2cbb84558968d6b005e309cffa
 
 16、reactjs code snippets
 

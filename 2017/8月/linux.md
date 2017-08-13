@@ -72,6 +72,13 @@ netmask 255.255.254.0 # 子网掩码
 gateway 172.26.8.1 # 网关
 dns-nameservers 192.168.10.8 202.116.0.1
 # end
+# 配置dns
+sudo vim /etc/resolvconf/resolv.conf.d/base
+# start
+nameserver 192.168.10.8
+nameserver 202.116.0.1
+# end
+sudo resolvconf -u
 
 # 重启网络
 sudo service network-manager restart
