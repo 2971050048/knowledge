@@ -39,7 +39,17 @@ ssh-keygen -t rsa -C "perhapszql@gmail.com"
   alias = config --get-regexp 'alias.*'
 ```
 
-## 二. 基本命令
+## 二、远程库的使用
+
+```shell
+git remote add origin URL # 添加远程库origin
+git remote rm origin # 移除远程库origin
+git remote show origin  # 显示origin远程库信息
+git fetch origin # 抓取origin所有的分支信息
+git push origin master
+```
+
+## 三. 基本命令
 
 ---
 
