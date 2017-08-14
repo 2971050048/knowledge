@@ -111,40 +111,65 @@ rm kcptun-linux-386-20170525.tar.gz
 
 ## 四、脚本设置和开机启动
 
-```shell
-# 网络
+4.1 network
 vim ~/script/network.sh
-# start
+
+```shell
 sudo service network-manager restart
 sudo ip addr flush enp2s0
 sudo systemctl restart networking.service # 重启网卡
-# end
+```
 
-# ss加速
+4.2 kcpstart
+
 vim ~/script/kcpstart.sh
-# start
+
+```shell
 cd ~/kcptun
 sudo ./client_linux_386 -r "138.128.207.165:4003" -l ":0104" -mode fast2
 echo 'kcptun start success'
-# end
+```
+
 vim ~/srcipt/kcpstop.sh
-# start
+
+```shell
 killall client_linux_386
 echo 'kcptun stop success'
-# end
+```
 
-# 赋予权限
+4.3 赋予权限
+
 chmod a+x *.sh
 
-# 快捷方式
+4.4 快捷方式
+
 vim ~/.bash_aliases
-# start
+
+```shell
 alias kcpstart='~/script/kcpstart.sh'
 alias kcpstop='~/script/kcpstop.sh'
 alias network='~/script/network.sh'
-# end
-
 ```
+
+4.5 开机启动程序
+
+gnome-session-properties
+
+- ss-qt5 /usr/bin/ss-qt5
+
+4.6 开机启动脚本
+
+方法一：
+
+- Ubuntu开机之后会执行/etc/rc.local文件中的脚本
+- vim /etc/rc.local
+- 在exit 0前添加脚本：`sudo /home/perhaps/kcptun/client_linux_386 -r "138.128.207.165:4003" -l ":0104" -mode fast2`
+
+方法二：
+
+- kcpstart.sh复制到`/etc/init.d/`目录下
+- `sudo chmod 755 /etc/init.d/kcpstart.sh`
+- `sudo update-rc.d /etc/init.d/kcpstart.sh defaults 95`
 
 ## 五、各文件目录的用途
 
