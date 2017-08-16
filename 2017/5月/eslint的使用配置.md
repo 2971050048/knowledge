@@ -56,7 +56,7 @@ module.exports = {
     "var2": false, //只读
     'example/custiom': true //添加插件环境
   },
-  // 规则继承，使用npm包，'eslint-config-standard',其中'eslint-config-'可省略; 
+  // 规则继承，使用npm包，'eslint-config-standard',其中'eslint-config-'可省略;
   // eslint:recommended 则启用打钩的核心规则;
   // eslint:all启动所有核心规则
   extends: 'standard',
@@ -67,7 +67,7 @@ module.exports = {
     'example'
   ],
   //"off"或0关闭规则,"warn"或1开启规则，不会导致程序退出,"error"或2-开启规则,被触发时程序退出
-  'rules': { 
+  'rules': {
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await
