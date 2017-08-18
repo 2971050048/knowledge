@@ -4,8 +4,6 @@
 
 ## 一、安装
 
----
-
 ```shell
 yarn init -y
 yarn add webpack
@@ -62,7 +60,5 @@ module.exports = {
 ```
 
 ## 二、参考文档
-
----
 
 - [官网教程](https://doc.webpack-china.org/)

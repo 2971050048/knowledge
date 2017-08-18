@@ -4,17 +4,13 @@
 
 ## 一、powershell常用命令
 
----
-
-```shell
-清楚DNS缓存: ipconfig /flushdns
-清屏|清行: clear|esc
-得到当前路径|去哪个路径: get-location|set-location d:/tools
-获得别名ls的命令: get-alias ls
-用默认编辑器打开当前文件夹 code .
-新建文件: new-item mongodb.log
-新建文件夹: mkdir data
-```
+- 清楚DNS缓存: `ipconfig /flushdns`
+- 清屏|清行: `clear|esc`
+- 得到当前路径|去哪个路径: `get-location|set-location d:/tools`
+- 获得别名ls的命令: `get-alias ls`
+- 用默认编辑器打开当前文件夹 `code .`
+- 新建文件: `new-item mongodb.log`
+- 新建文件夹: `mkdir data`
 
 查看端口占用
 
@@ -26,8 +22,6 @@ taskkill /PID 13784 /F
 '命令 /?' 可以查看该命令的帮助
 
 ## 二、问题解决
-
----
 
 1、任务管理器卸载任务出现"等待卸载或更新程序"
 
@@ -47,8 +41,6 @@ taskkill /PID 13784 /F
 - 内容设置: 127.0.0.1 网址，可以屏蔽相应网站
 
 ## 三、快捷键
-
----
 
 ```shell
 alt+space+x|n: 最大|最小化窗口
@@ -79,8 +71,6 @@ shift:
 ```
 
 ## 四、win10的用户和域用户
-
----
 
 申请普通用户时用户权限分为"管理员"和"用户"
 

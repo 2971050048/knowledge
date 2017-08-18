@@ -4,8 +4,6 @@
 
 ## 一、webpack配置
 
----
-
 ```js
 // webpack.config.js
 module.export {
@@ -39,8 +37,6 @@ module.export {
 ```
 
 ## 二、组件
-
----
 
 1、生命周期
 
@@ -109,8 +105,6 @@ ReactDOM.render(<Clock name='perhaps'/>, document.getElementById('app'));
 ```
 
 ## 三、参考文档
-
----
 
 - [React入门教程](https://hulufei.gitbooks.io/react-tutorial/introduction.html)
 - [react官网](https://facebook.github.io/react/docs/components-and-props.html)

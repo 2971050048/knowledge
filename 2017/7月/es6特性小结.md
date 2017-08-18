@@ -4,8 +4,6 @@
 
 ES6总体上来说：添加了块级作用域，增加了一些语法糖，增强了字符串的处理，引入Generator函数控制函数内部状态的变化，原生提供Promise对象，引入Class的概念，并在语言规格层面上实现了模块功能
 
-<!--more-->
-
 ES6是是一种新的javascript规范, 2015年出现，因此也称为ECMAScript2015
 
 > js发展历史
@@ -19,8 +17,6 @@ ES6是是一种新的javascript规范, 2015年出现，因此也称为ECMAScript
 
 ## 一、默认参数
 
----
-
 可以直接把默认值放在函数申明里
 
 ```javascript
@@ -30,8 +26,6 @@ var link = function(height = 50, color = 'red', url = 'http://azat.co') {
 ```
 
 ## 二、模板文本
-
----
 
 使用新的语法${NAME}，并放在反引号里
 
@@ -45,8 +39,6 @@ console.log(name, url) // Your name is zly lizi.  http://localhost:3000/api/mess
 ```
 
 ## 三、多行字符串
-
----
 
 反引号来表示字符串，且可以表示多行字符串
 
@@ -62,8 +54,6 @@ var fourAgreements = `You have the right to be you.
 ```
 
 ## 四、解构赋值
-
----
 
 ```javascript
 // es5，对象属性
@@ -82,8 +72,6 @@ console.log(q, w) // 1 2
 
 ## 五、增强的对象文本
 
----
-
 ```javascript
 var serviceBase = { port: 3000, url: 'azat.co' }
 var accountService = {
@@ -98,8 +86,6 @@ console.log(accountService)
 
 ## 六、箭头函数
 
----
-
 身处箭头函数里面，this还是原来的this
 
 ```javascript
@@ -112,13 +98,28 @@ var messages = ids.map(function (value) {
 var messages = ids.map(value => `ID is ${value}`)
 ```
 
-## 七、Promises
+## 七、Promises和async
 
----
+异步编程的解决方案，将异步操作以同步操作的流程表达出来。
+
+await后的为promise对象
+
+```js
+async function a() {
+  let result = await b();
+  console.log(result);
+}
+let b = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('haha')
+    }, 1000)
+  })
+}
+a(); // 一秒后输出'haha'
+```
 
 ## 八、块作用域构造Let and Const
-
----
 
 在ES5中，块级作用域起不了任何作用,var只是限制函数作用域
 ES6中，大括号定义的代码块，用let和const限制块级作用域
@@ -148,8 +149,6 @@ console.log(amount(true)); // 0
 ```
 
 ## 九、类
-
----
 
 ```javascript
 class baseModel {
@@ -181,8 +180,6 @@ console.log(`Data is ${lizi.accountsData}`) // Data is 123,345
 
 ## 十、模块
 
----
-
 ```javascript
 // module.js
 export var port = 3000
@@ -198,8 +195,6 @@ console.log(service.port) // 3000
 ```
 
 ## 十一、正则
-
----
 
 ```js
 let r1 = new RegExp(/xyz/i); // r1 = /xyz/i

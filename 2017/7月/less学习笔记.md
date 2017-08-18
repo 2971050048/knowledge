@@ -4,8 +4,6 @@
 
 ## 一、安装
 
----
-
 Less是CSS预处理语言，增加变量、混合、函数等功能。
 
 ```shell
@@ -28,8 +26,6 @@ module.rules[{
 
 ## 二、变量
 
----
-
 将常用的值定义在一个地方
 
 ```less
@@ -47,8 +43,6 @@ module.rules[{
 ```
 
 ## 三、嵌套规则
-
----
 
 ```less
 #button {
@@ -80,8 +74,6 @@ module.rules[{
 
 ## 四、运算和范围
 
----
-
 ```less
 @num: 1px + 5; // 6px
 #footer {
@@ -92,8 +84,6 @@ module.rules[{
 ```
 
 ## 五、函数
-
----
 
 Less 内置多种函数用于转换颜色、处理字符串、算术运算等
 
@@ -135,8 +125,6 @@ Less 内置多种函数用于转换颜色、处理字符串、算术运算等
 
 ## 六、条件和循环
 
----
-
 ```less
 // 条件语句
 button when (@my-option = true) {
@@ -176,8 +164,6 @@ button when (@my-option = true) {
 
 ## 七、合并和父选择器
 
----
-
 需要合并的属性后添加'+'标示。聚合多个属性形成逗号分隔的单一属性。
 
 ```less
@@ -213,7 +199,5 @@ button when (@my-option = true) {
 ```
 
 ## 八、参考文档
-
----
 
 - [官网教程](http://less.bootcss.com/features/#variables-feature)</br>

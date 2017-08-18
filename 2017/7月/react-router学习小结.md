@@ -4,8 +4,6 @@
 
 ## 一、使用
 
----
-
 ```shell
 yarn add react-router
 ```
@@ -71,7 +69,5 @@ React.render((
 ```
 
 ## 二、参考文档
-
----
 
 - [React Router中文文档](https://react-guide.github.io/react-router-cn/)

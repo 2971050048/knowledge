@@ -6,13 +6,11 @@ Babel用于将es6代码转为es5
 
 ## 一、配置文件
 
----
-
 ```shell
 yarn add babel-loader babel-core babel-preset-env
 yarn add babel-runtime babel-plugin-transform-runtime
 yarn add babel-preset-react babel-eslint
-yarn add babel-plugin-import
+yarn add babel-plugin-import babel-plugin-antd
 ```
 
 ```js
@@ -43,8 +41,6 @@ module.rules: [{
 ```
 
 ## 二、babel-cli 命令行转码
-
----
 
 ```shell
 # 全局
@@ -87,8 +83,6 @@ require("./index.js");
 
 ## 四、babel-core API转码
 
----
-
 `$ npm i babel-core -D`</br>
 调用Babel的API转码前，需引用babel-core模块。比如使用`babel-plugin-transform-runtime`插件时需先安装`babel-core`模块。
 
@@ -111,8 +105,6 @@ babel.transformFromAst(ast, code, options);
 
 ## 五、babel-polyfill 转换新的API
 
----
-
 `$ npm i babel-polyfill -D`</br>
 
 Babel默认只转换新JS句法，而不转换新API。如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，
@@ -124,8 +116,6 @@ import 'babel-polyfill';
 ```
 
 ## 六、babel-eslint
-
----
 
 `$ npm i eslint eslint-babel -D`</br>
 
@@ -154,8 +144,6 @@ import 'babel-polyfill';
 ```
 
 ## 七、mocha测试框架
-
----
 
 ```js
 // package.json
@@ -201,8 +189,6 @@ yarn add babel-runtime babel-plugin-transform-runtime
 ```
 
 ## 九、参考文档
-
----
 
 - [阮一峰：babel入门教程](http://www.ruanyifeng.com/blog/2016/01/babel.html)
 - [babel官网](https://babeljs.io/docs/core-packages/)
