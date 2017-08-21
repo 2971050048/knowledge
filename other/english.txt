@@ -390,3 +390,7 @@ fetch: 取得[fetʃ]
 shiny: 晴朗的['ʃaɪnɪ]
 fiddle: 瞎搞['fɪd(ə)l]
 firm: 坚定的，牢固的[fɜːm]
+teaser: 难题['tiːzə]
+brain teaser: 脑筋急转弯
+bit manipulation: 位操作
+recursion: 递归[rɪ'kɜːʃ(ə)n] 
