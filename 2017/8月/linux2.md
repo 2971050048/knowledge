@@ -18,6 +18,7 @@ sudo apt-get install redshift gtk-redshift
 # sogou 官网下载
 # vsocde appstore
 # chrome 官网
+# gnoke github
 ```
 
 app store下载的软件: vscode

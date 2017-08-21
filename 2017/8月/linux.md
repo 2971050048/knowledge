@@ -156,6 +156,7 @@ alias network='~/script/network.sh'
 gnome-session-properties
 
 - ss-qt5 /usr/bin/ss-qt5
+- guake
 
 4.6 开机启动脚本
 
