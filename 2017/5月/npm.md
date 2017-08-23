@@ -4,8 +4,6 @@
 
 ## 一、nvm的安装配置
 
----
-
 node version management
 
 1、windows安装
@@ -38,8 +36,6 @@ npm config set registry "https://registry.npm.taobao.org/"
 ```
 
 ## 二、yarn的安装
-
----
 
 1、原理
 
@@ -75,8 +71,6 @@ yarn config set registry 'https://registry.npm.taobao.org'
 
 ## 三、常用命令
 
----
-
 1、npm常用命令
 
 ```shell
@@ -111,8 +105,6 @@ yarn upgrade pkg@[version] == npm update pkg@[version]
 
 ## 四、安装包地址
 
----
-
 1、windows
 
 - 本地安装: 当前目录
@@ -120,8 +112,6 @@ yarn upgrade pkg@[version] == npm update pkg@[version]
 - 缓存目录: C:\Users\Administrator\AppData\Roaming\npm-cache
 
 ## 五、package.json
-
----
 
 新建package.json： `npm init | yarn init`</br>
 每个项目的根目录，都有package.json文件，定义项目所需模块，以及项目配置信息。
@@ -153,8 +143,6 @@ keywords - 关键字
 [node包的测试和使用](https://runkit.com/home)
 
 ## 六、参考文档
-
----
 
 - [nvm-win下载](https://github.com/coreybutler/nvm-windows/releases)
 - [nvm教程](https://github.com/coreybutler/nvm-windows)
