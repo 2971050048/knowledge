@@ -70,6 +70,7 @@ pre-up ifconfig enp2s0 hw ether B8:88:E3:DC:C7:63 # 修改mac
 address 172.26.8.176 # IP
 netmask 255.255.254.0 # 子网掩码
 gateway 172.26.8.1 # 网关
+boastcast 172.26.8.255 # 广播
 dns-nameservers 192.168.10.8 202.116.0.1
 # end
 # 配置dns
@@ -126,7 +127,7 @@ vim ~/script/kcpstart.sh
 
 ```shell
 cd ~/kcptun
-sudo ./client_linux_386 -r "138.128.207.165:4003" -l ":0104" -mode fast2
+sudo ./client_linux_386 -r "138.128.207.165:4003" -l ":0105" -mode fast2
 echo 'kcptun start success'
 ```
 
@@ -160,11 +161,11 @@ gnome-session-properties
 
 4.6 开机启动脚本
 
-方法一：
+方法一：(已用)
 
 - Ubuntu开机之后会执行/etc/rc.local文件中的脚本
 - vim /etc/rc.local
-- 在exit 0前添加脚本：`sudo /home/perhaps/kcptun/client_linux_386 -r "138.128.207.165:4003" -l ":0104" -mode fast2`
+- 在exit 0前添加脚本：`sudo /home/perhaps/kcptun/client_linux_386 -r "138.128.207.165:4003" -l ":0105" -mode fast2`
 
 方法二：
 

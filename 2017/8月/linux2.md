@@ -7,7 +7,7 @@
 - ubuntu桌面指南: `super+a`，再输入`help`
 - 程序开机启动:`super+a`,`启动应用程序`
 - 改密码：`sudo passwd perhaps` lizi Poi12345
-- 去掉密码环：`ctrl+a` -> `seahorse`, 右键`密码`，更改密码为空
+- 去掉密码环：`super+a` -> `seahorse`, 右键`密码`，更改密码为空
 
 ## 二. 有用的软件
 
@@ -15,10 +15,10 @@
 # redshift, 配置文件在 `~/.config/redshift.conf`
 # 配置文件参考：https://github.com/Arondight/profile/blob/master/redshift/redshift.conf
 sudo apt-get install redshift gtk-redshift
+sudo apt-get install gnoke
 # sogou 官网下载
 # vsocde appstore
 # chrome 官网
-# gnoke github
 ```
 
 app store下载的软件: vscode

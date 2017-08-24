@@ -165,6 +165,13 @@ git mv -f -r <source> <destination> //移动文件夹
     git tag -d <tagname>      //删除一个本地标签；
     git push origin :refs/tags/<tagname> //删除一个远程标签。
 
+## ubuntu的git
+
+1.
+
+- 问题：Please enter a commit message to explain why this merge is necessary,especially if it merges an updated upstream into a topic branch。
+- 方法：输入信息后 `ctrl+x` 即可退出保存。
+
 ## 参考文档
 
 ---
