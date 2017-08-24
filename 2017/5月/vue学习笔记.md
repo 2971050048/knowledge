@@ -6,8 +6,6 @@ Vue.js专注于MVVM模型的ViewModel层。通过双向数据绑定把View层和
 
 ## 一、DOM上的指令
 
----
-
 Vue.js专注于MVVM模型的ViewModel层。通过双向数据绑定把View层和Model层连接起来。实际的DOM封装和输出被抽象为Directives和Filters
 
 - 直接文本插值: {{message}}
@@ -20,7 +18,7 @@ Vue.js专注于MVVM模型的ViewModel层。通过双向数据绑定把View层和
 - 双向绑定: v-model, 从view层到model层
 - 更新元素innerHTML: v-html
 
-```vue
+```html
 <template>
   <div id="app">
     <!-- S = 指令 -->
@@ -69,8 +67,6 @@ Vue.js专注于MVVM模型的ViewModel层。通过双向数据绑定把View层和
 
 ## 二、vue实例的生命周期钩子
 
----
-
 不能使用箭头函数定义生命周期方法,理由是箭头函数绑定了父级作用域的上下文，所以this将不会按照期望指向 Vue 实例
 
 - beforecreate: 实例初始化后，数据观测和event/watcher事件配置之前被调用
@@ -87,11 +83,9 @@ Vue.js专注于MVVM模型的ViewModel层。通过双向数据绑定把View层和
 
 ## 三、计算属性computed和methods对比
 
----
-
 计算属性只有在相关依赖发生改变时才会重新求值
 
-```vue
+```html
 <template>
   <div id="app">
     <p>{{message}}</p>
@@ -118,11 +112,9 @@ new Vue({
 
 ## 四、class与style绑定
 
----
-
 在v-bind用于class和style时，表达式除了字符串，还可以是对象或数组
 
-```vue
+```html
 <template>
   <div id="app">
     <div :style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
@@ -165,11 +157,7 @@ new Vue({
 
 ## 五、组件(尽量使用短横线隔开式)
 
----
-
 5.1 基本模板
-
----
 
 1、全局组件: Vue.component(id, [definition])
 
@@ -187,7 +175,7 @@ new Vue({
   prop验证，传入的数据不符合规格，Vue会发出警告
     type可为：Number|String|Boolean|Object|Function|Array
 
-```vue
+```html
 //模板1：
 <template>
   <div id="list">
@@ -258,11 +246,9 @@ new Vue({
 
 5.2 组件自定义事件
 
----
-
 自定义事件: $on(eventName)监听事件, $emit(eventName)触发事件
 
-```vue
+```html
 // 模板2
 <template>
   <div id="counter-event">
@@ -302,12 +288,10 @@ new Vue({
 
 5.3 v-model表单控件
 
----
-
 `<input v-model="something">` 相当于语法糖 
 `<input :value="something" @input="something = $event.target.value">`
 
-```vue
+```html
 <template>
   <div id="app">
     <currency-input label="Price" v-model="price" ></currency-input>
@@ -388,8 +372,6 @@ new Vue({
 
 ## 六、事件处理v-on
 
----
-
 1.v-on: 事件.修饰符;  在vue实例上放在methods对象中
 
 2.$event可以访问原生dom事件. <button @click='fun($event)'></button>
@@ -407,14 +389,12 @@ new Vue({
 
 ## 七、表单控件绑定 v-model
 
----
-
 修饰符:
 `.lazy`: 让v-model在change事件中同步(默认是input事件)
 `.number`: 自动将用户的输入值转为Number类型
 `.trim`: 自动过滤用户输入的首尾空格
 
- ```vue
+ ```html
 <template>
 <div id="app">
   <!-- 复选框绑定到数组 -->
@@ -459,7 +439,5 @@ new Vue({
 ```
 
 ## 八、参考教程
-
----
 
 - [vue官网](https://cn.vuejs.org/v2/guide/)

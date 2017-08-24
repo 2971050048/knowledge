@@ -4,31 +4,23 @@
 
 HTML5是HTML第五代标准，小结了7个特性和一些新标签，还storage的使用
 
-<!--more-->
-
 ## 一、新特性
-
----
 
 - 语意特性,添加 `<header><nav>` 等标签
 - 多媒体,  用于媒介回放的 `video` 和 `audio` 元素
 - 图像效果, 用于绘画的 `canvas` 元素, `svg` 元素等
 - 离线存储, 对本地离线存储的更好的支持, `localStorage` 和 `sessionStorage`
-- 新的表单控件 
-- 连接特性, 更有效的连接工作效率, 更快速的网页游戏体验, 更优化的在线交流和实时聊天。HTML5拥有更有效的服务器推送技术, `Server-Sent Event` 和` WebSockets` 能 实现服务器将数据"推送"到客户端
+- 新的表单控件
+- 连接特性, 更有效的连接工作效率, 更快速的网页游戏体验, 更优化的在线交流和实时聊天。HTML5拥有更有效的服务器推送技术, `Server-Sent Event` 和 `WebSockets` 能 实现服务器将数据"推送"到客户端
 - 新的跨域通信机制 `window.postMessage`
 
 ## 二、新增标签
-
----
 
 - 多媒体：`<audio>,<video>,<source>,<embed>,<track>`
 - 新表单元素：`<datalist>,<output>,<keygen>`
 - 新文档节段和纲要: `<header>,<section>,<aside>,<article>,<footer>`
 
 ## 三、input新特性
-
----
 
 - color 选择颜色
 - date 选择日期
@@ -44,8 +36,6 @@ HTML5是HTML第五代标准，小结了7个特性和一些新标签，还storage
 
 ## 四、兼容ie9
 
----
-
 ```html
 <head>
   <!--[if lt IE 9]>
@@ -55,8 +45,6 @@ HTML5是HTML第五代标准，小结了7个特性和一些新标签，还storage
 ```
 
 ## 五、cookie、localStorage、sessionStorage和indexedDB的区别
-
----
 
 1、cookies
 
@@ -101,7 +89,5 @@ localStorage.removeItem('user') // 删除
 - 缺点: 更难于应用
 
 ## 六、参考文档
-
----
 
 - [简书: HTML5新特性](http://www.jianshu.com/p/c435f52fb95f)

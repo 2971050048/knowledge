@@ -175,7 +175,7 @@ const router6 = new VueRouter({
         component: '组件About',
         children: [
           { path: 'baz', component: '组件baz', redirect: '/home/foo'},//重定向到home/foo
-          { 
+          {
             path: 'dynamic/:id', 
             redirect: to => {//动态返回重定向目标
               const { hash, params, query } = to

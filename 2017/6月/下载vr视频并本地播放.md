@@ -6,13 +6,9 @@
 
 ## 一、为什么要去youtube
 
----
-
 其实国内也有一些vr视频网站，像这个 [utovr](http://www.utovr.com/) ，里面的资源也很多，但jj的<<弹唱>>在这里看感觉效果没达到我的要求，所以就去 [youtube](https://www.youtube.com/) 下载4k画质的视屏。
 
 ## 二、工具
-
----
 
 - shadowsocks，科学上网
 - ffmpeg, 作用是将视频音频混流，下载地址为: [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html)
@@ -21,8 +17,6 @@
 - 格式工厂，转化为视频格式
 
 ## 三、研究过程
-
----
 
 首先要下载youtube视频，是需要科学上网，我租了国外服务器，利用shadowsocks就能让整个寝室一起访问国外资源。
 

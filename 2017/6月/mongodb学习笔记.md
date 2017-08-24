@@ -6,16 +6,12 @@ MongoDB是跨平台、面向文档的数据库。MongoDB的运行基于集合（
 
 ## 一、基本概念
 
----
-
 mongodb:MongoDB是跨平台、面向文档的数据库。MongoDB的运行基于集合（collection）与文档（document)</br>
 数据库:数据库是集合的容器。一个MongoDB服务器有多个数据库</br>
 集合:是一组MongoDB文档。相当于关系型数据库中表的概念。集合不能执行模式（schema）。存储在集合中的数据都是BSON格式。BSON是一种类json的一种二进制形式的存储格式,简称Binary JSON。</br>
 文档:一组键值对,有着动态的模式</br>
 
 ## 二、安装使用
-
----
 
 1、windows安装
 
@@ -47,8 +43,6 @@ mongod --rest #启用http用户界面，进行测试
 ```
 
 ## 三、shell操作数据库
-
----
 
 1、基本命令
 
@@ -101,8 +95,6 @@ and和or: db.zly.find({k1: v1, $or:[{k2: v2}, {k3: v3}]}).pretty()
 ```
 
 ## 四、参考文档
-
----
 
 - [入门](http://www.runoob.com/mongodb/mongodb-tutorial.html)
 - [mongodb+nodejs](http://mongodb.github.io/node-mongodb-native/2.2/tutorials/main/)

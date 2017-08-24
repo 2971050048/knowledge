@@ -4,7 +4,6 @@
 
 ## 一、基本格式
 
----
 <!-- 分割线 -->
 
 > 格式1
@@ -97,14 +96,10 @@ function() {
 
 ## 二、写文章格式
 
----
-
 ```md
 # 标题
 
 ## 一、内容1
-
----
 
 1、子内容1
 
@@ -114,15 +109,11 @@ function() {
 
 ## 二、参考文档
 
----
-
 - [name1](link1)
 - [name2](link2)
 ```
 
 ## 三、参考文档
-
----
 
 - [语法教程](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 - [markdownlint使用](http://thisdavej.com/build-an-amazing-markdown-editor-using-visual-studio-code-and-pandoc/)

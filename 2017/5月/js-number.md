@@ -6,8 +6,6 @@
 
 ## 一、属性
 
----
-
 1、`Number.MAX_VALUE|MIN_VALUE`
 
 `Number.MAX_VALUE` 接近于`1.79E+308`。大于 MAX_VALUE 的值为 `Infinity`
@@ -44,11 +42,7 @@ n === -p // true
 
 ## 二、方法
 
----
-
 2.1 Number.isFinite(value)
-
----
 
 es6的方法，检测传入的参数是否是一个有穷数,该方法不会强制将非数值参数转换成数值
 
@@ -61,8 +55,6 @@ Number.isFinite(Infinity) // false，无穷
 ```
 
 2.2 Number.isInteger(value) | isNaN(value)
-
----
 
 都为es6的方法，分别表示：判断参数是否为整数，检测给定的值是否是NaN
 
@@ -106,8 +98,6 @@ Number.isNaN = Number.isNaN || function(value) {
 
 2.3 Number.prototype.toFixed(digits) | toPrecision(digits)
 
----
-
 指定小数位数返回数值字符串|指定数值位数返回数值字符串
 
 ```javascript
@@ -121,8 +111,6 @@ num.toPrecision(1) // '1e+1',自动转为指数
 
 2.4 Number.prototype.toExponential(digits)
 
----
-
 指定小数位数的指数表示法返回数值字符串
 
 ```javascript
@@ -133,8 +121,6 @@ num.toExponential(5) // '1.23450e+1'
 
 2.5 Number.prototype.toString(radix)
 
----
-
 返回指定基数的数值字符串
 
 ```javascript
@@ -144,8 +130,6 @@ num.toExponential(5) // '1.23450e+1'
 ```
 
 ## 三、其他
-
----
 
 1、parseInt(string, radix)
 
@@ -169,8 +153,6 @@ parseFloat('12.345hello lizi') // 12.345
 ```
 
 ## 四、参考文档
-
----
 
 - [MDN: number](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number)
 - javascript高级程序设计
