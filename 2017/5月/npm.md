@@ -13,6 +13,7 @@ node version management
 ```shell
 nvm node_mirror https://npm.taobao.org/mirrors/node/ # node镜像
 nvm npm_mirror https://npm.taobao.org/mirrors/npm/ # npm镜像
+nvm ls-remote # 列出可安装的版本
 nvm install v8.3.0 # 安装nodejs
 nvm use 8.3.0 #使用node
 ```
