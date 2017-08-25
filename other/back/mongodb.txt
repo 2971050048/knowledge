@@ -25,7 +25,7 @@ linux安装:
   curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz    # 下载
   tar -zxvf mongodb-linux-x86_64-3.0.6.tgz                                   # 解压
   mv  mongodb-linux-x86_64-3.0.6/ /usr/local/mongodb                         # 将解压包拷贝到指定目录
-  mv  mongodb-linux-x86_64-3.0.6.tar.gz /usr/local/mongodb
+  rm  mongodb-linux-x86_64-3.0.6.tgz
   vim /etc/profile
     export PATH=/usr/local/mongodb/bin:$PATH #添加PATH路径，文件最后一行添加
   source /etc/profile
