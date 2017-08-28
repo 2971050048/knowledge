@@ -1,6 +1,6 @@
 <!-- 2017/8/9  -->
 
-# linux使用小结
+# ubuntu使用小结
 
 ## 一、系统安装
 
@@ -42,28 +42,22 @@
 - `f11`: 全屏
 - `tab+tab`: 显示所有命令
 
-## 三、命令
+## 三、网络配置
 
-3.1 更改文件权限
+3.1 NetworkManager
 
-`chmod a+w 文件名`</br>
-参数含义: a全部、w写、r读、x执行、u用户、g组。
-
-3.2 配置dns，ip，mac
+`sudo gedit /etc/NetworkManager/NetworkManager.conf`
 
 ```shell
-# 修改权限
-sudo gedit /etc/NetworkManager/NetworkManager.conf
-# start
 managed=true
-# end
+```
+3.2 配置ip，mac
 
-# 查看ip，mac
-ifconfig
+查看整体配置：`ifconfig`
 
-# 配置mac和ip
-sudo gedit /etc/network/interfaces
-# start
+配置mac和ip：`sudo gedit /etc/network/interfaces`
+
+```shell
 auto enp2s0 # enp2s0自动连接,根据ifconfig的结果来决定'enp2s0'这个参数
 iface enp2s0 inet static # 使用静态IP
 pre-up ifconfig enp2s0 hw ether B8:88:E3:DC:C7:63 # 修改mac
@@ -72,48 +66,22 @@ netmask 255.255.254.0 # 子网掩码
 gateway 172.26.8.1 # 网关
 boastcast 172.26.8.255 # 广播
 dns-nameservers 192.168.10.8 202.116.0.1
-# end
-# 配置dns
-sudo vim /etc/resolvconf/resolv.conf.d/base
-# start
-nameserver 192.168.10.8
-nameserver 202.116.0.1
-# end
-sudo resolvconf -u
-
-# 重启网络
-sudo service network-manager restart
-sudo ip addr flush enp2s0
-sudo systemctl restart networking.service
 ```
 
-3.3 安装ss+kcptun
+3.3 配置dns
+
+`sudo vim /etc/resolvconf/resolv.conf.d/base`
 
 ```shell
-# 安裝 ss-qt5
-sudo add-apt-repository ppa:hzwhuang/ss-qt5
-sudo apt update
-sudo apt install shadowsocks-qt5
-
-# 设置 pac
-sudo apt install python-pip
-sudo pip install genpac
-pip install --upgrade genpac # 安裝genpac
-genpac -p="SOCKS5 127.0.0.1:1080" -o=~/document/gfwoutput.txt
-# 网络 -> 网络代理 -> 配置URL -> file:///home/perhaps/document/gfwoutput.txt
-
-# 安裝 kcptun
-mkdir ~/kcptun
-cd ~/kcptun
-wget https://github.com/xtaci/kcptun/releases/download/v20170525/kcptun-linux-386-20170525.tar.gz
-tar -zxvf kcptun-linux-386-20170525.tar.gz
-rm kcptun-linux-386-20170525.tar.gz
+nameserver 192.168.10.8
+nameserver 202.116.0.1
 ```
 
-## 四、脚本设置和开机启动
+重启dns服务：`sudo resolvconf -u`
 
-4.1 network
-vim ~/script/network.sh
+3.4 编写脚本
+
+`vim ~/script/network.sh`
 
 ```shell
 sudo service network-manager restart
@@ -121,9 +89,48 @@ sudo ip addr flush enp2s0
 sudo systemctl restart networking.service # 重启网卡
 ```
 
-4.2 kcpstart
+3.5 添加快捷方式
 
-vim ~/script/kcpstart.sh
+`vim ~/bash_aliases`
+
+```shell
+alias network='~/script/network.sh'
+```
+
+## 四、ss配置
+
+4.1 安裝 shadowsocks-qt5
+
+```shell
+sudo add-apt-repository ppa:hzwhuang/ss-qt5
+sudo apt update
+sudo apt install shadowsocks-qt5
+```
+
+4.2 配置pac
+
+```shell
+sudo apt install python-pip
+sudo pip install genpac
+pip install --upgrade genpac # 安裝genpac
+genpac -p="SOCKS5 127.0.0.1:1080" -o=~/document/gfwoutput.txt
+```
+
+添加pac规则：网络 -> 网络代理 -> 配置URL -> file:///home/perhaps/document/gfwoutput.txt
+
+4.3 安装kcptun
+
+```shell
+mkdir ~/kcptun
+cd ~/kcptun
+wget https://github.com/xtaci/kcptun/releases/download/v20170525/kcptun-linux-386-20170525.tar.gz
+tar -zxvf kcptun-linux-386-20170525.tar.gz
+rm kcptun-linux-386-20170525.tar.gz
+```
+
+4.4 编写kcptun脚本
+
+`vim ~/script/kcpstart.sh`
 
 ```shell
 cd ~/kcptun
@@ -131,41 +138,84 @@ sudo ./client_linux_386 -r "138.128.207.165:4003" -l ":0105" -mode fast2
 echo 'kcptun start success'
 ```
 
-vim ~/srcipt/kcpstop.sh
+`vim ~/srcipt/kcpstop.sh`
 
 ```shell
 killall client_linux_386
 echo 'kcptun stop success'
 ```
 
-4.3 赋予权限
+赋予权限：`chmod a+x *.sh`
 
-chmod a+x *.sh
+4.5 快捷方式
 
-4.4 快捷方式
-
-vim ~/.bash_aliases
+`vim ~/.bash_aliases`
 
 ```shell
 alias kcpstart='~/script/kcpstart.sh'
 alias kcpstop='~/script/kcpstop.sh'
-alias network='~/script/network.sh'
 ```
 
-4.5 开机启动程序
+## 五、连接远程服务器
+
+5.1 安装和启动
+
+安装：`sudo apt-get install openssh-server`
+
+查看SSH是否启动：`dpkg -l |grep ssh`
+
+启动SSH服务：`sudo service ssh start`
+
+远程: `sudo yum install openssh-server`
+
+5.2 添加私钥
+
+本地: `sudo gedit ~/.ssh/id_rsa.pub` 复制到
+
+远程: `vim /root/.ssh/authorized_keys`
+
+远程重启sshd服务：`/bin/systemctl restart sshd.service`
+
+5.3 编写脚本
+
+`vim ~/script/sshstart.sh`
+
+```shell
+ssh root@138.128.207.165 -p 29487
+```
+
+赋予权限：`chmod a+x *.sh`
+
+5.4 添加快捷方式
+
+`vim ~/.bash_aliases`
+
+```shell
+alias sshstart='~/script/sshstart.sh'
+```
+
+## 六、开机启动
+
+6.1 开机启动程序
 
 gnome-session-properties
 
-- ss-qt5 /usr/bin/ss-qt5
+- ss-qt5 ss-qt5
 - guake
+- redshift
 
-4.6 开机启动脚本
+6.2 开机启动脚本
 
 方法一：(已用)
 
-- Ubuntu开机之后会执行/etc/rc.local文件中的脚本
-- vim /etc/rc.local
-- 在exit 0前添加脚本：`sudo /home/perhaps/kcptun/client_linux_386 -r "138.128.207.165:4003" -l ":0105" -mode fast2`
+Ubuntu开机后会执行/etc/rc.local文件
+
+`vim /etc/rc.local`
+
+```shell
+# 在exit 0前添加脚本：
+`sudo /home/perhaps/kcptun/client_linux_386 -r "138.128.207.165:4003" -l ":0105" -mode fast2`
+```
 
 方法二：
 
@@ -173,7 +223,7 @@ gnome-session-properties
 - `sudo chmod 755 /etc/init.d/kcpstart.sh`
 - `sudo update-rc.d /etc/init.d/kcpstart.sh defaults 95`
 
-## 五、各文件目录的用途
+## 七、各文件目录的用途
 
 - `/`: 根目录，只存放目录
 - `/bin /usr/bin`: 可执行二进制文件目录。对应的命令ls,tar,mv,cat<
@@ -183,7 +233,7 @@ gnome-session-properties
 - `/opt`: 第三方软件。如 `bin,share,lib,local` 应用程序，共享数据，函数库文件，软件升级
 - `/var`: variable 可变动的，例如 `mail,run,news,lock` 邮箱，程序相关，新闻组，文件锁
 
-## 六、参考文档
+## 八、参考文档
 
 - [官网下载](http://cn.ubuntu.com/download/)
 - [linux公社：UbuntuU盘安装](http://www.linuxidc.com/Linux/2016-04/130520.htm)
