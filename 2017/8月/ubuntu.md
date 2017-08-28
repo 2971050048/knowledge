@@ -158,37 +158,41 @@ alias kcpstop='~/script/kcpstop.sh'
 
 ## 五、连接远程服务器
 
-5.1 安装和启动
+5.1 远程
 
-安装：`sudo apt-get install openssh-server`
+```shell
+sudo apt-get install openssh-server # 安装
+sudo service ssh start # 启动服务
+```
 
-查看SSH是否启动：`dpkg -l |grep ssh`
+5.2 本地
 
-启动SSH服务：`sudo service ssh start`
+```shell
+dpkg -l |grep ssh # 检查是否有openssh-client
+sudo apt-get install openssh-server
+sudo service ssh start
+```
 
-远程: `sudo yum install openssh-server`
+5.3 私钥登录
 
-5.2 添加私钥
+```shell
+# 本地的id_rsa.pub复制到远程
+sudo gedit ~/.ssh/id_rsa.pub
+# 远程
+vim /root/.ssh/authorized_keys
+```
 
-本地: `sudo gedit ~/.ssh/id_rsa.pub` 复制到
-
-远程: `vim /root/.ssh/authorized_keys`
-
-远程重启sshd服务：`/bin/systemctl restart sshd.service`
-
-5.3 编写脚本
+5.4 本地脚本
 
 `vim ~/script/sshstart.sh`
 
 ```shell
-ssh root@138.128.207.165 -p 29487
+ssh -c root@138.128.207.165 -p 29487
 ```
 
 赋予权限：`chmod a+x *.sh`
 
-5.4 添加快捷方式
-
-`vim ~/.bash_aliases`
+添加快捷方式：`vim ~/.bash_aliases`
 
 ```shell
 alias sshstart='~/script/sshstart.sh'
