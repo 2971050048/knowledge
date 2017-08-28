@@ -394,3 +394,4 @@ teaser: 难题['tiːzə]
 brain teaser: 脑筋急转弯
 bit manipulation: 位操作
 recursion: 递归[rɪ'kɜːʃ(ə)n] 
+torrent: 连续不断['tɒr(ə)nt]
