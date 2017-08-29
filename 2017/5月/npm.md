@@ -15,7 +15,7 @@ nvm node_mirror https://npm.taobao.org/mirrors/node/ # node镜像
 nvm npm_mirror https://npm.taobao.org/mirrors/npm/ # npm镜像
 nvm ls-remote # 列出可安装的版本
 nvm install v8.3.0 # 安装nodejs
-nvm use 8.3.0 #使用node
+nvm use v8.3.0 #使用node
 ```
 
 2、linux安装
@@ -27,7 +27,7 @@ source ~/.bashrc
 command -v nvm #得到nvm表示安装成功
 export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node/ # 设置node镜像
 nvm install v8.3.0 #安装node
-nvm use 8.3.0 #使用node
+nvm use v8.3.0 #使用node
 ```
 
 3、配置
@@ -52,7 +52,7 @@ ubuntu下载
 
 ```shell
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-sudo tee /etc/apt/sources.list.d/yarn.list
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update
 sudo apt-get install yarn
 ```

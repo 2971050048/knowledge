@@ -39,7 +39,7 @@ mkdir -p /data/db #创建数据库目录
 mongod #启动mongodb
 mongo #js交互
 mongod --rest #启用http用户界面，进行测试
-#ip地址:28017 即可访问
+#ip地址:27017 即可访问
 ```
 
 ## 三、shell操作数据库

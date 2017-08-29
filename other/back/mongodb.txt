@@ -33,7 +33,7 @@ linux安装:
   mongod --fork --logpath /usr/local/mongodb/mongodb.log --dbpath /data/db #后台启动mongodb
   mongo #js交互
   mongod --rest #启用http用户界面，进行测试
-  blogperhaps.cn:28017 即可访问
+  blogperhaps.cn:27017 即可访问
 
 shell操作数据库:
   显示已有数据库: show dbs

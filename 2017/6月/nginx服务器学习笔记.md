@@ -8,7 +8,7 @@ nginx在windows和linux环境下的安装和使用，以及nginx.conf中server.l
 
 ---
 
-安装: [官网下载](http://nginx.org/en/download.html ) 
+安装: [官网下载](http://nginx.org/en/download.html )
 
 使用: 解压后，打开powersehll，在nginx目录输入命令`./nginx`就能启动。(其实`./nginx`相当于 `./nginx -c ./conf/nginx.conf`，意思是指定配置文件)
 
@@ -18,19 +18,16 @@ nginx在windows和linux环境下的安装和使用，以及nginx.conf中server.l
 
 1、安装所需模块： gzip模块需要zlib库，ssl功能需要openssl库
 
-```yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel```
+`yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel`
 
 2、安装pcre：rewrite模块需要pcre库
-
-`yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel`
 
 ```shell
 wget http://downloads.sourceforge.net/project/pcre/pcre/8.35/pcre-8.35.tar.gz
 tar zxvf pcre-8.35.tar.gz  #解压安装包
-rm pcre-8.35.tar.gz  #删除安装包
 mv pcre* /usr/local/src  #移动文件夹到src目录
 cd /usr/local/src/pcre-8.35
-./configure 
+./configure
 make && make install #编译
 pcre-config --version #查看版本
 ```
@@ -38,9 +35,8 @@ pcre-config --version #查看版本
 3、安装nginx: 需先到官网查看最新版本
 
 ```shell
-wget http://nginx.org/download/nginx-1.12.0.tar.gz
+wget http://nginx.org/download/nginx-1.12.1.tar.gz
 tar zxvf nginx-1.6.2.tar.gz
-rm nginx-1.6.2.tar.gz
 mv nginx* /usr/local/src
 cd /usr/local/src/nginx-1.6.2
 ./configure --prefix=/usr/local/webserver/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre-8.35
