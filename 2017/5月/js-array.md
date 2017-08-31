@@ -6,13 +6,9 @@
 
 ## 一、属性
 
----
-
 Array.length: 表示数组中元素个数
 
 ## 二、方法
-
----
 
 1、Array.from(arrayLike)
 
@@ -56,11 +52,7 @@ is(1) //false
 
 ## 三、Array原型对象的方法
 
----
-
 1、concat(arr1, arr2...)
-
----
 
 合并两个或多个数组。返回一个新数组，不改变原数组
 
@@ -70,8 +62,6 @@ arr.concat([4, 5], [6]) // [1, 2, 3, 4, 5, 6]
 ```
 
 2、join()
-
----
 
 将所有元素连接为字符串，不改变原数组
 
@@ -83,8 +73,6 @@ arr.join('-') // '1-2-3'
 
 3、slice(start, end)
 
----
-
 返回从start到end的数组，不改变原数组
 
 ```javascript
@@ -94,8 +82,6 @@ arr.slice(1, 3) // [1, 2]
 ```
 
 4、splice(start, count, item1, item2..)
-
----
 
 从shart删除count个元素，并添加item1,item2元素，返回删除的元素组成的数组
 
@@ -107,8 +93,6 @@ arr // [1, 'f', 'o', 3]
 
 5、reverse()
 
----
-
 ```javascript
 // 将数组元素的位置颠倒
 var arr = [1, 2, 3]
@@ -116,8 +100,6 @@ arr.reverse() // [3, 2, 1]
 ```
 
 6、forEach|every|some|filter|map(callback)
-
----
 
 - 对每个元素执行一次函数操作
 - 返回布尔值，判断是否所有元素通过函数测试
@@ -137,8 +119,6 @@ arr.map((val) => (val + 1)) // [2, 3, 4, 5, 6]
 
 7、reduce(callback(acc, val, index, array))
 
----
-
 对数组每个元素应用函数，将其减少为单个值
 
 ```javascript
@@ -157,8 +137,6 @@ flatten(list2) // [ 0, 1, 2, 3, 4, 5, 6]
 
 8、push|pop|shift|unshift(val)
 
----
-
 作用如下图
 
 ```bash
@@ -176,8 +154,6 @@ arr.shift() // 7, 因为8先进去，从右边进去
 
 9、copyWithin(target, start, end)方法
 
----
-
 es6语法，复制数组[start,end)的值到target位置，但不修改原数组大小
 
 ```javascript
@@ -187,8 +163,6 @@ arr // [2, 3, 3 ,4]
 ```
 
 10、entries()方法
-
----
 
 es6语法，返回Array Iterator对象，包含数组中每个索引的键值对
 
@@ -208,7 +182,5 @@ for (let e of iterator) {
 ```
 
 ## 四、参考文档
-
----
 
 - [MDN：Array](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/length)

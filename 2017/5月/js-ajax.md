@@ -6,8 +6,6 @@
 
 ## 一、XMLHttpRequest方法
 
----
-
 - new XMLHttpRequest()
 - send()  //发送GET请求给服务端
 - send(string) //发送POST请求给服务端
@@ -18,8 +16,6 @@
 - open(GET|POST, url, async(true|false), user, psw)
 
 ## 二、XMLHttpRequest属性
-
----
 
 1、onreadystatechange //当readyState状态变化时执行函数
 
@@ -73,9 +69,8 @@ function myAjax(){
   }
 }
 ```
-## 三、HTTP协议
 
----
+## 三、HTTP协议
 
 1、POST与GET区别
 
@@ -92,7 +87,8 @@ GET优点:
 2、cookie与session区别
 
 使用原因: HTTP是无状态连接,客户端每次读取web页面,服务器都认为是新会话,Cookie和Session持久保存某些信息。
-区别: 
+
+区别:
 
 - cookie保存在客户端,session在服务器
 - 单个cookie的大小为4kb,每站点cookie数量一般为20个
@@ -108,7 +104,7 @@ GET优点:
 
 4、JS跨域
 
-同源策略存在原因: 
+同源策略存在原因:
 
 - 协议和端口造成的跨域"前台"没办法
 - 只识别URL首部，不判断是否同ip

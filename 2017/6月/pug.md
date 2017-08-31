@@ -4,8 +4,6 @@
 
 ## 一、语法
 
----
-
 ```pug
 doctype html
 html(lang="en")
@@ -59,7 +57,5 @@ html(lang='en')
 ```
 
 ## 二、参考文档
-
----
 
 - [官网](https://pugjs.org/api/getting-started.html)

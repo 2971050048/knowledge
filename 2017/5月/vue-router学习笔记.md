@@ -6,19 +6,13 @@
 
 ## 一、作用
 
----
-
 安装：`npm i vue vue-router -S`
 
 用Vue.js + vue-router创建单页应用。将组件映射到路由，然后告vue-router在哪里渲染它们
 
 ## 二、使用
 
----
-
 2.1 模板
-
----
 
 ```html
 //html文件
@@ -64,8 +58,6 @@ const app = new Vue({
 
 2.2 动态路由配置
 
----
-
 匹配到的路由映射到同个组件
 
 ```javascript
@@ -78,8 +70,6 @@ const router2 = new VueRouter({
 ```
 
 2.3 嵌套路由
-
----
 
 ```javascript
 const User = {
@@ -110,8 +100,6 @@ const router3 = new VueRouter({
 ```
 
 2.4 编程式导航
-
----
 
 ```shell
 router.push(location)//向history栈添加一个新的记录,等同于router-link中的to导航
@@ -230,8 +218,6 @@ const router7 = new VueRouter({
 
 ## 三、路由信息对象: 当前激活路由的状态信息
 
----
-
 1、使用场景
 
 - 组件内的this.$route和$route watcher回调
@@ -274,8 +260,6 @@ const router = new VueRouter({
 
 ## 四、router构造配置
 
----
-
 ```javascript
 const router8 = new VueRouter({
   routes: [{
@@ -298,8 +282,6 @@ const router8 = new VueRouter({
 ```
 
 ## 五、router实例
-
----
 
 1、属性
 
@@ -326,7 +308,5 @@ router.app|mode|currentRoute; 配置了router的vue根实例|路由模式|路由
 - $route //当前激活的路由信息对象,属性是只读的
 
 ## 六、参考文档
-
----
 
 - [vue-router官网](http://router.vuejs.org/zh-cn/)

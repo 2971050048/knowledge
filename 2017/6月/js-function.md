@@ -1,6 +1,6 @@
 <!-- 2017/6/3  -->
 
-# js学习笔记-function
+# js学习笔记-Function
 
 js function的属性和方法小结
 

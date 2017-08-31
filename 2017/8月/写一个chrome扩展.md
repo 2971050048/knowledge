@@ -6,8 +6,6 @@
 
 ## 一、manifest.json
 
----
-
 声明该扩展的作用和取得相应权限。
 
 ```json
@@ -49,17 +47,11 @@
 
 ## 二、icon.png
 
----
-
 19*19像素的图像
 
 ## 三、popup.html
 
----
-
 ## 四、参考文档
-
----
 
 - [官网: 入门教程](https://developer.chrome.com/extensions/getstarted)</br>
 - [官网: chrome开发者](https://developer.chrome.com/extensions)</br>
