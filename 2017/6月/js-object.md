@@ -4,8 +4,6 @@
 
 ## 一、属性的枚举
 
----
-
 - `Object.keys(obj|arr)` 返回属性名数组, 自身可枚举属性
 - `Object.getOwnPropertyNames(obj|arr)` 返回属性名数组, 自身属性
 - `Object.getOwnPropertySymbols(obj)` 返回属性名数组，symbol属性
@@ -23,8 +21,6 @@ Object.getOwnPropertySymbols(obj); //[Symbol(a)], a没有引号
 ```
 
 ## 二、属性的创建
-
----
 
 - `Object.assign(target, ...sources)` 返回target, 将sources的可枚举属性复制到target。
 - `Object.create(proto, [propertiesObject])` 指定原型对象及属性去创建新对象
@@ -48,8 +44,6 @@ Object.keys(o1); //['b', 'c']
 ```
 
 ## 三、原型对象
-
----
 
 - `Object.getPrototypeOf(obj)` 返回原型对象
 - `Object.prototype.constructor` 返回原型对象的函数

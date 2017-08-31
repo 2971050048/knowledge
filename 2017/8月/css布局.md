@@ -2,9 +2,10 @@
 
 # css 布局
 
-## 一、水平居中布局
+水平居中，垂直居中，flex布局，响应式布局的代码实现
+<!--more-->
 
----
+## 一、水平居中布局
 
 ```html
 <!-- html  -->
@@ -33,8 +34,6 @@
 
 ## 二、垂直居中布局
 
----
-
 1、父元素一定，子单行内联：子设为 `height: line-height`
 
 2、父元素一定，子多行内联
@@ -58,8 +57,6 @@
 
 ## 三、flex布局
 
----
-
 ```css
 /* 常用容器属性 */
 .box {
@@ -79,8 +76,6 @@
 
 ## 四、响应式布局
 
----
-
 ```html
 <meta name="viewport" content="width=device-width,initial-scale=1">
 ```
@@ -90,8 +85,6 @@
 ```
 
 ## 五、多列等分布局
-
----
 
 ```html
 <div class="parent">
@@ -117,9 +110,7 @@
 .column + .column { margin-left: 20px; }
 ```
 
-## 参考文档
-
----
+## 六、参考文档
 
 - [CSS布局](http://web.jobbole.com/90844/)
 - [CSS布局技巧](http://www.imooc.com/article/2235)

@@ -6,15 +6,11 @@ nginx在windows和linux环境下的安装和使用，以及nginx.conf中server.l
 
 ## 一、windows使用nginx
 
----
-
 安装: [官网下载](http://nginx.org/en/download.html )
 
 使用: 解压后，打开powersehll，在nginx目录输入命令`./nginx`就能启动。(其实`./nginx`相当于 `./nginx -c ./conf/nginx.conf`，意思是指定配置文件)
 
 ## 二、linux使用nginx
-
----
 
 1、安装所需模块： gzip模块需要zlib库，ssl功能需要openssl库
 
@@ -73,8 +69,6 @@ pscp -P 29487 -r D:\demo\blog\admin\dist root@138.128.207.165:/usr/www/blog/admi
 
 ## 三、location的写法
 
----
-
 1、配置 `nginx.conf`
 
 配置nginx文件夹的conf/nginx.conf文件，server中location的配置规则。
@@ -90,44 +84,44 @@ pscp -P 29487 -r D:\demo\blog\admin\dist root@138.128.207.165:/usr/www/blog/admi
 ```shell
 # nginx.conf
 location  = / { ## 精确匹配 / ，主机名后面不能带任何字符串
-  [ configuration A ] 
+  [ configuration A ]
 }
 location  / {
   ## 因为所有的地址都以 / 开头，所以这条规则将匹配到所有请求
   ## 但是正则和最长字符串会优先匹配
-  [ configuration B ] 
+  [ configuration B ]
 }
 location /documents/ {
   ## 匹配任何以 /documents/ 开头的地址，匹配符合以后，还要继续往下搜索
   ## 只有后面的正则表达式没有匹配到时，这一条才会采用这一条
-  [ configuration C ] 
+  [ configuration C ]
 }
 location ~ /documents/Abc {
   ## 匹配任何以 /documents/ 开头的地址，匹配符合以后，还要继续往下搜索
   ## 只有后面的正则表达式没有匹配到时，这一条才会采用这一条
-  [ configuration CC ] 
+  [ configuration CC ]
 }
 location ^~ /images/ {
   ## 匹配任何以 /images/ 开头的地址，匹配符合以后，停止往下搜索正则，采用这一条。
-  [ configuration D ] 
+  [ configuration D ]
 }
 location ~* .(gif|jpg|jpeg)$ {
   ## 匹配所有以 gif,jpg或jpeg 结尾的请求
   ## 然而，所有请求 /images/ 下的图片会被 config D 处理，因为 ^~ 到达不了这一条正则
-  [ configuration E ] 
+  [ configuration E ]
 }
 location /images/ {
   ## 字符匹配到 /images/，继续往下，会发现 ^~ 存在
-  [ configuration F ] 
+  [ configuration F ]
 }
-location /images/abc {  
+location /images/abc {
   ## 最长字符匹配到 /images/abc，继续往下，会发现 ^~ 存在
   ## F与G的放置顺序是没有关系的
-  [ configuration G ] 
+  [ configuration G ]
 }
 location ~ /images/abc/ {
   ## 只有去掉 config D 才有效：先最长匹配 config G 开头的地址，继续往下搜索，匹配到这一条正则，采用
-  [ configuration H ] 
+  [ configuration H ]
 }
 location ~* /js/.*/.js
 ```
@@ -169,7 +163,5 @@ location / {
 ```
 
 ## 四、参考文档
-
----
 
 - [菜鸟教程：nginx](http://www.runoob.com/linux/nginx-install-setup.html)</br>

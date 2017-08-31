@@ -4,8 +4,6 @@
 
 ## 一、快捷键
 
----
-
 1、默认快捷键
 
 ```shell
@@ -43,8 +41,6 @@ color picker: alt+c p|c
 
 ## 二、问题解决
 
----
-
 1、终端设置："terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
 
 2、集成终端错位：打开命令行，右键属性->使用旧版控制台
@@ -55,8 +51,6 @@ color picker: alt+c p|c
 - 去掉`---和一行`：`---\n\n`
 
 ## 三、插件
-
----
 
 > 亲测有用的
 
@@ -162,8 +156,6 @@ color picker: alt+c p|c
 
 ## 四、setting
 
----
-
 1、基本设置
 
 - 用户设置：命令面板 -> preferences: open user setting ->  点击行前面那只笔就能设置
@@ -218,8 +210,6 @@ configurations的属性
 - console - 启动调试控制台的位置, 值为internalConsole, integratedTerminal,  externalTerminal.
 
 ## 五、参考文档
-
----
 
 - [官方文档](https://code.visualstudio.com/docs#vscode)
 - [中文文档](https://jeasonstudio.gitbooks.io/vscode-cn-doc/content/)

@@ -96,7 +96,7 @@ ReactDOM.render(<TimerViewer appState={appstate}, element />)
 
 如果函数应该自动运行，但不产生新值，使用`autorun`。 其余情况使用 `computed`
 
-## 参考文档
+## 三、参考文档
 
 - [中文官网](http://cn.mobx.js.org/)
 - [官网例子](https://mobx.js.org/getting-started.html)

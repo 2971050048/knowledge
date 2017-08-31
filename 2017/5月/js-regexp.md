@@ -6,8 +6,6 @@
 
 ## 一、RegExp对象方法
 
----
-
 `/pattern/.test|exec(string)`
 
 `test()`: 返回值是布尔值
@@ -31,8 +29,6 @@ console.log(g.index, g.input); // 2 '1,2,3,4,5,'
 
 ## 二、RegExp对象属性
 
----
-
 基于执行的最近一次正则表达式，`Regexp` 将有下列属性
 
 - input 输入的字符串
@@ -54,8 +50,6 @@ if(pattern.test('1,2,3,4,5')) {
 ```
 
 ## 三、String正则
-
----
 
 包括4个方法 `match, replace, search, split`
 
@@ -134,8 +128,6 @@ What is outCome_exec[1] and outCome_matc[1]? //'web','net2.0
 ```
 
 ## 四、/pattern/flags
-
----
 
 flags
 
@@ -223,8 +215,6 @@ $Y  Insert Y'th captured group
 ```
 
 ## 五、参考文档
-
----
 
 - javascript高级程序设计
 - [领悟javascript中的exec与match方法](http://www.cnblogs.com/xiehuiqi220/archive/2008/12/01/1327487.html)

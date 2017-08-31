@@ -1,6 +1,9 @@
 <!-- 2017/8/29 -->
 
-# 服务器装blog
+# ubuntu服务器博客配置
+
+需要安装的软件：`nginx, mongodb, redis, nvm, yarn, pm2`
+<!--more-->
 
 ## 一、mongodb
 
@@ -126,9 +129,23 @@ sudo apt-get update
 sudo apt-get install yarn
 ```
 
+3、安装pm2
+
+```shell
+npm i -g pm2
+```
+
 ## 五、文件传输
 
-## 参考文档
+1.本地到远程：
+
+`scp -P 29487 -r /home/perhaps/document/blog-vue root@138.128.207.165:/root/blog/`
+
+2.远程到本地：
+
+`scp -P 29487 -r root@138.128.207.165:/root/blog /home/perhaps/document/blog-vue/`
+
+## 六、参考文档
 
 - [mongodb官网文档](https://docs.mongodb.com/manual/text-search/)
 - [redis官网文档](https://redis.io/download)
