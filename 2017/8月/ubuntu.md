@@ -182,6 +182,12 @@ sudo gedit ~/.ssh/id_rsa.pub
 vim /root/.ssh/authorized_keys
 ```
 
+问题：无法ssh登录
+
+解决：`vim /etc/ssh/sshd_config`
+
+将 `AuthorizedKeyFile %h/.ssh/authorized_keys` 的注释去掉
+
 5.4 本地脚本
 
 `vim ~/script/sshstart.sh`

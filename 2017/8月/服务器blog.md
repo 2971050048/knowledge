@@ -128,7 +128,13 @@ sudo apt-get install yarn
 
 ## 五、文件传输
 
-## 参考文档
+1.本地到远程：
+`scp -P 29487 -r /home/perhaps/document/blog-vue root@138.128.207.165:/root/blog/`
+
+2.远程到本地：
+`scp -P 29487 -r root@138.128.207.165:/root/blog /home/perhaps/document/blog-vue/`
+
+## 六、参考文档
 
 - [mongodb官网文档](https://docs.mongodb.com/manual/text-search/)
 - [redis官网文档](https://redis.io/download)
