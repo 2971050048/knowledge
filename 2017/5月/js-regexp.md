@@ -13,7 +13,7 @@
 ```javascript
 //验证手机号
 var pattern = /\d{11}/;
-if(pettern.test('12345678901')) {
+if(pattern.test('12345678901')) {
   console.log('yes');
 }
 ```
@@ -86,17 +86,17 @@ var newstr = "John Smith".replace(/(\w+)\s(\w+)/re, "$2, $1");//'Smith John'
 
 ```javascript
 //分割不同类型的字符
-function replacer(match, p1, p2, p3, offset, string) {
+function replacer(match, p1, p2, p3, index, input) {
   return [p1, p2, p3].join(' - ');
 }
 // p1非数字, p2数字, p3非单词。
-var newString = 'abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w]*)/, replacer);
+var newString = 'abc12345#$*%'.replace(/(\D*)(\d*)(\W*)/, replacer);
 // abc - 12345 - #$*%
 ```
 
 ```javascript
 // 华氏度转为摄氏度
-var f2c = (x) => String(x).replace(/(\d+(?:\.\d*)?)[F|f]\b/g, (str, p1, offset, s) => ((p1-32) * 5/9) + "C")
+var f2c = (x) => String(x).replace(/(\d+(?:\.\d*)?)[F|f]\b/g, (match, p1, index, input) => ((p1-32) * 5/9) + "C")
 f2c('98F')//36.666666666666664C
 ```
 

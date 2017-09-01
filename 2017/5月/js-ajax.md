@@ -12,7 +12,7 @@
 - abort() //取消当前请求
 - setRequestHeader()  //添加请求头
 - getResponseHeader()
-- getAllResponseHeaders() 
+- getAllResponseHeaders()
 - open(GET|POST, url, async(true|false), user, psw)
 
 ## 二、XMLHttpRequest属性
