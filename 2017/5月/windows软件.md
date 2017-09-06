@@ -54,6 +54,12 @@ myersplash
 漫画: 布卡漫画|icomic
 ```
 
+6、win操作系统
+
+```shell
+[MSDN](https://msdn.itellyou.cn/)
+```
+
 ## 二、软件配置
 
 1、everything

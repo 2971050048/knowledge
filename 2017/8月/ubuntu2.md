@@ -7,6 +7,8 @@
 - ubuntu桌面指南: `super+a`，再输入`help`
 - 改密码：`sudo passwd perhaps` lizi Poi12345
 - 去掉密码环：`super+a` -> `seahorse`, 右键`密码`，更改密码为空
+- 查看对应进程：`ps -aux | grep '程序名'` -> `sudo kill <pidNumber>`
+- 修改主机名：`sudo vim /etc/hosts` 改第二行,再重启电脑
 
 ## 二. 有用的软件
 
@@ -22,13 +24,44 @@
 
 2.2 fishshell
 
+fishshell
+
 ```shell
 sudo apt-add-repository ppa:fish-shell/release-2
 sudo apt-get update
 sudo apt-get install fish
 ```
 
-2.3 必备
+2.3 wine
+
+安装
+
+```shell
+# wine
+sudo dpkg --add-architecture i386
+wget -nc https://dl.winehq.org/wine-builds/Release.key
+sudo apt-key add Release.key
+sudo apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/
+sudo apt-get install --install-recommends winehq-stable
+```
+
+```shell
+# winetricks
+wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+chmod +x winetricks
+sudo mv winetricks /usr/local/bin
+```
+
+配置
+
+```shell
+winecfg # 配置环境
+```
+
+- [wine安装官网](https://wiki.winehq.org/Ubuntu)
+- [winetricks](https://github.com/Winetricks/winetricks)
+
+2.4 必备
 
 `sudo apt-get install gnoke vim`
 
@@ -36,14 +69,15 @@ sudo apt-get install fish
 - chrome 官网
 - vscode appstore
 
-2.4 其他
+2.* 其他
 
 网易云音乐，steam游戏，Franz(聊天工具)，clipgrab(下载视频)</br>
 popcorn time(在线视频)，pyrenamer(重命名)，vlc(播放器)，Avidemux(编辑视频)</br>
 fishshell|zsh,dde/deepin 全套,Calibre(电子书管理)，Inkspace(矢量图片编辑)</br>
 Pidgin(通讯软件)，gitg，PdfShuffler，Guake(下拉式终端)</br>
 VLC(播放器)</br>
-写论文(Rstudio),SysMonitor Indicator(监控软件)，command line learning(命令行课程)
+写论文(Rstudio),SysMonitor Indicator(监控软件)，command line learning(命令行课程)</br>
+wine(运行windows程序),emule(ed2k链接下载),KTorrent(BitTorrent客户端)
 
 ## 三. 概念
 
