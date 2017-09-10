@@ -187,7 +187,7 @@ vim /root/.ssh/authorized_keys
 
 问题：无法ssh登录
 
-解决：`vim /etc/ssh/sshd_config`
+解决(远程)：`vim /etc/ssh/sshd_config`
 
 将 `AuthorizedKeyFile %h/.ssh/authorized_keys` 的注释去掉
 
@@ -196,7 +196,7 @@ vim /root/.ssh/authorized_keys
 `vim ~/script/sshstart.sh`
 
 ```shell
-ssh -c root@138.128.207.165 -p 29487
+ssh root@138.128.207.165 -p 29487 -i ~/.ssh/id_rsa
 ```
 
 赋予权限：`chmod a+x *.sh`
