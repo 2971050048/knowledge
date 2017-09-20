@@ -73,6 +73,11 @@
 - `n1,n2s/src/dest/g`: 在n1到n2之间，将src替换为dest
 - `.,$s/src/dest/g`: 当前行到最后一行
 
+1.9 代码缩进(vistual模式)
+
+- `>`: 右缩进
+- `<`: 左缩进
+
 ## 二、参考文档
 
 - [vim练级攻略](https://coolshell.cn/articles/541..html)
