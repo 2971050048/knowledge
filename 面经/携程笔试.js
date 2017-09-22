@@ -17,17 +17,27 @@ preOrder(i)
 function toUpperCase(data) {
   var nVal = '', nData = {}
   for(var val in data) {
-    var codeAt = val.charAt().charCodeAt()
-    if(codeAt >=97 && codeAt <= 122) {
-      codeAt -= 32
-      nVal = String.fromCharCode(codeAt) + val.slice(1)
-    } else {
-      nVal = val
+    var nVal = val.replace(/^[a-z]/, function(char) {
+      var codeAt = char.charCodeAt() - 32
+      return String.fromCharCode(codeAt)
+    })
+    if(data[val]) {
+      nData[nVal] = data[val]
     }
-    nData[nVal] = data[val]
+    // var codeAt = val.charAt().charCodeAt()
+    // if(codeAt >=97 && codeAt <= 122) {
+    //   codeAt -= 32
+    //   nVal = String.fromCharCode(codeAt) + val.slice(1)
+    // } else {
+    //   nVal = val
+    // }
+    // nData[nVal] = data[val]
   }
   return nData
 }
+var data = {'abc': 'abc', 'hello': 'wordl', 'ab': 1}
+var nData = toUpperCase(data)
+console.log(JSON.stringify(nData))
 
 // 3. 去重
 var n = read_line()
@@ -39,4 +49,3 @@ for(var i = 0, len = n.length; i < len; i++) {
   }
 }
 print(result.join(','))
-
