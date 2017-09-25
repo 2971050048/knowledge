@@ -20,17 +20,18 @@
 
 配置文件: `~/.config/redshift.conf`
 
-[配置文件参考](https://github.com/Arondight/profile/blob/master/redshift/redshift.conf)
+[github:配置文件参考](https://github.com/Arondight/profile/blob/master/redshift/redshift.conf)
 
 2.2 fishshell
-
-fishshell
 
 ```shell
 sudo apt-add-repository ppa:fish-shell/release-2
 sudo apt-get update
 sudo apt-get install fish
 ```
+
+- [阮：入门教程](http://www.ruanyifeng.com/blog/2017/05/fish_shell.html)
+- []
 
 2.3 wine
 
@@ -62,7 +63,19 @@ winecfg # 配置环境
 - [wine安装官网](https://wiki.winehq.org/Ubuntu)
 - [winetricks](https://github.com/Winetricks/winetricks)
 
-2.4 必备
+2.4 apt-fast
+
+```shell
+sudo add-apt-repository ppa:saiarcot895/myppa
+sudo apt-get update
+sudo apt-get -y install apt-fast
+# apt-fast代替apt-get
+sudo echo "alias apt-get='apt-fast'" >> ~/.bash_aliases
+```
+
+- [github:apt-fast](https://github.com/ilikenwf/apt-fast/blob/master/README.md)
+
+2.5 必备
 
 `sudo apt-get install gnoke vim`
 

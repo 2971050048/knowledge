@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>baidu</title>
+  <style>
+    .hind {
+      display:none;
+    }
+  </style>
+</head>
+<body>
+  <div id="jsCountdown">
+    <span>01天</span>
+    <span>02:</span>
+    <span>03:</span>
+    <span>04</span>
+  </div>
+  <script>
+  function second(second) {
+    var obj = {};
+    obj.second = second % 60;
+    obj.min = parseInt(second / 60) % 60;
+    obj.hour = parseInt(second / 3600) % 24;
+    obj.day = parseInt(second / 86400);
+    return obj;
+  }
+
+  function render(data) {
+    var spanArr = document.querySelector('#jsCountdown').querySelectorAll('span');
+    if(data.day == 0) {
+      spanArr[0].className = 'hide';      
+    }
+    spanArr[0].innerHTML = addZero(data.day) + '天';
+    spanArr[1].innerHTML = addZero(data.hour) + ':';
+    spanArr[2].innerHTML = addZero(data.min) + ':';
+    spanArr[3].innerHTML = addZero(data.second);
+  }
+
+  function addZero(val) {
+    if(val < 10) {
+      return '0' + val;
+    }
+    return val;
+  }
+  render(second(86400))
+  </script>
+</body>
+</html>
