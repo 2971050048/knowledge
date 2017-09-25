@@ -83,6 +83,17 @@ sudo echo "alias apt-get='apt-fast'" >> ~/.bash_aliases
 - chrome 官网
 - vscode appstore
 
+2.6 vitualbox
+
+```shell
+sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian xenial contrib" >> /etc/apt/sources.list.d/virtualbox.list'
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+sudo apt update
+sudo apt install virtualbox-5.1
+```
+
+- [UbuntuHandbook](http://ubuntuhandbook.org/index.php/2016/07/virtualbox-5-1-released/)
+
 2.* 其他
 
 网易云音乐，steam游戏，Franz(聊天工具)，clipgrab(下载视频)</br>
