@@ -30,8 +30,10 @@ sudo apt-get update
 sudo apt-get install fish
 ```
 
+配置：`fish_config`</br>
+设置`prompt`为`minimalist`
+
 - [阮：入门教程](http://www.ruanyifeng.com/blog/2017/05/fish_shell.html)
-- []
 
 2.3 wine
 
