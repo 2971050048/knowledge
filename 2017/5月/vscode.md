@@ -54,40 +54,43 @@ color picker: alt+c p|c
 
 > 亲测有用的
 
-1、advanced new file
+- advanced new file
 
-- 新建文件，`ctrl+alt+n`
-- 设置："newFile.showFullPath": false
+  - 新建文件，`ctrl+alt+n`
+  - 设置："newFile.showFullPath": false
 
-2、beautify
+- auto rename tag
 
-- 代码格式化，`alt+c b` (自)
-- 设置方法: open keyboard shortcuts ->搜索HookyQR.beautify
-- 设置文件: .jsbeautifyrc，[参考](https://github.com/victorporof/Sublime-HTMLPrettify/blob/master/.jsbeautifyrc)
+  - 自动重命名html标签
 
-3、color picker
+- beautify
 
-- `alt+c p|c`(自)
-- 设置："colorHelper.pickerForm": "simple" //面板设为简单模式
+  - 代码格式化，`alt+c b` (自)
+  - 设置方法: open keyboard shortcuts ->搜索HookyQR.beautify
+  - 设置文件: .jsbeautifyrc，[参考](https://github.com/victorporof/Sublime-HTMLPrettify/blob/master/.jsbeautifyrc)
 
-4、eslint
+- color highlight
 
-- .eslintrc.js
+  - 颜色自动高亮
 
-5、markdownlint
+- color picker
 
-- `markdown:open preview to the side`：打开侧边预览
-- `markdown:open preview`：打开预览
+  - `alt+c p|c`(自)
+  - 设置："colorHelper.pickerForm": "simple" //面板设为简单模式
 
-6、stylelint
+- eslint
 
-- .stylelintrc.json
+  - .eslintrc.js
 
-7、GBKtoUTF8: 自动把文件编码方式换成utf8
+- filesize: 左下角显示文件大小，点击可显示详细信息
 
-8、git history: view file|git|line history
+- GBKtoUTF8: 自动把文件编码方式换成utf8
 
-9、HTML Snippets
+- git history: view file|git|line history
+
+- html snippets
+
+- HTML Snippets
 
 设置user: 允许在其他哪些文件使用html代码提醒
 
@@ -98,54 +101,65 @@ color picker: alt+c p|c
 }
 ```
 
-10、vscode-icons
+- markdown preview github styling
 
-- 在每个文件前添加图标
-- 使用: `命令面板 -> preferences: file icon theme -> vscode icon`
+- markdownlint
 
-11、prettify json
+  - `markdown:open preview to the side`：打开侧边预览
+  - `markdown:open preview`：打开预览
 
-- 命令面板 -> prettify json即可, 要求是json文件里不能有注释，不然用不了这个插件
+- prettify json
 
-12、sublime text keymap
+  - 命令面板 -> prettify json即可, 要求是json文件里不能有注释，不然用不了这个插件
 
-13、view in browser
+- reactjs code snippets
 
-14、filesize: 左下角显示文件大小，点击可显示详细信息
+  - rcc → 标准样式
+  - rccp → 标+propType
+  - rcfc → 标+生命周期
+  - rsc → 函数样式
+  - con → constructor函数
+  - conc → +context
+  - est → state对象
 
-15、settings sync
+  - cwm → componentWillMount
+  - cdm → componentDidMount
+  - cwr → componentWillReceiveProps
+  - scu → shouldComponentUpdate
+  - cwup → componentWillUpdate
+  - cdup → componentDidUpdate
+  - cwun → componentWillUnmount
 
-- 同步vscode的设置，
-- 设置权限：`chmod a+x /home/perhaps/.vscode/extensions/Shan.code-settings-sync-2.8.2/node_modules/opn/xdg-open`
-- 先在github gist中得到token值，vscode命令面板 `sync:upload settings` 上传设置，另一电脑 `sync:download settings` 输入gist值获取设置
-- github token: 63b24465c362d768ea0dbffa12b9907b242c4f84
-- github gist: 5a60a18a38b5ec12456cf18bdfa68358 (lattop)
+  - sst → setState函数
+  - ssf → setState函数+回调函数
+  - ren → render函数
 
-16、reactjs code snippets
+  - props→this.props
+  - state→this.state
+  - bnd → binds一个函数
 
-- rcc → 标准样式
-- rccp → 标+propType
-- rcfc → 标+生命周期
-- rsc → 函数样式
-- con → constructor函数
-- conc → +context
-- est → state对象
+- settings sync
 
-- cwm → componentWillMount
-- cdm → componentDidMount
-- cwr → componentWillReceiveProps
-- scu → shouldComponentUpdate
-- cwup → componentWillUpdate
-- cdup → componentDidUpdate
-- cwun → componentWillUnmount
+  - 同步vscode的设置，
+  - 设置权限：`chmod a+x /home/perhaps/.vscode/extensions/Shan.code-settings-sync-2.8.2/node_modules/opn/xdg-open`
+  - 先在github gist中得到token值，vscode命令面板 `sync:upload settings` 上传设置，另一电脑 `sync:download settings` 输入gist值获取设置
+  - github token: 63b24465c362d768ea0dbffa12b9907b242c4f84
+  - github gist: 5a60a18a38b5ec12456cf18bdfa68358 (lattop)
 
-- sst → setState函数
-- ssf → setState函数+回调函数
-- ren → render函数
+- stylelint
 
-- props→this.props
-- state→this.state
-- bnd → binds一个函数
+  - .stylelintrc.json
+
+- sublime text keymap
+
+- view in browser
+
+- vim
+
+- vscode-icons
+
+  - 在每个文件前添加图标
+  - 使用: `命令面板 -> preferences: file icon theme -> vscode icon`
 
 > 暂时没用到
 

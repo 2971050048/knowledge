@@ -50,16 +50,38 @@
 
 // baidu, 最大字典字符串
 
-var s = 'fdbaaa', t = 'ee', result = '';
-var lenS = s.length, lenT = t.length;
-var i = 0, j = 0;
-s = s.split('')
-t = t.split('').sort().reverse(); // 降序排序
-while(i < lenS && j < lenT) {
-  if(s[i] >= t[j]) {
-    i++;
-  } else {
-    s[i++] = t[j++]
+// var s = 'fdbaaa', t = 'ee', result = '';
+// var lenS = s.length, lenT = t.length;
+// var i = 0, j = 0;
+// s = s.split('')
+// t = t.split('').sort().reverse(); // 降序排序
+// while(i < lenS && j < lenT) {
+//   if(s[i] >= t[j]) {
+//     i++;
+//   } else {
+//     s[i++] = t[j++]
+//   }
+// }
+// console.log(s.join(''))
+
+// 函数柯里化
+
+const curring = (fn) => {
+  let args = []
+  return function rep(...rest) {
+    if(rest.length === 0){ 
+      return fn.apply(this, args) 
+    }
+    args.push(...rest) // 参数不为0，添加参数，并返回函数
+    return rep
   }
 }
-console.log(s.join(''))
+const multi = (...rest) => {
+  let total = 0
+  rest.forEach((val) => {
+    total += val
+  })
+  return total
+}
+let calc = curring(multi)
+calc(2,4)(3)() // 9
