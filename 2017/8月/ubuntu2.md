@@ -9,6 +9,7 @@
 - 去掉密码环：`super+a` -> `seahorse`, 右键`密码`，更改密码为空
 - 查看对应进程：`ps -aux | grep '程序名'` -> `sudo kill <pidNumber>`
 - 修改主机名：`sudo vim /etc/hosts` 改第二行,再重启电脑
+- 耳机没有声音：`sudo apt-fast install pavucontrol` -> `pavucontrol` -> 配置的hda关了，输出设备改为模拟耳机
 
 ## 二. 有用的软件
 
