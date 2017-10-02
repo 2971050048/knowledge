@@ -50,16 +50,25 @@
 
 // baidu, 最大字典字符串
 
-var s = 'fdbaaa', t = 'ee', result = '';
-var lenS = s.length, lenT = t.length;
-var i = 0, j = 0;
-s = s.split('')
-t = t.split('').sort().reverse(); // 降序排序
-while(i < lenS && j < lenT) {
-  if(s[i] >= t[j]) {
-    i++;
-  } else {
-    s[i++] = t[j++]
-  }
-}
-console.log(s.join(''))
+// var s = 'fdbaaa', t = 'ee', result = '';
+// var lenS = s.length, lenT = t.length;
+// var i = 0, j = 0;
+// s = s.split('')
+// t = t.split('').sort().reverse(); // 降序排序
+// while(i < lenS && j < lenT) {
+//   if(s[i] >= t[j]) {
+//     i++;
+//   } else {
+//     s[i++] = t[j++]
+//   }
+// }
+// console.log(s.join(''))
+
+// 葵花
+var a = {}
+var b = { 'key': 'b' }
+var c = { 'key': 'c' }
+a[b] = 123
+a[c] = 456
+console.log(a[b])
+console.log(a)
