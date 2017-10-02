@@ -24,7 +24,7 @@ audacity(音频编辑)|OBSstudio(直播录像)
 3、下载工具
 
 ```shell
-迅雷9|IDE|youtube-dl
+迅雷9|IDM|youtube-dl
 ```
 
 4、手机
@@ -157,6 +157,10 @@ Thunder9\Profiles\XLBrowserApp\thunder_adlist.txt
 添加idm插件到chrome：
   在安装目录找到"IDMGCExt.crx"文件，改成"IDMGCExt.zip",解压后打开文件，删除"_metadata"文件夹。
   在chrome设置里，勾选"开发者模式","加载已解压的扩展程序",勾选文件，搞定
+```
+
+```javascript
+var hello = 'hello'
 ```
 
 9、百度云在线下载 (chrome插件)

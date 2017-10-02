@@ -173,7 +173,8 @@ sudo service ssh start # 启动服务
 ```shell
 dpkg -l |grep ssh # 检查是否有openssh-client
 sudo apt-get install openssh-server
-sudo service ssh start```
+sudo service ssh start
+```
 
 5.3 私钥登录
 
