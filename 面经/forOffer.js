@@ -115,10 +115,22 @@
 // // console.log(arr1, arr2)
 
 // 7. 斐波那契
-function Fibonacci(n) {
-  if(n == 0) return 0
-  if(n == 1) return 1
-  if(n == 2) return 1
-  return Fibonacci(n - 1) + Fibonacci(n - 2)
+// function Fibonacci(n) {
+//   if(n == 0) return 0
+//   if(n == 1) return 1
+//   if(n == 2) return 1
+//   return Fibonacci(n - 1) + Fibonacci(n - 2)
+// }
+// console.log(Fibonacci(39))
+
+var arr = [0,1]
+function fibonacci(n) {
+  if(arr[n] !== undefined) return arr[n]
+  arr[n] = fibonacci(n - 1) + fibonacci(n - 2)
+  return arr[n]
 }
-console.log(Fibonacci(39))
+
+// 8、青蛙跳台阶:青蛙一次跳上1或2级台阶。跳n级台阶有几种跳法？
+function jumpFloor(n) {
+
+}

@@ -1,0 +1,47 @@
+<style>
+  .hide {
+    display:none;
+  }
+</style>
+<div id="jsCountdown">
+  <span>01天</span>
+  <span>02:</span>
+  <span>03:</span>
+  <span>04</span>
+</div>
+<script>
+  // 对输入时间的处理
+  function second(input) {
+    var time = input
+    var obj = {};
+    obj.second = time % 60;
+    obj.min = Math.floor(time / 60) % 60;
+    obj.hour = Math.floor(time / 3600) % 24;
+    obj.day = Math.floor(time / 86400);
+    return obj;
+  }
+  // 个位数转为两个数的字符串
+  function addZero(val) {
+    if(val < 10) {
+      return '0' + val;
+    }
+    return val.toString();
+  }
+  function render(data) {
+    var spanArr = document.querySelector('#jsCountdown').querySelectorAll('span');
+    if(data.day == 0) {
+      spanArr[0].className = 'hide';
+    }
+    spanArr[0].innerHTML = addZero(data.day) + '天';
+    spanArr[1].innerHTML = addZero(data.hour) + ':';
+    spanArr[2].innerHTML = addZero(data.min) + ':';
+    spanArr[3].innerHTML = addZero(data.second);
+  }
+  (function() {
+    var input = 86400
+    setInterval(function() {
+      render(second(input))
+      input--
+    }, 1000)
+  })()
+</script>

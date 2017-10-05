@@ -7,7 +7,8 @@
 - `Object.keys(obj|arr)` 返回属性名数组, 自身可枚举属性
 - `Object.getOwnPropertyNames(obj|arr)` 返回属性名数组, 自身属性
 - `Object.getOwnPropertySymbols(obj)` 返回属性名数组，symbol属性
-- `for(var prop in obj)` 遍历obj的可枚举属性,包括原型对象
+- `for(var key in obj)` 遍历obj的可枚举属性,包括原型对象,配合`Object.prototype.hasOwnProperty(prop)`一起使用可遍历自身可枚举属性
+- `for(let val of obj)` 遍历collection对象的属性值
 
 ```js
 var obj = { 100: 'a', 2: 'b', 7: 'c' };

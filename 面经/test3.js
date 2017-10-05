@@ -65,10 +65,33 @@
 // console.log(s.join(''))
 
 // 葵花
-var a = {}
-var b = { 'key': 'b' }
-var c = { 'key': 'c' }
-a[b] = 123
-a[c] = 456
-console.log(a[b])
-console.log(a)
+// var a = {}
+// var b = { 'key': 'b' }
+// var c = { 'key': 'c' }
+// a[b] = 123
+// a[c] = 456
+// console.log(a[b])
+// console.log(a)
+
+// 倒计时
+function timer (input) {
+  var count = input
+  return function() {
+    var secs = count % 60
+    var mins = addZero(count / 60 % 60)
+    var hours = addZero(count / 3600 % 24)
+    var date = addZero(count / 86400)
+    var result = `${date}: ${hours}: ${mins}: ${secs}`
+    count--
+    console.log(result)
+    // document.querySelector(`.timer`).innerHTML = `result`
+  }
+}
+function addZero(num) {
+  if(num < 10) {
+    return `0` + parseInt(num)
+  } 
+  return parseInt(num).toString()
+}
+var input = 86400
+setInterval(timer(input), 1000)
