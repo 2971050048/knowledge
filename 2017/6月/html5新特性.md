@@ -48,7 +48,7 @@ HTML5是HTML第五代标准，小结了7个特性和一些新标签，还storage
 
 1、cookies
 
-- 概念: 文档内存储字符串数据，服务端发cookies给客户端，客户端存储下来在请求中发回给服务端，用户管理用户会话。
+- 概念: 文档内存储字符串数据，服务端发cookies给客户端，客户端存储下来在请求中发回给服务端，管理用户会话。
 - 优点: 服务器通信，过期时可以重新设置
 - 缺点: 增加传输负载，只存储少量字符串，安全问题
 - 使用:
@@ -72,7 +72,7 @@ document.cookie = "user_name=perhaps;expires=Thu,01 Jan 1970 00:00:01 GMT"; // d
 let user = {"user_name": "perhaps","user_age": 21}
 localStorage.setItem('user',JSON.stringify(user)) // 创建'user'
 localStorage.getItem(JSON.parse(user)) // 读取'user'
-let updateUser = {"user_name": "perhaps","user_age", 0}
+let updateUser = {"user_name": "perhaps","user_age": 0}
 localStorage.setItem('user',JSON.stringify(user))// 更新
 localStorage.removeItem('user') // 删除
 ```
