@@ -1,0 +1,40 @@
+  <form action="" method="POST" id="form" autocomplete>
+    <fieldset>
+      <legend>new form</legend>
+      <label>
+        <span>name:</span>
+        <input type="text" list="datalist"/>
+      </label>
+      <label>
+        <span>name:</span>
+        <input type="text"/>
+      </label>
+      <datalist id="datalist">
+        <option value="apple" />
+        <option value="banana" />
+      </datalist>
+      <input type="submit" value="save">
+      <label for="radio1">
+        <input type="radio" id="radio1">
+        radio1
+      </label>
+    </fieldset>
+  </form>
+
+form(action="" method="post" id="form" autocomplete)
+  fieldset
+    legend new form
+    label
+      span name:
+      input(type="text" list="datalist")
+    label
+      span psw:
+      input(type="password")
+    datalist#datalist
+      option(value="apple")
+      option(value="banana")
+    input(type="submit" value="save")
+    label
+      input(type="radio")
+      span radio
+    
