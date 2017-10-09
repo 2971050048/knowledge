@@ -41,7 +41,6 @@ Array(7) //[ , , , , , , ]
 
 3、Array.isArray(obj)
 
-
 ```javascript
 // 判断传入的值是否为数组
 var is = Array.isArray
