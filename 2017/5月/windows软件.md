@@ -12,6 +12,7 @@ bandzip|wps|snipaste|github
 everything|xampp|ps|typora(编辑md)|sublime|坚果云
 teamviewer|xmind(思维导图)|autoruns(开机启动)|procexp
 putty|lantern|irfanview(图片查看)|sumatraPDF(pdf阅读)|cajViewer
+listary(应用搜索)|navicat|clover(增强文件夹)
 ```
 
 2、娱乐
@@ -66,7 +67,7 @@ myersplash
 
 ```shell
 官网: http://www.voidtools.com/
-指定文件夹搜索: 
+指定文件夹搜索:
   设置: 搜索->'匹配路径'+'所有'
   e:\software\*.txt 表在e:\software下所有.txt结尾的文件
 正则搜索:

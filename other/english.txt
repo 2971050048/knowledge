@@ -395,3 +395,6 @@ brain teaser: 脑筋急转弯
 bit manipulation: 位操作
 recursion: 递归[rɪ'kɜːʃ(ə)n] 
 torrent: 连续不断['tɒr(ə)nt]
+clause: 条款[klɔːz]
+shorthand: 速记的['ʃɔːthænd]
+hypotenuse: 直接三角形的斜边[haɪ'pɒtənjuːz; -s]

@@ -11,6 +11,7 @@
 - 用默认编辑器打开当前文件夹 `code .`
 - 新建文件: `new-item mongodb.log`
 - 新建文件夹: `mkdir data`
+- 查看历史命令: `get-history`
 
 查看端口占用
 

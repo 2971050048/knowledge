@@ -82,7 +82,7 @@ npm un <Module> (-g) # 卸载
 npm up <Module> (-g) # 更新
   npm up # 更新package.json全部
   npm i npm -g # 更新npm
-npm ls (-g) # 查看已安装模块
+npm ls (-g) --depth 0 # 查看已安装模块
 npm show <Module> # 显示模块
 npm s <Module> # 搜索
 npm cache clear # 清空缓存
