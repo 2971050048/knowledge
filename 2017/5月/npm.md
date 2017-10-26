@@ -75,42 +75,52 @@ yarn config set registry 'https://registry.npm.taobao.org'
 1、npm常用命令
 
 ```shell
-npm i <Module> (-g) # 安装
+npm i <module> (-g) # 安装
   npm i # 根据package.json安装
   npm i vue-rooter@v0.7.13 -S # 安装指定版本
-npm un <Module> (-g) # 卸载
-npm up <Module> (-g) # 更新
+npm un <module> (-g) # 卸载
+npm up <module> (-g) # 更新
   npm up # 更新package.json全部
   npm i npm -g # 更新npm
 npm ls (-g) --depth 0 # 查看已安装模块
-npm show <Module> # 显示模块
-npm s <Module> # 搜索
+npm show <module> # 显示模块
+npm s <module> # 搜索
 npm cache clear # 清空缓存
 npm init # 初始化文件夹
 npm test # 等同于npm run test
-npm run # 运行自定义脚本
-任意命令 -h # 查看帮助，eg. 'npm i -h' 可查看i命令的帮助
+npm run <command># 运行自定义脚本
+npm <command> -h # 查看帮助，eg. 'npm i -h' 可查看i命令的帮助
 ```
 
 2、yarn常用命令
 
 ```shell
-yarn init == npm init
-yarn == npm i
-yarn add pkg == npm i pkg -S
-yarn global add pkg == npm i pkg -g
-yarn add pkg -D == npm i pkg -D
-yarn remove pkg == npm un pkg -S|-D
-yarn upgrade pkg@[version] == npm update pkg@[version]
+yarn init === npm init
+yarn === npm i
+yarn add pkg === npm i pkg -S
+yarn global add pkg === npm i pkg -g
+yarn add pkg -D === npm i pkg -D
+yarn remove pkg === npm un pkg -S|-D
+yarn upgrade pkg@[version] === npm update pkg@[version]
 ```
 
-## 四、安装包地址
+## 四、有用的包
 
-1、windows
+1、windows包地址
 
 - 本地安装: 当前目录
 - 全局安装: C:\Users\Administrator\AppData\Roaming\npm\node_modules
 - 缓存目录: C:\Users\Administrator\AppData\Roaming\npm-cache
+
+2、yarn仓库管理
+
+安装：`npm i -g yrm`
+使用：`yrm -h`
+
+3、删除文件夹
+
+安装：`npm i -g rimraf`
+使用：`rimraf node_modules`，快速删除node包
 
 ## 五、package.json
 
@@ -133,7 +143,7 @@ main -
 keywords - 关键字
 ```
 
-`npm i <Module>` 添加后缀
+`npm i <module>` 添加后缀
 
 ```shell
 -S, --save: 模块写入dependencies属性.
@@ -148,4 +158,4 @@ keywords - 关键字
 - [nvm-win下载](https://github.com/coreybutler/nvm-windows/releases)
 - [nvm教程](https://github.com/coreybutler/nvm-windows)
 - [yarn官网](https://yarnpkg.com/zh-Hans/docs)
-- [npm教程](http://coloration.cc/npmjs-documentation/2016/03/29/creatingNodejsModules.html)
+- [npm教程](http://coloration.cc/npmjs-documentation/2016/03/29/creatingNodejsmodules.html)

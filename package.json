@@ -1,0 +1,11 @@
+{
+  "name": "knowledge",
+  "version": "1.0.0",
+  "homepage": "https://github.com/perhaps-yo/knowledge",
+  "dependencies": {
+    "import-sort-cli": "^3.3.0",
+    "import-sort-parser-babylon": "^3.2.0",
+    "import-sort-style-eslint": "^3.0.0",
+    "yargs": "^10.0.3"
+  }
+}

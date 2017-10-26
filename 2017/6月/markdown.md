@@ -75,6 +75,12 @@ function() {
   console.log("haha");
 }
 ```  -->
+
+9、任务列表
+
+- [ ] write the cod
+- [x] finish the markdown file
+
 ```
 
 > 对应的效果2
@@ -93,6 +99,11 @@ function() {
   console.log("haha");
 }
 ```
+
+9、任务列表
+
+- [ ] write the cod
+- [x] finish the markdown file
 
 ## 二、写文章格式
 
@@ -113,7 +124,30 @@ function() {
 - [name2](link2)
 ```
 
-## 三、参考文档
+## 三、vscode插件
+
+1、markdownlint
+
+- 检查md格式且预览md文件
+- 项目根目录：`.markdownlint.json`
+- [使用](http://thisdavej.com/build-an-amazing-markdown-editor-using-visual-studio-code-and-pandoc/)
+
+2、markdown all in one
+
+快捷键编辑md文件
+
+- `ctrl+b` bold
+- `ctrl+i` italic
+- `ctrl+shift+]` #
+- `ctrl+shift+[` 去掉#
+- `alt+c` check task list item
+
+命令行：`create table to content`, 添加索引
+
+3、markdown shortcuts
+
+增强右键功能
+
+## 四、参考文档
 
 - [语法教程](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-- [markdownlint使用](http://thisdavej.com/build-an-amazing-markdown-editor-using-visual-studio-code-and-pandoc/)

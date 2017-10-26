@@ -52,47 +52,43 @@ color picker: alt+c p|c
 
 ## 三、插件
 
-> 亲测有用的
+1、theme
 
-- advanced new file
+- dracula official 漂亮的theme color
+- markdown preview github styling
+- one dark pro 漂亮的theme color
 
-  - 新建文件，`ctrl+alt+n`
-  - 设置："newFile.showFullPath": false
-
-- auto rename tag
-
-  - 自动重命名html标签
-
-- beautify
-
-  - 代码格式化，`alt+c b` (自)
-  - 设置方法: open keyboard shortcuts ->搜索HookyQR.beautify
-  - 设置文件: .jsbeautifyrc，[参考](https://github.com/victorporof/Sublime-HTMLPrettify/blob/master/.jsbeautifyrc)
-
-- color highlight
-
-  - 颜色自动高亮
-
-- color picker
-
-  - `alt+c p|c`(自)
-  - 设置："colorHelper.pickerForm": "simple" //面板设为简单模式
-
-- eslint
-
-  - .eslintrc.js
-
-- filesize: 左下角显示文件大小，点击可显示详细信息
-
-- GBKtoUTF8: 自动把文件编码方式换成utf8
-
-- git history: view file|git|line history
+2、lint
 
 - html snippets
+  - 设置user: 允许在其他哪些文件使用html代码提醒
+- eslint
+  - .eslintrc.js
+- markdownlint
+  - `markdown:open preview to the side`：打开侧边预览
+  - `markdown:open preview`：打开预览
 
-- HTML Snippets
+3、function
 
-设置user: 允许在其他哪些文件使用html代码提醒
+- advanced new file
+  - 新建文件，`ctrl+alt+n`
+  - 设置："newFile.showFullPath": false
+- auto rename tag
+  - 自动重命名html标签
+- beautify - 代码格式化，`alt+c b` (自)
+  - 设置方法: open keyboard shortcuts ->搜索HookyQR.beautify
+  - 设置文件: .jsbeautifyrc，[参考](https://github.com/victorporof/Sublime-HTMLPrettify/blob/master/.jsbeautifyrc)
+- color highlight
+  - 颜色自动高亮
+- color picker
+  - `alt+c p|c`(自)
+  - 设置："colorHelper.pickerForm": "simple" //面板设为简单模式
+- document this 生成js注释
+- filesize: 左下角显示文件大小，点击可显示详细信息
+- GBKtoUTF8: 自动把文件编码方式换成utf8
+- git history: view file|git|line history
+
+4、snippet
 
 ```js
 "files.associations": {
@@ -101,19 +97,10 @@ color picker: alt+c p|c
 }
 ```
 
-- markdown preview github styling
-
-- markdownlint
-
-  - `markdown:open preview to the side`：打开侧边预览
-  - `markdown:open preview`：打开预览
-
 - prettify json
-
   - 命令面板 -> prettify json即可, 要求是json文件里不能有注释，不然用不了这个插件
-
 - reactjs code snippets
-
+  - 1
   - rcc → 标准样式
   - rccp → 标+propType
   - rcfc → 标+生命周期
@@ -121,7 +108,7 @@ color picker: alt+c p|c
   - con → constructor函数
   - conc → +context
   - est → state对象
-
+  - 2
   - cwm → componentWillMount
   - cdm → componentDidMount
   - cwr → componentWillReceiveProps
@@ -129,44 +116,26 @@ color picker: alt+c p|c
   - cwup → componentWillUpdate
   - cdup → componentDidUpdate
   - cwun → componentWillUnmount
-
+  - 3
   - sst → setState函数
   - ssf → setState函数+回调函数
   - ren → render函数
-
+  - 4
   - props→this.props
   - state→this.state
   - bnd → binds一个函数
-
 - settings sync
-
   - 同步vscode的设置，
   - 设置权限：`chmod a+x /home/perhaps/.vscode/extensions/Shan.code-settings-sync-2.8.2/node_modules/opn/xdg-open`
   - 先在github gist中得到token值，vscode命令面板 `sync:upload settings` 上传设置，另一电脑 `sync:download settings` 输入gist值获取设置
   - github token: 63b24465c362d768ea0dbffa12b9907b242c4f84
   - github gist: 5a60a18a38b5ec12456cf18bdfa68358 (lattop)
-
 - stylelint
-
   - .stylelintrc.json
-
 - sublime text keymap
-
 - view in browser
-
 - vim
-
-- vscode-icons
-
-  - 在每个文件前添加图标
-  - 使用: `命令面板 -> preferences: file icon theme -> vscode icon`
-
-> 暂时没用到
-
 - debugger for chrome
-- intellisense for css class name
-- powershell
-- vetur，vue，vue2 snippets，vue-beautify
 
 ## 四、setting
 
