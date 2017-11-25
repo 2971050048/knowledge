@@ -18,6 +18,9 @@
 # 用户名和密码
 git config --global user.name "perhaps"
 git config --global user.email "perhapszql@gmail.com"
+# 设置代理
+git config --global http.proxy 'socks5://127.0.0.1:1080'
+git config --global https.proxy 'socks5://127.0.0.1:1080'
 # 生成ssh密钥对在用户目录，公钥打开全选复制到github中
 ssh-keygen -t rsa -C "perhapszql@gmail.com"
 ```
