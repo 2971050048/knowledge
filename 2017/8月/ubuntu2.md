@@ -63,6 +63,8 @@ sudo mv winetricks /usr/local/bin
 winecfg # 配置环境
 ```
 
+目录: `home/perhaps/.wine`
+
 - [wine安装官网](https://wiki.winehq.org/Ubuntu)
 - [winetricks](https://github.com/Winetricks/winetricks)
 
@@ -96,6 +98,12 @@ sudo apt install virtualbox-5.1
 ```
 
 - [UbuntuHandbook](http://ubuntuhandbook.org/index.php/2016/07/virtualbox-5-1-released/)
+
+2.7 shutter
+
+```shell
+sudo da
+```
 
 2.* 其他
 

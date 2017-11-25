@@ -1,19 +1,22 @@
 /**
  * 快排函数
- * @param {*Array} arr 待排序的数组
- * @param {*Number} left 待排序的左边界
- * @param {*Number} right 右边界
+ * 
+ * @param {array} arr 待排序的数组
+ * @param {number} left 待排序的左边界
+ * @param {number} right 右边界
+ * @returns 从小到大排序的数组
  */
-function quickSort(arr, left, right) {
-  if(left >= right) return arr;
+function quickSorts(arr, left, right) {
+  if (left >= right) return arr;
   var key = arr[left]; // 取最左边为基准数
-  var lp = left, rp = right;
+  var lp = left,
+    rp = right;
   var tmp;
-  while(lp < rp) {
-    while(lp < rp && arr[rp] >= key) {
+  while (lp < rp) {
+    while (lp < rp && arr[rp] >= key) {
       rp--;
     }
-    while(lp < rp && arr[lp] <= key) {
+    while (lp < rp && arr[lp] <= key) {
       lp++;
     }
     tmp = arr[lp];
@@ -29,5 +32,5 @@ function quickSort(arr, left, right) {
   return arr;
 }
 
-var a = quickSort([5,4,6,2,1,7,8,3,2,1], 0, 4);
+var a = quickSort([5, 4, 6, 2, 1, 7, 8, 3, 2, 1], 0, 4);
 console.log(a.join(''));

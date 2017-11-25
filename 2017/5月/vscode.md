@@ -4,39 +4,70 @@
 
 ## 一、快捷键
 
-1、默认快捷键
+1、文件
 
 ```shell
-切换自动换行 alt+z
-多行编辑 ctrl+alt+箭头|alt+f3
-多列选择 alt+shift+鼠标或箭头
-复制该行 ctrl+shift+d,删除行 ctrl+shift+k
-注释 ctrl+/ 或者 ctrl+shift+/
-f2可以重命名一个变量，右键也行
-代码折叠 ctrl+shift+[, 点击'-'也行
-  全部打开 ctrl+k ctrl+0
-  全部折叠 ctrl+k ctrl+9(自己定义的)
-移动代码 ctrl+[
-代码错误警告 ctrl+k n
-转化为小写 ctrl+k ctrl+l
-关闭当前文件 alt+f4
-全屏模式: f11
-zen模式：shift+f11 (只看代码)
-多行代码变成一行: ctrl+j
-切换侧边栏可见性: ctrl+b
-定位到指定行数: ctrl+g
-搜索整个工作区文件，找到指定代码: ctrl+shift+f
+ctrl+alt+n 指定目录新建文件
+ctrl+shift+n 新建窗口
+ctrl+w 关闭编辑器
+ctrl+shift+w 关闭窗口
 ```
 
-2、自定义快捷键
+2、编辑
 
 ```shell
-全部折叠: ctrl+k ctrl+9
-emmet: tab改成了'alt+c e'
-新建文件: ctrl+alt+n
-代码格式化: alt+c b
-color picker: alt+c p|c
-代码提醒细节显示: ctrl+alt+space
+ctrl+f|h 查找|替换
+ctrl+shift+f|h 在文件中国查找|替换
+ctrl+/ 行注释
+ctrl+shift+a 块注释
+```
+
+3、选择
+
+```shell
+alt+up 代码向上一行
+ctrl+m 添加下一个匹配项
+ctrl+k ctrl+m 取消下一个的匹配
+ctrl+shift+l 选择所有的匹配
+```
+
+4、查看
+
+```shell
+ctrl+shift+p 命令面板
+ctrl+shift+e|f|g|d|x 资源|find|git|debug|扩展
+ctrl+j 切换面板
+ctrl+m|y message|调试控制台
+f11 全屏
+ctrl+k z zen模式
+ctrl+\ 拆分编辑器
+alt+shift+1 切换编辑器布局
+alt+z 切换自动换行
+```
+
+5、转到
+
+```shell
+ctrl+tab 切换编辑器
+ctrl+p 转到文件
+ctrl+shift+o 转到文件中的符号
+```
+
+6、调试
+
+```shell
+f5 调试
+ctrl+f5 非调试启动
+shift+f5 停止调试
+ctrl+shift+f5 重启调试
+f10|f11|shift+f11|f5 单步|进入|跳出|继续
+ctrl+shift+b 运行生成任务
+```
+
+```shell
+代码折叠 ctrl+shift+[
+  全部打开 ctrl+k ctrl+0
+  全部折叠 ctrl+k ctrl+9(自己定义的)
 ```
 
 ## 二、问题解决
@@ -55,18 +86,20 @@ color picker: alt+c p|c
 1、theme
 
 - dracula official 漂亮的theme color
-- markdown preview github styling
 - one dark pro 漂亮的theme color
+- markdown preview github styling
 
 2、lint
 
-- html snippets
-  - 设置user: 允许在其他哪些文件使用html代码提醒
+- stylelint
+  - .stylelintrc.json
 - eslint
   - .eslintrc.js
 - markdownlint
   - `markdown:open preview to the side`：打开侧边预览
   - `markdown:open preview`：打开预览
+- prettify json
+  - 命令面板 -> prettify json即可, 要求是json文件里不能有注释，不然用不了这个插件
 
 3、function
 
@@ -75,30 +108,31 @@ color picker: alt+c p|c
   - 设置："newFile.showFullPath": false
 - auto rename tag
   - 自动重命名html标签
-- beautify - 代码格式化，`alt+c b` (自)
-  - 设置方法: open keyboard shortcuts ->搜索HookyQR.beautify
+- beautify - 代码格式化，`ctrl+alt+c` (自)
   - 设置文件: .jsbeautifyrc，[参考](https://github.com/victorporof/Sublime-HTMLPrettify/blob/master/.jsbeautifyrc)
+  - 设置快捷键: `open keyboard shortcuts files` -> `{ "key": "ctrl+alt+c", "command": "HookyQR.beautify", "when": "editorFocus" }`
 - color highlight
   - 颜色自动高亮
-- color picker
-  - `alt+c p|c`(自)
-  - 设置："colorHelper.pickerForm": "simple" //面板设为简单模式
-- document this 生成js注释
+- document this
+  - 生成ts的函数注释
+  - 快捷键：`ctrl+alt+d` 两次
 - filesize: 左下角显示文件大小，点击可显示详细信息
 - GBKtoUTF8: 自动把文件编码方式换成utf8
 - git history: view file|git|line history
+- settings sync
+  - 同步vscode的设置，
+  - 设置权限：`chmod a+x /home/perhaps/.vscode/extensions/Shan.code-settings-sync-2.8.2/node_modules/opn/xdg-open`
+  - 使用：先在github gist中得到token值，vscode命令面板 `sync:upload settings` 上传设置，另一电脑 `sync:download settings` 输入gist值获取设置
+  - github token: 5f4fecf64f0c12ad4c00abbb884fbc70fed3926f
+  - gist id: 6b77a177e040ac48e15c7e7a54f17975(ubuntu)
+- view in browser
+- vim
+- debugger for chrome
 
 4、snippet
 
-```js
-"files.associations": {
-  "*.ejs": "html",
-  "*.js": "html"
-}
-```
-
-- prettify json
-  - 命令面板 -> prettify json即可, 要求是json文件里不能有注释，不然用不了这个插件
+- html snippets
+  - 设置user: 允许在其他哪些文件使用html代码提醒
 - reactjs code snippets
   - 1
   - rcc → 标准样式
@@ -124,33 +158,8 @@ color picker: alt+c p|c
   - props→this.props
   - state→this.state
   - bnd → binds一个函数
-- settings sync
-  - 同步vscode的设置，
-  - 设置权限：`chmod a+x /home/perhaps/.vscode/extensions/Shan.code-settings-sync-2.8.2/node_modules/opn/xdg-open`
-  - 先在github gist中得到token值，vscode命令面板 `sync:upload settings` 上传设置，另一电脑 `sync:download settings` 输入gist值获取设置
-  - github token: 63b24465c362d768ea0dbffa12b9907b242c4f84
-  - github gist: 5a60a18a38b5ec12456cf18bdfa68358 (lattop)
-- stylelint
-  - .stylelintrc.json
-- sublime text keymap
-- view in browser
-- vim
-- debugger for chrome
 
-## 四、setting
-
-1、基本设置
-
-- 用户设置：命令面板 -> preferences: open user setting ->  点击行前面那只笔就能设置
-- 工作区设置：命令面板 -> preferences: open workspace setting
-- 特定语言设置：命令面板 -> preferences: configure language special setting
-- 界面语言: 命令面板 -> configure language
-
-2、调试
-
-- 断点: f9
-- step into|out|over: f11|shift+f11|f10
-- 启动|停止|重启: f5|shift+f5|ctrl+shift+f5
+## 四、调试
 
 ```js
 // launch.json
