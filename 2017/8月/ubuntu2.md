@@ -120,3 +120,10 @@ wine(运行windows程序),emule(ed2k链接下载),KTorrent(BitTorrent客户端)
 1.ram
 
 Random Access Memory，随机存取存储器，与CPU直接交换数据的内部存储器，也叫主存。
+
+## 四、命令
+
+1、nohup
+
+- 用法：nohup command &
+- 作用：后台运行程序，忽略所有挂断信号

@@ -1,0 +1,54 @@
+<html>
+
+<head>
+  <style>
+    html {
+      text-align: center;
+      padding: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <form class="myform" onSubmit="return onSubmit()">
+    <input class="inputText" name="input" />
+    <button class="add">add</button>
+  </form>
+
+  <div class="show"></div>
+
+  <script>
+    let add = document.querySelector('.add')
+    let inputText = document.querySelector('.inputText')
+    let show = document.querySelector('.show')
+    let form = document.querySelector('.myform')
+
+    let arr = ['hello', 'world']
+
+    showArr(arr)
+    // add.addEventListener('click', function (event) {
+    //   arr.push(form.input.value)
+    //   showArr(arr)
+    //   event.stopPropagation()
+    // }, false)
+
+    function onSubmit() {
+      arr.push(form.input.value)
+      showArr(arr)
+      return false // 让页面不刷新
+    }
+
+
+    function showArr(arr) {
+      let str = ''
+      for (let i = 0, len = arr.length; i < len; i++) {
+        str += arr[i] + ', '
+      }
+      show.innerHTML = str
+    }
+
+  </script>
+</body>
+
+</html>

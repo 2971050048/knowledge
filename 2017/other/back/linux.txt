@@ -1,0 +1,22 @@
+常用命令: http://www.cnblogs.com/laov/p/3541414.html#zhiling
+putty下载: https://www.chiark.greenend.org.uk/~sgtatham/putty/
+
+找文件: find / -name '*grub*'   表示在/目录下找包含grub名字的文件
+升级内核
+  查看内核版本: uname -r
+  查看内核配置文件: cat /boot/grub2/grub.cfg
+  修改配置文件: vim /etc/default/grub 
+  使配置文件生效: grub2-mkconfig -o /boot/grub2/grub.cfg 
+常用命令:
+  重命名文件夹: mv ./nodejs-v6.10.3/ ./nodejs/
+  查看占用的端口: netstat -lnp|grep 80
+  杀死pid: kill pid_num
+  杀死占用某端口的进程: sudo fuser -k 80/tcp
+
+
+  启用elpore仓库:
+    rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+    rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+  安装最新的主线稳定内核：
+    yum --enablerepo=elrepo-kernel install kernel-ml
+
