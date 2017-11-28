@@ -1,8 +1,0 @@
-简介: 一个带有负载均衡功能的应用进程管理器
-安装: npm i pm2 -g
-使用: 
-  查看进程状态: pm2 ls
-  启动: pm2 start app.js
-  停止: pm2 stop app.js|all
-  删除: pm2 delete id
-  重启: pm2 restart app.js
