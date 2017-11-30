@@ -5,13 +5,13 @@
 js function的属性和方法小结
 
 ```javascript
-// 注释的写法
+// 注释的写法, 类型：number, string, boolean, Object, Function, RegExp, Array, Date
 /**
- * @description: 判断传入的参数的长度是否在给定的有效范围内
- * @param: minL->给定的最小的长度
- * @param: maxL->给定的最大的长度
- * @param: str->待验证的参数
- * @return : true表示合理，验证通过
+ * @description 判断传入的参数的长度是否在给定的有效范围内
+ * @param {number} minL 给定的最小的长度
+ * @param {number} maxL 给定的最大的长度
+ * @param {string} str 待验证的参数
+ * @return {boolean} true表示合理，验证通过
  */
 var isAvaiableLength = function(minL,maxL,str){
     return (str.length >= minL && str.length <= maxL) ? true : false;
