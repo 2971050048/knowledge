@@ -402,3 +402,11 @@ allocation: 分配[ælə'keɪʃ(ə)n]
 comprise: 包含[kəm'praɪz]
 kernel: 内核['kɜːn(ə)l]
 tenant: 租户['tenənt] 
+specialization: 专业化[,speʃəlaɪ'zeɪʃən]
+composition: 组成
+decompose: 分解
+arbitrary: 随意的
+premier: 第一的['premɪə]
+stock: 库存
+hierarchy: 等级制度
+italicize: 用斜字体
