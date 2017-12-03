@@ -12,7 +12,11 @@
 
 ３、组件：命名时开头大写，props参数是只读的，单向数据流
 
-４、状态: 只有使用`this.setState()`方法才能再更新状态后重新执行`render()`方法，`this.setState()`得到的状态会和原状态进行合并。
+４、状态:
+
+- 只有使用`this.setState()`方法才能在更新状态后重新执行`render()`方法
+- `this.setState()`得到的状态会和原状态进行合并
+- 使用：`this.setState({})` 或 `this.setState((prevState, props) => ({}))`
 
 ５、事件:
 
@@ -122,6 +126,96 @@ MyComponent.propTypes = {
 
 ```js
 Greeting.defaultProps = {name: 'perhaps'}
+```
+
+## 四、ref
+
+1、使用ref的情况：
+
+- `focus` `text selection` `media playback`
+- 触发必要的动画
+- 跟第三方dom库交互
+
+2、使用
+
+```js
+// 管理dom元素，可调用原dom的方法
+class CustomTextInput extends React.Component {
+  constructor(props) {
+    super(props)
+    this.focusTextInput = this.focusTextInput.bind(this)
+  }
+  focusTextInput() {
+    this.textInput.focus()
+  }
+  render() {
+    return (
+      <div>
+        <input type='text' ref={input => {this.textInput = input}) />
+        <input type='button' onClick={this.focusTextInput} />
+      </div>
+    )
+  }
+}
+```
+
+```js
+// 管理react组件，可调用子组件的方法
+class AutoFocusTextInput extends React.Component {
+  componentDidMount() {
+    this.textInput.focusTextInput()
+  }
+  render() {
+    return (
+      <CustomTextInput ref={input = {this.textInput = input}}/>
+    )
+  }
+}
+```
+
+## 五、form表单
+
+1、非控制组件: 用`ref`获得组件的`value`，用`defaultValue|defaultChecked`定义默认值
+
+```js
+handleSubmit(e) {
+  window.alert(this.inputText.value)
+  e.preventDefault()
+}
+render() {
+  return (
+    <form onSubmit={this.handleSubmit}>
+      <input defaultValue='hello' type='text' ref={input => {this.inputText = input}} />
+      <input type='submit' />
+    </form>
+  )
+}
+```
+
+2、控制组件：用`onChange`属性监听组件值的变化，用`state`作为组件的默认值并交互
+
+```js
+constructor(props) {
+  super(props)
+  this.state({value: 'world'})
+  this.handleSubmit = this.handleSubmit.bind(this)
+  this.handleInputChange = this.handleInputChange.bind(this)
+}
+handleSubmit(e) {
+  window.alert(this.state.value)
+  e.preventDefault()
+}
+handleInputChange(e) {
+  this.setState({value: e.target.value})
+}
+render() {
+  return (
+    <form onSubmit={this.handleSubmit}>
+      <input value={this.state.value} type='text' onChange={this.handleInputChange} />
+      <input type='submit' />
+    </form>
+  )
+}
 ```
 
 ## 参考文档

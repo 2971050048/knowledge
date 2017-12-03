@@ -326,7 +326,6 @@ cap: 覆盖[kæp]
 assert: 坚持，声称[ə'sɜːt]
 reveal: 揭露 [rɪ'viːl]
 trademark: 商标['treɪdmɑːk]
-iteration: 迭代，反复[ɪtə'reɪʃ(ə)n]
 plain: 朴素的，简单的[pleɪn]
 interpolation: 插入[ɪn,tɜːpəʊ'leɪʃən]
 trailing: 拖尾的['treɪlɪŋ]
@@ -410,3 +409,6 @@ premier: 第一的['premɪə]
 stock: 库存
 hierarchy: 等级制度
 italicize: 用斜字体
+modify: 修改
+legacy: 遗弃
+mutable: 易变的
