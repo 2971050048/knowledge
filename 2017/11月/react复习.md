@@ -22,13 +22,107 @@
 
 6、条件渲染: `&&`操作符和`?`操作符。组件返回`null`则不会渲染
 
-７、列表: `map()`方法。每个列表项都需要`key`属性。key属性帮助react分辨哪个列表项改变了。
+７、列表: `map()`方法。每个列表项都需要`key`属性，key属性帮助react分辨哪个列表项改变了。计算完用map得到的元素，放到数组中，再用`return`返回。
 
 ８、表单: `input, textarea, select`通过`value`属性实现控制组件
 
 ９、状态提升:　当几个组件共享同一个可变数据时，让该共享数据提升到最近的共同祖先
 
 10、组成: `props.children`或者自定义的`props.title` `props.message`
+
+11、构造react组件：等级制度，建立静态版本时用`props`，`state`是为了交互才用的，单向数据流(根据等级制度从上到下的数据流)
+
+- 建立UI等级制度, 构造静态版本的界面，只有`render()`和`props`
+- 确定哪些才是`state`，确定state的位置
+- 添加逆向数据流，用事件监听
+
+## 二、JSX
+
+1、jsx能嵌入的js表达式有：`string`, `react component`, `列表`
+
+```js
+<MyComponent>{ 'foo' }</MyComponent>
+<MyComponent>{ <SubComponent /> }</MyComponent>
+<MyComponent>{ ['hello', 'world'] }</MyComponent>
+```
+
+2、展开运算符能对object使用
+
+```js
+const props = {value: 1, placeholder: 'hello'}
+const nProps = {...props, value: 2} // 对象内使用
+// 当作元素属性来用
+return <input {...nProps} />
+```
+
+3、运行时指定组件名
+
+```js
+const components = {photo: PhotoStory, video: VideoStory}
+function story(props) {
+  const SpecifyStory = components[props.storyType]
+  return <SpecifyStory />
+}
+```
+
+4、props.children
+
+`props.children` 可以是任何数据类型
+
+```js
+function Repeat(props) {
+  let items = []
+  for(let i = 0, len = props.numTimes; i < len; i++) {
+    items.push(props.children(i))
+  }
+  return <div>{items]</div>
+}
+function ListOfTenThings() {
+  return (
+    <Repeat numTimes={10}>
+      {(index) => <div key={index}>this is item {index}</div>}>
+    </Repeat>
+  )
+}
+```
+
+## 三、prop的类型检查
+
+1、需要先引入包`prop-types`
+
+```js
+import PropTypes from 'prop-types'
+class Greeting extends React.Component {
+  render() {
+    return (
+      <h1>Hello, {this.props.name}</h1>
+    );
+  }
+}
+Greeting.propTypes = {
+  name: PropTypes.string
+}
+```
+
+2、可选的种类
+
+```js
+import PropTypes from 'prop-types'
+MyComponent.propTypes = {
+  option1: PropTypes.number, // 可选 string, bool, func, object, symbol, node, element, any
+  option2: PropTypes.number.isRequired,
+  option3: PropTypes.arrayOf(PropTypes.number), // 可选 objectOf
+  option4: PropTypes.oneOf(['hello', 'world']),
+  option5: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Greeting)])
+  option6: PropTypes.shape({color: PropTypes.string, fontSize: PropTypes.number}) // 指定object形状
+}
+```
+
+3、默认prop的值
+
+```js
+Greeting.defaultProps = {name: 'perhaps'}
+```
 
 ## 参考文档
 
