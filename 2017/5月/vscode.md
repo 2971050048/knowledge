@@ -2,6 +2,13 @@
 
 # vscode
 
+- [vscode](#vscode)
+  - [一、快捷键](#%E4%B8%80%E3%80%81%E5%BF%AB%E6%8D%B7%E9%94%AE)
+  - [二、问题解决](#%E4%BA%8C%E3%80%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3)
+  - [三、插件](#%E4%B8%89%E3%80%81%E6%8F%92%E4%BB%B6)
+  - [四、调试](#%E5%9B%9B%E3%80%81%E8%B0%83%E8%AF%95)
+  - [五、参考文档](#%E4%BA%94%E3%80%81%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3)
+
 ## 一、快捷键
 
 1、文件
@@ -100,6 +107,7 @@ ctrl+shift+b 运行生成任务
   - `markdown:open preview`：打开预览
 - prettify json
   - 命令面板 -> prettify json即可, 要求是json文件里不能有注释，不然用不了这个插件
+- tslint
 
 3、function
 
@@ -133,6 +141,9 @@ ctrl+shift+b 运行生成任务
 
 - html snippets
   - 设置user: 允许在其他哪些文件使用html代码提醒
+- markdown all in one
+  - `alt+b|i|c` toggle bold|italic|taskList
+  - `ctrl+shift+]` uplevel heading
 - reactjs code snippets
   - 1
   - rcc → 标准样式

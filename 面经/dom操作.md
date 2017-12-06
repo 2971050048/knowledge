@@ -55,6 +55,7 @@
 </script>
 ```
 
+```html
 <!-- 列表的dom操作 -->
 <ul class="list">
   <li class="class1">hello1</li>
@@ -89,3 +90,4 @@
     })
   })
 </script>
+```
