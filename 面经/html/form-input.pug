@@ -1,0 +1,23 @@
+//- https://codepen.io/perhapszql/pen/KyLdwE
+form(action="" method="post")
+  label
+    span text
+    input#text(type="text", name="inputText")
+  label
+    span radio
+    input#radio(type="radio", name="radio1")
+  label
+    span radio2
+    input#radio(type="radio", name="radio1")
+  label
+    span datalist
+    input#datalist(type="text", name="datalist" list="fruits")
+    datalist#fruits
+      option(value="apple")
+      option(value="orange")
+  label
+    span file
+    input#file(type="file", name="file")
+  label
+    span reset
+    input(type="reset", value="reset")

@@ -2,7 +2,16 @@
 
 # react复习
 
-<!-- more -->
+学习react也有一段时间，今天对react做个小结。
+<!--more-->
+
+- [react复习](#react%E5%A4%8D%E4%B9%A0)
+  - [一、react 注意的点](#%E4%B8%80%E3%80%81react-%E6%B3%A8%E6%84%8F%E7%9A%84%E7%82%B9)
+  - [二、JSX](#%E4%BA%8C%E3%80%81jsx)
+  - [三、prop的类型检查](#%E4%B8%89%E3%80%81prop%E7%9A%84%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5)
+  - [四、ref](#%E5%9B%9B%E3%80%81ref)
+  - [五、form表单](#%E4%BA%94%E3%80%81form%E8%A1%A8%E5%8D%95)
+  - [六、参考文档](#%E5%85%AD%E3%80%81%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3)
 
 ## 一、react 注意的点
 
@@ -218,6 +227,6 @@ render() {
 }
 ```
 
-## 参考文档
+## 六、参考文档
 
 - [官网教程](https://reactjs.org/docs/hello-world.html)
