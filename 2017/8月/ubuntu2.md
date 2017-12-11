@@ -105,6 +105,13 @@ sudo apt install virtualbox-5.1
 sudo da
 ```
 
+2.8 vlc视频播放器
+
+```shell
+sudo add-apt-repository ppa:videolan/master-daily
+sudo apt-get update
+sudo apt-get install vlc
+```
 2.* 其他
 
 网易云音乐，steam游戏，Franz(聊天工具)，clipgrab(下载视频)</br>

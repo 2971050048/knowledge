@@ -193,18 +193,10 @@ vim /root/.ssh/authorized_keys
 
 5.4 本地脚本
 
-`vim ~/script/sshstart.sh`
-
-```shell
-ssh root@138.128.207.165 -p 29487 -i ~/.ssh/id_rsa
-```
-
-赋予权限：`chmod a+x *.sh`
-
 添加快捷方式：`vim ~/.bash_aliases`
 
 ```shell
-alias sshstart='~/script/sshstart.sh'
+alias sshstart='ssh root@138.128.207.165 -p 29487 -i ~/.ssh/id_rsa'
 ```
 
 ## 六、开机启动
