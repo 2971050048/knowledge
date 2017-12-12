@@ -32,6 +32,28 @@ sudo update-mime-database /usr/share/mime
 - 查看内核: `uname -r`
 - 查看系统版本号: `cat /etc/issue`
 
+## 三、方便点的命令
+
+1、apt免密运行
+
+`sudo vim /etc/sudoers`, 
+
+```shell
+# 后添加
+%sudo   ALL=(ALL:ALL) ALL
+perhaps ALL=NOPASSWD: /usr/bin/apt-get
+perhaps ALL=NOPASSWD: /usr/bin/dpkg
+```
+
+2、apt免sudo运行
+
+`vim ~/.bash_aliases`
+
+```shell
+alias apt-get='sudo apt-fast'
+alias apt-fast='sudo apt-fast'
+```
+
 ## 参考文档
 
 - [安装deb包](https://chentao92.github.io/2016/09/19/ubuntu16.04%E5%AE%89%E8%A3%85deb%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%AD%A5%E9%AA%A4/)

@@ -116,7 +116,7 @@ sudo apt install shadowsocks-qt5
 sudo apt install python-pip
 sudo pip install genpac
 pip install --upgrade genpac # 安裝genpac
-genpac -p="SOCKS5 127.0.0.1:1080" -o=~/document/gfwoutput.txt
+genpac -p="SOCKS5 127.0.0.1:1080" -o=~/Documents/gfwoutput.txt
 ```
 
 添加pac规则：网络 -> 网络代理 -> 配置URL -> file:///home/perhaps/document/gfwoutput.txt

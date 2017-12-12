@@ -48,10 +48,14 @@ sudo apt-get install apt-transport-https \
 # 添加gpg key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
-# 安装docker
+# 添加库(ubuntu16.04)
 sudo add-apt-repository \
   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable"
+# 添加库(ubuntu17.10)
+sudo add-apt-repository \
+  "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable edge"
 sudo apt-get update
 sudo apt-get install docker-ce
 # 安装成功
@@ -62,25 +66,35 @@ docker --help
 
 ![docker-architecture](../images/docker-architecture.png)
 
-1、获取镜像
+1、省略sudo: 加入用户组
 
-在终端输入命令 `docker pull --help` 可以知道该用法：
+```shell
+sudo groupadd docker # 新建docker群组
+sudo gpasswd -a perhaps docker # 将用户perhaps加入docker群组
+sudo systemctl restart docker # 重启docker
+newgrp docker # 登入docker群组
+```
+
+2、寻找镜像
+
+- `docker search hello-world`
+
+3、获取镜像
 
 - `docker pull [OPTIONS] NAME[:TAG]`
 - `docker pull hello-world`
 
-2、运行镜像, 构建容器
+4、运行镜像, 构建容器
 
 ```shell
 docker images # 列举本地的镜像
 docker run hello-world
 ```
 
-3、构建镜像(需要Dockerfie文件)
+5、构建镜像(需要Dockerfie文件)
 
-`docker build --help`得到 `docker build [OPTIONS] 上下文路径`
-
-`docker build -t demo:v1 .`
+- `docker build [OPTIONS] 上下文路径`
+- `docker build -t demo:v1 .`
 
 ## 五、Dockerfile
 
@@ -113,3 +127,4 @@ CMD ["python", "app.py"]
 - [docker官方镜像](https://hub.docker.com/)
 - [docker教程](https://yeasy.gitbooks.io/docker_practice/content/basic_concept/repository.html)
 - [官网：get docker ce for ubuntu](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/)
+- [docker省略sudo命令](http://www.jianshu.com/p/cf59b0996aec)

@@ -9,25 +9,27 @@
 
 ## 一、TIM
 
-1、安装镜像：`sudo docker pull bestwu/qq`
+1、安装镜像：`docker pull bestwu/qq:office`
 
 2、允许所有用户访问X11服务: `xhost +`
 
 3、编写脚本：
 
-`vim ~/script/qq.sh`
+`vim ~/Documents/script/qq.sh`
 
 ```shell
-sudo docker run -d --name qq --device /dev/snd --net=host \
+sudo docker run -d --name qq \
+--device /dev/snd \
 -v /tmp/.X11-unix:/tmp/.X11-unix \
--v /home/peter/TencentFiles:/TencentFiles \
+-v $HOME/TencentFiles:/TencentFiles \
 -e DISPLAY=unix$DISPLAY \
 -e XMODIFIERS=@im=fcitx \
 -e QT_IM_MODULE=fcitx \
 -e GTK_IM_MODULE=fcitx \
--e AUDIO_GID=63 \
--e GID=1000 \
--e UID=1000 \
+-e AUDIO_GID=`getent group audio | cut -d: -f3` \
+-e VIDEO_GID=`getent group video | cut -d: -f3` \
+-e GID=`id -g` \
+-e UID=`id -u` \
 bestwu/qq:office
 ```
 
@@ -38,15 +40,22 @@ bestwu/qq:office
 `vim ~/.bash_aliases`添加：
 
 ```shell
-alias qqstart='~/script/qq.sh'
+alias qqstart='~/Documents/script/qq.sh'
 alias qqstop='sudo docker rm -f qq'
 ```
 
+5、使用
+
+- 启动: `qqstart`
+- 停止: `docker stop qq`
+- 再启动: `docker start qq`
+- 删除容器: `qqstop`
+
 ## 二、thunder
 
-1、安装镜像：`sudo docker pull yinheli/docker-thunder-xware:latest`
+1、安装镜像：`docker pull yinheli/docker-thunder-xware:latest`
 
-2、创建下载目录：`cd ~`, `mkdir thunder`
+2、创建下载目录：`cd ~/Downloads`, `mkdir thunder`
 
 3、编写脚本: `vim ~/script/thunder.sh`
 
@@ -54,13 +63,13 @@ alias qqstop='sudo docker rm -f qq'
 sudo docker run -d --privileged=true \
         --name=xware \
         --net=host \
-        -v /home/perhaps/thunder:/app/TDDOWNLOAD \
+        -v /home/perhaps/Downloads/thunder:/app/TDDOWNLOAD \
         yinheli/docker-thunder-xware
 ```
 
-`sudo chmod a+x thunder.sh`
+`chmod a+x thunder.sh`
 
-4、快捷方式??
+4、快捷方式
 
 `vim ~/.bash_aliases`添加：
 
@@ -71,7 +80,7 @@ alias thunderstop='sudo docker rm -f xware'
 
 5、使用
 
-- 查看激活码：`sudo docker logs xware`
+- 查看激活码：`docker logs xware`
 - 远程地址：`http://yuancheng.xunlei.com/`
 
 ## 参考文档

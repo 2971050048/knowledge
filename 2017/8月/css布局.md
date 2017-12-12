@@ -24,10 +24,10 @@
 ```css
 /* 方法1 */
 .parent { text-align: center; }
-.block { display: inline-block`;}
+.block { display: inline-block;}
 /* 方法2, 绝对布局 */
-.parent { display: relative; }
-.block { display: absolute; left: 50%; transform: translate(50%); }
+.parent { position: relative; }
+.block { position: absolute; left: 50%; transform: translate(50%); }
 ```
 
 4、通用方案：父设为 `display: flex; justify-content: center`

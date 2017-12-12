@@ -36,6 +36,24 @@ sudo apt-get install fish
 
 - [阮：入门教程](http://www.ruanyifeng.com/blog/2017/05/fish_shell.html)
 
+函数实现.bash_aliases
+
+`vim ~/.config/fish/config.fish`
+
+```shell
+function apt-get
+  sudo apt-fast $argv
+end
+
+function apt-fast
+  sudo apt-fast $argv
+end
+
+function dpkg
+  sudo dpkg $argv
+end
+```
+
 2.3 wine
 
 安装
@@ -47,7 +65,7 @@ wget -nc https://dl.winehq.org/wine-builds/Release.key
 sudo apt-key add Release.key
 sudo apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/
 sudo apt-get update
-sudo apt-get install --install-recommends winehq-stable
+sudo apt-get install --install-recommends winehq-stable -y
 ```
 
 ```shell
@@ -82,7 +100,7 @@ sudo echo "alias apt-get='apt-fast'" >> ~/.bash_aliases
 
 2.5 必备
 
-`sudo apt-get install gnoke vim`
+`sudo apt-get install guake vim`
 
 - sogou 官网下载
 - chrome 官网
@@ -112,6 +130,11 @@ sudo add-apt-repository ppa:videolan/master-daily
 sudo apt-get update
 sudo apt-get install vlc
 ```
+
+对于ubuntu17.10, 用原声的视频播放器
+
+添加解码器： `sudo apt-get install ubuntu-restricted-extras`
+
 2.* 其他
 
 网易云音乐，steam游戏，Franz(聊天工具)，clipgrab(下载视频)</br>
