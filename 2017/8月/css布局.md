@@ -27,14 +27,14 @@
 .block { display: inline-block;}
 /* 方法2, 绝对布局 */
 .parent { position: relative; }
-.block { position: absolute; left: 50%; transform: translate(50%); }
+.block { position: absolute; left: 50%; transform: translate(-50%); }
 ```
 
 4、通用方案：父设为 `display: flex; justify-content: center`
 
 ## 二、垂直居中布局
 
-1、父元素一定，子单行内联：子设为 `height: line-height`
+1、父元素一定，子单行内联：父的`line-height`等于`height`
 
 2、父元素一定，子多行内联
 

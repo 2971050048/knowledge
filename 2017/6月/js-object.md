@@ -24,7 +24,7 @@ Object.getOwnPropertySymbols(obj); //[Symbol(a)], a没有引号
 ## 二、属性的创建
 
 - `Object.assign(target, ...sources)` 返回target, 将sources的可枚举属性复制到target。
-- `Object.create(proto, [propertiesObject])` 指定原型对象及属性去创建新对象
+- `Object.create(prototype[,propertiesObject])` 指定原型对象及属性去创建新对象
 - `Object.defineProperties(obj, props)` 定义新属性或修改现有属性
 - `Object.getOwnPropertyDescriptor(obj, prop)` 返回属性描述符
 
@@ -46,8 +46,8 @@ Object.keys(o1); //['b', 'c']
 
 ## 三、原型对象
 
-- `Object.getPrototypeOf(obj)` 返回原型对象
-- `Object.prototype.constructor` 返回原型对象的函数
+- `Object.getPrototypeOf(obj)` 返回obj的原型对象
+- `obj.constructor` 返回原型对象(obj)的构造函数
 - `obj1.isPrototypeOf(obj2)` 返回boolean, obj1是obj2的原型对象吗
 
 ## 四、参考文档

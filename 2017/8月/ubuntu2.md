@@ -52,6 +52,10 @@ end
 function dpkg
   sudo dpkg $argv
 end
+
+function vim
+  sudo vim $argv
+end
 ```
 
 2.3 wine
@@ -134,6 +138,74 @@ sudo apt-get install vlc
 对于ubuntu17.10, 用原声的视频播放器
 
 添加解码器： `sudo apt-get install ubuntu-restricted-extras`
+
+2.9 wps
+
+- [wps deb包](http://wps-community.org/)
+
+问题：
+
+1、缺失`libpng12-0`
+
+```shell
+sudo apt-add-repository "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe"
+apt-fast update
+apt-fast install -f
+```
+
+2、字体
+
+- [缺失的字体](https://pan.baidu.com/s/1o8ujqhc)
+- [github:yahei consolas hybrid](https://github.com/yakumioto/YaHei-Consolas-Hybrid-1.12)
+- [微软雅黑](http://www.pc6.com/mac/116742.html)
+- [参考](https://my.oschina.net/renwofei423/blog/635798)
+
+(1) 缺失的字体
+
+```shell
+sudo cp * /usr/share/fonts
+sudo mkfontscale
+sudo mkfontdir
+sudo fc-cache
+```
+
+(2) 微软雅黑字体: `msyhbd.ttf`
+
+```shell
+cd /usr/share/fonts
+mkdir msyh # 将msyhdb.ttf放到该目录
+sudo chmod 644 /usr/share/fonts/msyh/*
+cd msyh
+sudo mkfontscale
+sudo mkfontdir
+sudo fc-cache
+```
+
+(3) YaHei Consolas Hybrid
+
+```shell
+wget -qO- https://raw.githubusercontent.com/yakumioto/YaHei-Consolas-Hybrid-1.12/master/install.sh | sudo sh
+```
+
+3、支持中文输入法
+
+`vim /usr/bin/wps`
+
+```shell
+#!/bin/bash 后添加
+export XMODIFIERS="@im=fcitx"
+export QT_IM_MODULE="fcitx"
+```
+
+同理在`/usr/bin/wpp` 和 `usr/bin/et` 也添加
+
+`vim etc/environment`
+
+```shell
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+```
 
 2.* 其他
 

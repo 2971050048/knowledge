@@ -43,6 +43,7 @@ sudo update-mime-database /usr/share/mime
 %sudo   ALL=(ALL:ALL) ALL
 perhaps ALL=NOPASSWD: /usr/bin/apt-get
 perhaps ALL=NOPASSWD: /usr/bin/dpkg
+perhaps ALL=NOPASSWD: /usr/bin/vim
 ```
 
 2、apt免sudo运行
@@ -52,6 +53,7 @@ perhaps ALL=NOPASSWD: /usr/bin/dpkg
 ```shell
 alias apt-get='sudo apt-fast'
 alias apt-fast='sudo apt-fast'
+alias vim='sudo vim'
 ```
 
 ## 参考文档
