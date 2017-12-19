@@ -60,7 +60,7 @@ end
 
 2.3 wine
 
-安装
+- 安装
 
 ```shell
 # wine
@@ -79,13 +79,35 @@ chmod +x winetricks
 sudo mv winetricks /usr/local/bin
 ```
 
-配置
+- 配置
 
 ```shell
 winecfg # 配置环境
 ```
 
-目录: `home/perhaps/.wine`
+- wine支持中文
+
+`vim ~/Documents/zh.reg`
+
+```shell
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]
+"Lucida Sans Unicode"="msyh.ttf"
+"Microsoft Sans Serif"="msyh.ttf"
+"MS Sans Serif"="msyh.ttf"
+"Tahoma"="msyh.ttf"
+"Tahoma Bold"="msyh.ttf"
+"SimSun"="msyh.ttf"
+"Arial"="msyh.ttf"
+"Arial Black"="msyh.ttf"
+```
+
+`regedit zh.reg`
+
+重启wine后搞定
+
+- 目录: `home/perhaps/.wine`
 
 - [wine安装官网](https://wiki.winehq.org/Ubuntu)
 - [winetricks](https://github.com/Winetricks/winetricks)
