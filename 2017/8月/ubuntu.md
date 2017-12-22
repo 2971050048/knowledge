@@ -124,11 +124,11 @@ genpac -p="SOCKS5 127.0.0.1:1080" -o=~/Documents/gfwoutput.txt
 4.3 安装kcptun
 
 ```shell
-mkdir ~/kcptun
-cd ~/kcptun
-wget https://github.com/xtaci/kcptun/releases/download/v20170525/kcptun-linux-386-20170525.tar.gz
-tar -zxvf kcptun-linux-386-20170525.tar.gz
-rm kcptun-linux-386-20170525.tar.gz
+mkdir ~/Documents/script/kcptun
+cd ～/Documents/script/kcptun
+wget https://github.com/xtaci/kcptun/releases/download/v20171201/kcptun-linux-amd64-20171201.tar.gz -e use_proxy=yes -e http_proxy=127.0.0.1:1080
+tar -zxvf kcptun-linux-amd64-20171201.tar.gz
+rm kcptun-linux-amd64-20171201.tar.gz
 ```
 
 4.4 编写kcptun脚本
@@ -137,14 +137,14 @@ rm kcptun-linux-386-20170525.tar.gz
 
 ```shell
 cd ~/kcptun
-sudo ./client_linux_386 -r "138.128.207.165:4003" -l ":0105" -mode fast2
+sudo ./client_linux_amd64 -r "138.128.207.165:6001" -l ":0202" -mode fast2
 echo 'kcptun start success'
 ```
 
 `vim ~/srcipt/kcpstop.sh`
 
 ```shell
-killall client_linux_386
+killall client_linux_amd64
 echo 'kcptun stop success'
 ```
 

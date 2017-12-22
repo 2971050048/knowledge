@@ -36,15 +36,17 @@ sudo update-mime-database /usr/share/mime
 
 1、apt免密运行
 
-`sudo vim /etc/sudoers`, 
+`sudo visudo /etc/sudoers.d/mysudoers`,
 
 ```shell
-# 后添加
-%sudo   ALL=(ALL:ALL) ALL
-perhaps ALL=NOPASSWD: /usr/bin/apt-get
-perhaps ALL=NOPASSWD: /usr/bin/dpkg
-perhaps ALL=NOPASSWD: /usr/bin/vim
+perhaps ALL=(ALL) NOPASSWD: /usr/bin/apt-get
+perhaps ALL=(ALL) NOPASSWD: /usr/sbin/apt-fast
+perhaps ALL=(ALL) NOPASSWD: /usr/bin/dpkg
+perhaps ALL=(ALL) NOPASSWD: /usr/bin/vim
+perhaps ALL=(ALL) NOPASSWD: /home/perhaps/Documents/script/kcptun/client_linux_amd64
 ```
+
+`sudo chmod 0440 /etc/sudoers.d/mysudoers`
 
 2、apt免sudo运行
 
@@ -56,6 +58,17 @@ alias apt-fast='sudo apt-fast'
 alias vim='sudo vim'
 ```
 
+3、后台运行
+
+`nohup <commands> >filename 2>&1 &`
+
+4、查找文件
+
+- `locate filename`
+- `whereis filename`
+- `find / -name filename`
+
 ## 参考文档
 
 - [安装deb包](https://chentao92.github.io/2016/09/19/ubuntu16.04%E5%AE%89%E8%A3%85deb%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%AD%A5%E9%AA%A4/)
+- [ubuntu16.04安装后的事](https://www.sysgeek.cn/15-things-to-do-after-installing-ubuntu-16-04-lts/)
