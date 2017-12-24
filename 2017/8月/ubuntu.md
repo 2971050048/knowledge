@@ -105,7 +105,7 @@ alias network='~/script/network.sh'
 4.1 安裝 shadowsocks-qt5
 
 ```shell
-sudo add-apt-repository ppa:hzwhuang/ss-qt5
+sudo add-apt-repository ppa:hzwhuang/ss-qt5 -y
 sudo apt update
 sudo apt install shadowsocks-qt5
 ```
@@ -113,19 +113,18 @@ sudo apt install shadowsocks-qt5
 4.2 配置pac
 
 ```shell
-sudo apt install python-pip
+sudo apt install python-pip -y
 sudo pip install genpac
 pip install --upgrade genpac # 安裝genpac
-genpac -p="SOCKS5 127.0.0.1:1080" -o=~/Documents/gfwoutput.txt
+genpac -p="SOCKS5 127.0.0.1:1080" -o=~/Documents/overwall/gfwoutput.txt
 ```
 
-添加pac规则：网络 -> 网络代理 -> 配置URL -> file:///home/perhaps/document/gfwoutput.txt
+添加pac规则：网络 -> 网络代理 -> 配置URL -> file:///home/perhaps/Documents/overwall/gfwoutput.txt
 
 4.3 安装kcptun
 
 ```shell
-mkdir ~/Documents/script/kcptun
-cd ～/Documents/script/kcptun
+cd ～/Documents/overwall
 wget https://github.com/xtaci/kcptun/releases/download/v20171201/kcptun-linux-amd64-20171201.tar.gz -e use_proxy=yes -e http_proxy=127.0.0.1:1080
 tar -zxvf kcptun-linux-amd64-20171201.tar.gz
 rm kcptun-linux-amd64-20171201.tar.gz
@@ -136,7 +135,7 @@ rm kcptun-linux-amd64-20171201.tar.gz
 `vim ~/script/kcpstart.sh`
 
 ```shell
-cd ~/kcptun
+cd ~/Documents/overwall
 sudo ./client_linux_amd64 -r "138.128.207.165:6001" -l ":0202" -mode fast2
 echo 'kcptun start success'
 ```

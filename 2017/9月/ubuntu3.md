@@ -36,7 +36,7 @@ sudo update-mime-database /usr/share/mime
 
 1、apt免密运行
 
-`sudo visudo /etc/sudoers.d/mysudoers`,
+`sudo visudo -f /etc/sudoers.d/mysudoers`,
 
 ```shell
 perhaps ALL=(ALL) NOPASSWD: /usr/bin/apt-get
@@ -68,7 +68,45 @@ alias vim='sudo vim'
 - `whereis filename`
 - `find / -name filename`
 
+5、`vim ~/.bash_aliases`
+
+```shell
+alias vim='sudo vim'
+alias apt='sudo apt-fast -y'
+alias apti='sudo apt-fast install -y'
+alias apt-get='sudo apt-fast -y'
+alias apt-fast='sudo apt-fast -y'
+alias dpkg='sudo dpkg'
+alias dpkgi='sudo dpkg -i'
+alias kcpstart='~/Documents/overwall/kcpstart.sh'
+```
+
+## 四、gnome3
+
+```shell
+apt install gnome-shell -y
+apt install ubuntu-gnome-desktop -y
+apt install gnome-tweak-tool -y
+```
+
+arc主题
+
+```shell
+apt install autoconf automake pkg-config libgtk-3-dev
+```
+
+卸载gnome3
+
+```shell
+apt remove gnome-shell gnome
+apt autoremove
+apt purge gnome
+apt autoclean
+apt clean
+```
+
 ## 参考文档
 
 - [安装deb包](https://chentao92.github.io/2016/09/19/ubuntu16.04%E5%AE%89%E8%A3%85deb%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%AD%A5%E9%AA%A4/)
 - [ubuntu16.04安装后的事](https://www.sysgeek.cn/15-things-to-do-after-installing-ubuntu-16-04-lts/)
+- [gnome+arc主题](http://www.linuxdiyf.com/linux/21610.html)

@@ -41,16 +41,28 @@ sudo apt-get install fish
 `vim ~/.config/fish/config.fish`
 
 ```shell
+function apt
+  sudo apt-fast -y $argv
+end
+
+function apti
+  sudo apt-fast install -y $argv
+end
+
 function apt-get
-  sudo apt-fast $argv
+  sudo apt-fast -y $argv
 end
 
 function apt-fast
-  sudo apt-fast $argv
+  sudo apt-fast -y $argv
 end
 
 function dpkg
   sudo dpkg $argv
+end
+
+function dpkgi
+  sudo dpkg -i $argv
 end
 
 function vim
@@ -227,6 +239,18 @@ export QT_IM_MODULE="fcitx"
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
+```
+
+2.10 爱壁纸
+
+```shell
+# python-support
+wget http://launchpadlibrarian.net/109052632/python-support_1.0.15_all.deb
+sudo dpkg -i python-support_1.0.15_all.deb
+# xdotool
+apt install xdotool
+# lovewallpaper
+dpkg -i LoveWallpaper4Linux.deb
 ```
 
 2.* 其他
