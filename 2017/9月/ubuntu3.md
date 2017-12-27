@@ -105,6 +105,36 @@ apt autoclean
 apt clean
 ```
 
+## 五、卸载不用的软件
+
+```shell
+apt remove --purge libreoffice*
+sudo apt-get remove thunderbird totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot 
+sudo apt-get remove gnome-mines cheese transmission-common gnome-orca webbrowser-app gnome-sudoku  landscape-client-ui-install  
+sudo apt-get remove onboard deja-dup
+```
+
+```shell
+apti git unity-tweak-tool adobe-flashplugin vlc browser-plugin-vlc
+```
+
+1、uGet代替迅雷
+
+```shell
+sudo add-apt-repository ppa:plushuang-tw/uget-stable
+# 添加aria2的依赖
+sudo add-apt-repository ppa:t-tujikawa/ppa
+apt update
+apti uget
+apti aria2
+```
+
+2、conky: 监视软件
+
+`apti conky conky-all`
+
+- [安装ubuntu后](https://www.jianshu.com/p/19353fbda01e)
+
 ## 参考文档
 
 - [安装deb包](https://chentao92.github.io/2016/09/19/ubuntu16.04%E5%AE%89%E8%A3%85deb%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%AD%A5%E9%AA%A4/)

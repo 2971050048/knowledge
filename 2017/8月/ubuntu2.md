@@ -130,8 +130,6 @@ REGEDIT4
 sudo add-apt-repository ppa:saiarcot895/myppa
 sudo apt-get update
 sudo apt-get -y install apt-fast
-# apt-fast代替apt-get
-sudo echo "alias apt-get='apt-fast'" >> ~/.bash_aliases
 ```
 
 - [github:apt-fast](https://github.com/ilikenwf/apt-fast/blob/master/README.md)
@@ -191,35 +189,27 @@ apt-fast install -f
 
 - [缺失的字体](https://pan.baidu.com/s/1o8ujqhc)
 - [github:yahei consolas hybrid](https://github.com/yakumioto/YaHei-Consolas-Hybrid-1.12)
-- [微软雅黑](http://www.pc6.com/mac/116742.html)
-- [参考](https://my.oschina.net/renwofei423/blog/635798)
+- [字体天下官网](http://www.fonts.net.cn/)
 
-(1) 缺失的字体
-
-```shell
-sudo cp * /usr/share/fonts
-sudo mkfontscale
-sudo mkfontdir
-sudo fc-cache
-```
-
-(2) 微软雅黑字体: `msyhbd.ttf`
+(1) 字体的安装
 
 ```shell
 cd /usr/share/fonts
-mkdir msyh # 将msyhdb.ttf放到该目录
-sudo chmod 644 /usr/share/fonts/msyh/*
-cd msyh
+sudo mkdir myfont
+sudo cp * /usr/share/fonts/myfont/*
+sudo chmod 644 /usr/share/fonts/myfont/*
 sudo mkfontscale
 sudo mkfontdir
 sudo fc-cache
 ```
 
-(3) YaHei Consolas Hybrid
+(2) 好看的字体
 
-```shell
-wget -qO- https://raw.githubusercontent.com/yakumioto/YaHei-Consolas-Hybrid-1.12/master/install.sh | sudo sh
-```
+- 微软雅黑字体: `msyhbd.ttf`
+- YaHei Consolas Hybrid: 适合中文夹杂代码
+  - 安装：`wget -qO- https://raw.githubusercontent.com/yakumioto/YaHei-Consolas-Hybrid-1.12/master/install.sh | sudo sh`
+- 汉仪全唐诗： `HanYiQuanTangShiJian-1.ttf`
+- 文泉驿字体： `WenQuanWeiMiHei-1.ttf`
 
 3、支持中文输入法
 

@@ -131,7 +131,7 @@ ctrl+shift+b 运行生成任务
   - 同步vscode的设置，
   - 设置权限：`chmod a+x /home/perhaps/.vscode/extensions/Shan.code-settings-sync-2.8.2/node_modules/opn/xdg-open`
   - 使用：先在github gist中得到token值，vscode命令面板 `sync:upload settings` 上传设置，另一电脑 `sync:download settings` 输入gist值获取设置
-  - GitHub Token: 55ab35865dc538459f00ed5333a4587ce8b0efb6
+  - GitHub Token: f09cf687a4a0460d7a33b1aa3ac9b1b148b9363a
   - gist id: 302dc08703199b67b0054b3d0ff8588d
   - 出错的话: `sync:reset extension settings`
 - view in browser
