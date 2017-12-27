@@ -1,4 +1,4 @@
-<!-- 2017/924 -->
+<!-- 2017/9/24 -->
 
 # ubuntu下载安装工具
 
@@ -27,36 +27,20 @@ sudo mv -vi /usr/share/mime/packages/kde.xml.bak
 sudo update-mime-database /usr/share/mime
 ```
 
+
+## 一. 帮助
+
+- 改密码：`sudo passwd perhaps` lizi Poi12345
+- 去掉密码环：`super+a` -> `seahorse`, 右键`密码`，更改密码为空
+- 查看对应进程：`ps -aux | grep '程序名'` -> `sudo kill <pidNumber>`
+- 耳机没有声音：`apti pavucontrol` -> `pavucontrol` -> 配置的hda关了，输出设备改为模拟耳机
+
 ## 二、ubuntu信息
 
 - 查看内核: `uname -r`
 - 查看系统版本号: `cat /etc/issue`
 
 ## 三、方便点的命令
-
-1、apt免密运行
-
-`sudo visudo -f /etc/sudoers.d/mysudoers`,
-
-```shell
-perhaps ALL=(ALL) NOPASSWD: /usr/bin/apt-get
-perhaps ALL=(ALL) NOPASSWD: /usr/sbin/apt-fast
-perhaps ALL=(ALL) NOPASSWD: /usr/bin/dpkg
-perhaps ALL=(ALL) NOPASSWD: /usr/bin/vim
-perhaps ALL=(ALL) NOPASSWD: /home/perhaps/Documents/script/kcptun/client_linux_amd64
-```
-
-`sudo chmod 0440 /etc/sudoers.d/mysudoers`
-
-2、apt免sudo运行
-
-`vim ~/.bash_aliases`
-
-```shell
-alias apt-get='sudo apt-fast'
-alias apt-fast='sudo apt-fast'
-alias vim='sudo vim'
-```
 
 3、后台运行
 
@@ -67,19 +51,6 @@ alias vim='sudo vim'
 - `locate filename`
 - `whereis filename`
 - `find / -name filename`
-
-5、`vim ~/.bash_aliases`
-
-```shell
-alias vim='sudo vim'
-alias apt='sudo apt-fast -y'
-alias apti='sudo apt-fast install -y'
-alias apt-get='sudo apt-fast -y'
-alias apt-fast='sudo apt-fast -y'
-alias dpkg='sudo dpkg'
-alias dpkgi='sudo dpkg -i'
-alias kcpstart='~/Documents/overwall/kcpstart.sh'
-```
 
 ## 四、gnome3
 
@@ -134,6 +105,51 @@ apti aria2
 `apti conky conky-all`
 
 - [安装ubuntu后](https://www.jianshu.com/p/19353fbda01e)
+
+## 网络配置
+
+3.1 NetworkManager
+
+`sudo gedit /etc/NetworkManager/NetworkManager.conf`: `managed=true`
+
+3.2 配置ip，mac
+
+查看整体配置：`ifconfig`
+
+配置mac和ip：`sudo gedit /etc/network/interfaces`
+
+```shell
+auto enp2s0 # 根据ifconfig决定'enp2s0'参数名
+iface enp2s0 inet static # 使用静态IP
+pre-up ifconfig enp2s0 hw ether B8:88:E3:DC:C7:63 # 修改mac
+address 172.26.8.176 # IP
+netmask 255.255.254.0 # 子网掩码
+gateway 172.26.8.1 # 网关
+boastcast 172.26.8.255 # 广播
+dns-nameservers 192.168.10.8 202.116.0.1
+```
+
+3.3 配置dns
+
+`sudo vim /etc/resolvconf/resolv.conf.d/base`
+
+```shell
+nameserver 192.168.10.8
+nameserver 202.116.0.1
+```
+
+重启dns服务：`sudo resolvconf -u`
+
+3.4 编写脚本
+
+`vim ~/Docuements/script/network.sh`
+
+```shell
+sudo service network-manager restart
+sudo ip addr flush enp2s0
+sudo systemctl restart networking.service # 重启网卡
+```
+
 
 ## 参考文档
 
