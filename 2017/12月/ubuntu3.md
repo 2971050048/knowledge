@@ -1,11 +1,77 @@
-<!-- 2017/9/24 -->
+<!-- 2017/12/28 -->
 
-# ubuntu下载安装工具
+# ubuntu学习笔记3
 
-## 一、deb包
+软件的开机启动，遇到的问题和解决方案，文件的查找，下载安装命令
+<!--more-->
 
-deb是debian linus的安装格式</br>
-dpkg是Debian Package的简写，是为Debian专门开发的套件管理系统
+- [ubuntu学习笔记3](#ubuntu%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03)
+  - [一、开机启动](#%E4%B8%80%E3%80%81%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8)
+  - [二、遇到的问题和解决方法](#%E4%BA%8C%E3%80%81%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95)
+  - [三、查找](#%E4%B8%89%E3%80%81%E6%9F%A5%E6%89%BE)
+  - [四、下载安装](#%E5%9B%9B%E3%80%81%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85)
+  - [五、其他命令](#%E4%BA%94%E3%80%81%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4)
+  - [六、各文件目录的用途](#%E5%85%AD%E3%80%81%E5%90%84%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%9A%84%E7%94%A8%E9%80%94)
+
+## 一、开机启动
+
+1、开机启动程序: `gnome-session-properties`
+
+- ss-qt5
+- guake
+- redshift
+- fcitx
+
+2、开机启动脚本: 将脚本复制到 `/etc/init.d/` 目录下
+
+```shell
+sudo chmod 755 /etc/init.d/*.sh
+sudo update-rc.d /etc/init.d/*.sh defaults 95
+```
+
+## 二、遇到的问题和解决方法
+
+1、
+
+- 耳机没有声音: `apti pavucontrol` -> `pavucontrol` -> 配置的hda关了，输出设备改为模拟耳机
+- 改密码：`sudo passwd perhaps` lizi Poi12345
+- 去掉密码环：`super+a` -> `seahorse`, 右键`密码`，更改密码为
+
+2、`Unknown media type in type 'all/all'`
+
+```shell
+sudo mv -vi /usr/share/mime/packages/kde.xml
+sudo mv -vi /usr/share/mime/packages/kde.xml.bak
+sudo update-mime-database /usr/share/mime
+```
+
+## 三、查找
+
+1、系统信息
+
+- 查看内核: `uname -r`
+- 查看系统版本号: `cat /etc/issue`
+
+2、查看进程
+
+```shell
+ps -aux | grep '程序名'
+kill -9 <pidNumber>
+```
+
+3、查找文件
+
+- `locate filename`
+- `whereis filename`
+- `find 位置 -name filename`
+  - `find / -name kcpstart.sh`
+
+## 四、下载安装
+
+1、dpkg
+
+- deb是debian linus的安装格式
+- dpkg是 `Debian Package` 的简写，是为Debian专门开发的套件管理系统
 
 ```shell
 sudo dpkg [commands] <package.deb>
@@ -13,146 +79,18 @@ sudo dpkg [commands] <package.deb>
 [commands]: -I|-s|-L 查看包详细信息|查看包详细信息|查看包所有文件
 ```
 
-遇到的问题：
+## 五、其他命令
 
-1、依赖缺失
-
-```shell
-sudo apt-get -f install
-```
-2、`Unknown media type in type 'all/all'`
-```shell
-sudo mv -vi /usr/share/mime/packages/kde.xml 
-sudo mv -vi /usr/share/mime/packages/kde.xml.bak
-sudo update-mime-database /usr/share/mime
-```
-
-
-## 一. 帮助
-
-- 改密码：`sudo passwd perhaps` lizi Poi12345
-- 去掉密码环：`super+a` -> `seahorse`, 右键`密码`，更改密码为空
-- 查看对应进程：`ps -aux | grep '程序名'` -> `sudo kill <pidNumber>`
-- 耳机没有声音：`apti pavucontrol` -> `pavucontrol` -> 配置的hda关了，输出设备改为模拟耳机
-
-## 二、ubuntu信息
-
-- 查看内核: `uname -r`
-- 查看系统版本号: `cat /etc/issue`
-
-## 三、方便点的命令
-
-3、后台运行
+1、后台运行
 
 `nohup <commands> >filename 2>&1 &`
 
-4、查找文件
+## 六、各文件目录的用途
 
-- `locate filename`
-- `whereis filename`
-- `find / -name filename`
-
-## 四、gnome3
-
-```shell
-apt install gnome-shell -y
-apt install ubuntu-gnome-desktop -y
-apt install gnome-tweak-tool -y
-```
-
-arc主题
-
-```shell
-apt install autoconf automake pkg-config libgtk-3-dev
-```
-
-卸载gnome3
-
-```shell
-apt remove gnome-shell gnome
-apt autoremove
-apt purge gnome
-apt autoclean
-apt clean
-```
-
-## 五、卸载不用的软件
-
-```shell
-apt remove --purge libreoffice*
-sudo apt-get remove thunderbird totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot 
-sudo apt-get remove gnome-mines cheese transmission-common gnome-orca webbrowser-app gnome-sudoku  landscape-client-ui-install  
-sudo apt-get remove onboard deja-dup
-```
-
-```shell
-apti git unity-tweak-tool adobe-flashplugin vlc browser-plugin-vlc
-```
-
-1、uGet代替迅雷
-
-```shell
-sudo add-apt-repository ppa:plushuang-tw/uget-stable
-# 添加aria2的依赖
-sudo add-apt-repository ppa:t-tujikawa/ppa
-apt update
-apti uget
-apti aria2
-```
-
-2、conky: 监视软件
-
-`apti conky conky-all`
-
-- [安装ubuntu后](https://www.jianshu.com/p/19353fbda01e)
-
-## 网络配置
-
-3.1 NetworkManager
-
-`sudo gedit /etc/NetworkManager/NetworkManager.conf`: `managed=true`
-
-3.2 配置ip，mac
-
-查看整体配置：`ifconfig`
-
-配置mac和ip：`sudo gedit /etc/network/interfaces`
-
-```shell
-auto enp2s0 # 根据ifconfig决定'enp2s0'参数名
-iface enp2s0 inet static # 使用静态IP
-pre-up ifconfig enp2s0 hw ether B8:88:E3:DC:C7:63 # 修改mac
-address 172.26.8.176 # IP
-netmask 255.255.254.0 # 子网掩码
-gateway 172.26.8.1 # 网关
-boastcast 172.26.8.255 # 广播
-dns-nameservers 192.168.10.8 202.116.0.1
-```
-
-3.3 配置dns
-
-`sudo vim /etc/resolvconf/resolv.conf.d/base`
-
-```shell
-nameserver 192.168.10.8
-nameserver 202.116.0.1
-```
-
-重启dns服务：`sudo resolvconf -u`
-
-3.4 编写脚本
-
-`vim ~/Docuements/script/network.sh`
-
-```shell
-sudo service network-manager restart
-sudo ip addr flush enp2s0
-sudo systemctl restart networking.service # 重启网卡
-```
-
-
-## 参考文档
-
-- [安装deb包](https://chentao92.github.io/2016/09/19/ubuntu16.04%E5%AE%89%E8%A3%85deb%E8%BD%AF%E4%BB%B6%E5%8C%85%E6%AD%A5%E9%AA%A4/)
-- [ubuntu16.04安装后的事](https://www.sysgeek.cn/15-things-to-do-after-installing-ubuntu-16-04-lts/)
-- [gnome+arc主题](http://www.linuxdiyf.com/linux/21610.html)
+- `/`: 根目录，只存放目录
+- `/bin` `/usr/bin`: 可执行二进制文件目录。对应的命令ls,tar,mv,cat<
+- `/boot`: 系统启动时用到的文件。`/boot/vmlinuz，/boot/gurb`为内核文件。建议单独分区，分区大小100M即可
+- `/etc`: 存放系统配置文件，不建议存放可执行文件，重要配置文件有 `/etc/inittab、/etc/fstab、/etc/init.d、/etc/X11、/etc/sysconfig、/etc/xinetd.d`，修改配置文件前记得备份。`/etc/X11 存放与x windows有关的设置`
+- `/usr`: 放置软件
+- `/opt`: 第三方软件。如 `bin,share,lib,local` 应用程序，共享数据，函数库文件，软件升级
+- `/var`: variable 可变动的，例如 `mail,run,news,lock` 邮箱，程序相关，新闻组，文件锁

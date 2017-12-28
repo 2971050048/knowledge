@@ -1,6 +1,6 @@
-<!-- 2017/8/9  -->
+<!-- 2017/12/28  -->
 
-# ubuntu学习笔记一
+# ubuntu学习笔记1
 
 电脑换成了ubuntu系统，前期有点不适应，各种配置和脚本都完成后，我才算慢慢的体会到ubuntu的优雅。文章包括常用快捷键，快捷命令以及最常用的软件。
 <!--more-->
@@ -45,6 +45,7 @@
 alias vim='sudo vim'
 alias apt='sudo apt-fast -y'
 alias apti='sudo apt-fast install -y'
+alias aptr='sudo apt-add-repository -y'
 alias apt-get='sudo apt-fast -y'
 alias apt-fast='sudo apt-fast -y'
 alias dpkg='sudo dpkg'
