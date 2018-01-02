@@ -23,8 +23,7 @@ if(pattern.test('12345678901')) {
 ```javascript
 var pattern = /2,(3,(4)?)?/;
 var g = pattern.exec('1,2,3,4,5');
-console.log(g[0], g[1], g[2]); // '2,3,4' '3,4' '4'
-console.log(g.index, g.input); // 2 '1,2,3,4,5,'
+// ['2,3,4', '3,4', '4', index: 2, input: '1,2,3,4,5']
 ```
 
 ## 二、RegExp对象属性
@@ -164,8 +163,9 @@ a*  0 or more a's
 ```shell
 (...)   Capturing group
 (?:...) Non-capturing group
-$Y      Match the Y'th captured group
+\Y      back reference, Match the Y'th captured group
 ```
+
 4、类
 
 ```shell

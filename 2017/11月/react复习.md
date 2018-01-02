@@ -88,7 +88,7 @@ function Repeat(props) {
   for(let i = 0, len = props.numTimes; i < len; i++) {
     items.push(props.children(i))
   }
-  return <div>{items]</div>
+  return <div>{items}</div>
 }
 function ListOfTenThings() {
   return (

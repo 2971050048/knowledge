@@ -15,42 +15,43 @@
 1、增
 
 - 创建：`document.createElement(name)`
-- 添加：`parentElement.appendChild(element)` `parentElement.insertBefore(new, old)`
+- 添加：`e.appendChild(e1)` `e.insertBefore(new, old)`
 
 2、删
 
-- `element.parentNode.removeChild(node)`
+- `e.removeChild(e1)`
 
 3、改
 
-- `parentElement.replaceChild(new, old)`
+- `e.replaceChild(new, old)`
 
 4、查
 
-- `element.parentNode|children|firstElementChild|lastElementChild`
-- `noelementde.nextElementSibling|previousElementSibling`
+- `document.querySelector(selector)`
+- `e.parentNode|nextElementSibling|previousElementSibling`
+- `e.children|firstElementChild|lastElementChild`
 
 ## 二、属性的增删改查
 
 1、增,改
 
-- `element.setArrtibute(name, value)`
+- `e.setArrtibute(name, value)`
 
 2、删
 
-- `element.removeAttribute(name)`
+- `e.removeAttribute(name)`
 
 3、查
 
-- `element.hasAttribute(name)`
-- `element.getAttribute(name)`
-- `element.attributes`
+- `e.hasAttribute(name)`
+- `e.getAttribute(name)`
+- `e.attributes`
 
 4、其他重要属性
 
-- `element.color='#000'`
-- `element.className|id='bar'`
-- `element.nodeName.toLowerCase()`
+- `e.color='#000'`
+- `e.className|id='bar'`
+- `e.nodeName.toLowerCase()`
 
 ## 三、文本
 
@@ -60,7 +61,7 @@
 
 - outerHTML: `<div>hello<br/></div>`
 - innerHTML: `hello<br/>`
-- innerText: `hello`
+- innerText: `hello`, 这是浏览器显示的结果
 
 ## 四、事件
 
@@ -72,9 +73,9 @@
 2、api
 
 - 事件监听：`target.addEventListener(type, listener[, useCapture])`
-- 阻止事件传播 `e.stopProprgation()`
-- 阻止默认行为 `e.preventDefault()`
-- 事件目标 `e.target` `e.currentTarget`
+- 阻止事件传播 `event.stopPropagation()`
+- 阻止默认行为 `event.preventDefault()`
+- 事件目标 `event.target` `event.currentTarget`
 
 ![js-event](../../2017/images/js-event.jpg)
 

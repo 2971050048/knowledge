@@ -6,7 +6,7 @@
 
 ```javascript
 // 正则的实现
-const milliFormat = (num) => {
+function milliFormat (num) {
   const DIGIT_PATTERN = /^\d+/g; // 取整数
   const MILLI_PATTERN = /(?=(?!^)(\d{3})+$)/g; // 识别千分位
   let str = num ? num.toString() : '';
