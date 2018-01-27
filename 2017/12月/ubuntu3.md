@@ -45,6 +45,13 @@ sudo mv -vi /usr/share/mime/packages/kde.xml.bak
 sudo update-mime-database /usr/share/mime
 ```
 
+3、`Could not get lock /var/lib/dpkg/lock`
+
+```shell
+ps aux | grep apt
+kill -9 <progressnumber>
+```
+
 ## 三、查找
 
 1、系统信息

@@ -77,11 +77,11 @@
 - 阻止默认行为 `event.preventDefault()`
 - 事件目标 `event.target` `event.currentTarget`
 
-![js-event](../../2017/images/js-event.jpg)
+![js-event](../../2017/images/js-event.png)
 
 3、stopProgration
 
-阻止事件的传播, 看上图，那些框框就是`stopProgation`的意思，在哪一层设置了，那么就不能再碰线了。而事件就是空白的部分吧。
+数字表示事件，箭头表示事件传播方向，在哪个事件设置了stopPropagation，则对应的箭头失效。
 
 ## 五、element和node
 
