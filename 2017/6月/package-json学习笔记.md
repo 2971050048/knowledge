@@ -2,6 +2,8 @@
 
 # package.json
 
+## 一、package.json
+
 ```json
 {
   "name": "hello world",
@@ -69,3 +71,7 @@ latest：安装最新版本。
   }
 }
 ```
+
+## 二、参考文档
+
+-[官网](https://docs.npmjs.com/how-npm-works/packages)
