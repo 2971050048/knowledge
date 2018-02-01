@@ -1,3 +1,5 @@
+<!-- 2018/5/30 -->
+
 # webpack学习笔记(添加)
 
 CommonJS规范:
@@ -5,7 +7,7 @@ CommonJS规范:
   Node由模块组成,用CommonJS模块规范: 每个文件是一个模块,有自己的作用域
   模块内部,module对象代表当前模块
   module.exports是对外接口加载某模块,其实是加载某模块的module.exports
-  require方法加载模块 
+  require方法加载模块
   模块加载一次,运行结果就缓存了,清除缓存可让模块再次运行
 module对象:
   module.id       模块识别符
@@ -40,7 +42,6 @@ require:
     require.main:  指向主模块
     require.cache: 指向所有缓存的模块
     require.extensions: 根据文件的后缀名,调用不同的执行函数
-
 
 webpack:
 
@@ -94,4 +95,3 @@ module.exports = {
   webpack --watch //监听变动并自动打包
   webpack -p     //压缩混淆脚本
   webpack -d    //生成map映射文件，告知哪些模块被打包到哪里
-

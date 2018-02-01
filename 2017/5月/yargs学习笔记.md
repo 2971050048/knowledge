@@ -1,3 +1,8 @@
+<!-- 2017/5/10 -->
+
+# yargs学习笔记
+
+```js
 #!/usr/bin/env node
 
 // process.argv.forEach((val, index) => {
@@ -26,7 +31,7 @@ yargs
         default: '21',
         describe: 'your age'
       })
-    }, 
+    },
     (argv) => {
       console.log(argv.name)
       console.log(argv.age)
@@ -34,3 +39,4 @@ yargs
   )
   .help()
   .argv
+```
