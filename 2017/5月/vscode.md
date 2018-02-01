@@ -7,6 +7,7 @@
   - [二、问题解决](#%E4%BA%8C%E3%80%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3)
   - [三、插件](#%E4%B8%89%E3%80%81%E6%8F%92%E4%BB%B6)
   - [四、调试](#%E5%9B%9B%E3%80%81%E8%B0%83%E8%AF%95)
+  - [五、自定义代码段](#%E4%BA%94%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E6%AE%B5)
   - [五、参考文档](#%E4%BA%94%E3%80%81%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3)
 
 ## 一、快捷键
@@ -212,6 +213,84 @@ configurations的属性
 - port - 调试要附加的端口
 - stopOnEntry - 启动后自动停止程序
 - console - 启动调试控制台的位置, 值为internalConsole, integratedTerminal,  externalTerminal.
+
+## 五、自定义代码段
+
+1、javascript
+
+```json
+"while1": {
+  "prefix": "while1",
+  "body": [
+    "while(1) {",
+    "  if($1) break;",
+    "  $2",
+    "}"
+  ]
+},
+"for": {
+  "prefix": "for",
+  "body": [
+    "for(var ${1:i} = 0${2:, len = ${3:arr}.length}; ${1:i} < ${4:len}; ${1:i}++) {",
+    "  $5",
+    "}"
+  ]
+},
+"some": {
+  "prefix": "some",
+  "body": [
+    "${1:array}.some((val${2:, index}) => {",
+    "  $3",
+    "})"
+  ]
+},
+"foreach": {
+  "prefix": "foreach",
+  "body": [
+    "${1:array}.forEach((val${2:, index}) => {",
+    "  $3",
+    "})"
+  ]
+},
+"ifelse": {
+  "prefix": "ifelse",
+  "body": [
+    "if($1) {",
+    "  $2",
+    "} else {",
+    "  $3",
+    "}"
+  ]
+},
+"ifelseif": {
+  "prefix": "ifelseif",
+  "body": [
+    "if($1) {",
+    "  $2",
+    "} else if($3) {",
+    "  $4",
+    "} else {",
+    "  $5",
+    "}"
+  ]
+},
+"binary": {
+  "prefix": "binary",
+  "body": [
+    "while(1) {",
+    "  if(low > high) break",
+    "  mid = parseInt((low + high) / 2)",
+    "  if(arr[mid] > ${1:target}) {",
+    "    $2",
+    "  } else if(arr[mid] < ${3:target}) {",
+    "    $4",
+    "  } else {",
+    "    $5",
+    "  }",
+    "}"
+  ]
+}
+```
 
 ## 五、参考文档
 
