@@ -44,4 +44,4 @@ var head = {
     }
   }
 }
-console.log(FindKthToTail2(null, 4))
+console.log(FindKthToTail(head, 3))

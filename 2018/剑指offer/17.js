@@ -9,7 +9,11 @@
 } */
 function HasSubtree(pRoot1, pRoot2) {
   if (!pRoot1 || !pRoot2) return false;
-  return isSubtree(pRoot1, pRoot2) || HasSubtree(pRoot1.left, pRoot2) || HasSubtree(pRoot1.right, pRoot2)
+  if (pRoot1.val === pRoot2.val) {
+    return isSubtree(pRoot1, pRoot2)
+  } else {
+    return HasSubtree(pRoot1.left, pRoot2) || HasSubtree(pRoot1.right, pRoot2)
+  }
 }
 
 function isSubtree(root1, root2) {

@@ -8,11 +8,8 @@ function Merge(pHead1, pHead2) {
   var result = {}
   var p1 = pHead1
   var p2 = pHead2
-  if (p1 === null) {
-    return p2
-  } else if (p2 === null) {
-    return p1
-  }
+  if (!p1) return p2
+  if (!p2) return p1
   if (p1.val < p2.val) {
     result.val = p1.val
     result.next = Merge(p1.next, p2)
@@ -22,6 +19,7 @@ function Merge(pHead1, pHead2) {
   }
   return result
 }
+
 /* 
 var head = {
   val: 1,

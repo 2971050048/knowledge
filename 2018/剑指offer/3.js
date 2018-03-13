@@ -10,7 +10,7 @@
 function printListFromTailToHead(head) {
   var arr = []
   while (1) {
-    if (head === null || head === undefined || Object.keys(head).length === 0) break;
+    if (!head) break;
     arr.push(head.val)
     head = head.next
   }

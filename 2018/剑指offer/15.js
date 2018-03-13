@@ -1,5 +1,5 @@
 /* 
-输入一个链表，反转链表后，输出链表的所有元素。
+输入一个链表，反转链表后，输出新链表
  */
 /*function ListNode(x){
     this.val = x;
@@ -22,24 +22,6 @@ function ReverseList(pHead) {
   return p2
 }
 // 16ms 5204k
-
-/* 
-function ReverseList(pHead) {
-  var node
-  var arr = []
-  node = pHead
-  while (node != null) {
-    arr.push(node.val);
-    node = node.next;
-  }
-  node = pHead;
-  while (node != null) {
-    node.val = arr.pop()
-    node = node.next;
-  }
-  return pHead;
-}
- */
 
 var head = {
   val: 1,

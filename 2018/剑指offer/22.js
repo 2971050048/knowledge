@@ -6,13 +6,14 @@
 function PrintFromTopToBottom(root) {
   var arr = []
   var nodeArr = []
-  if (root !== null && root !== undefined) nodeArr.push(root)
+  if (!root) return arr
+  nodeArr.push(root)
   while (1) {
     if (nodeArr.length === 0) break;
     var node = nodeArr.shift()
     arr.push(node.val)
-    if (node.left !== null) nodeArr.push(node.left)
-    if (node.right !== null) nodeArr.push(node.right)
+    if (!node.left) nodeArr.push(node.left)
+    if (!node.right) nodeArr.push(node.right)
   }
   return arr
 }

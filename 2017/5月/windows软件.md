@@ -191,3 +191,21 @@ ffmpeg -i 风起了-视频.webm -i 风起了-音频.webm -vcodec copy -acodec co
 ```
 
 12、[WPS去广告](https://mopiaoyao.ctfile.com/dir/4187640-18229844-2c0b88/)
+
+13、qttabbar(win资源管理器)
+
+- [下载](https://sourceforge.net/projects/qttabbar/?source=typ_redirect)
+
+```shell
+Alt + G            Show group menu (Command Bar)
+Ctrl + O           Browse folder
+Ctrl + L           Lock / unlock current
+Ctrl + Tab         Select next tab
+Ctrl + W           Close current tab
+Ctrl + Shift + W   Close all but current
+Ctrl + Shift + Z   Undo close
+Alt + O            Open option dialog
+Alt + H            Show recent folder menu (Command Bar)
+Alt + Comma        Show toolbar menu
+Ctrl + Shift + Tab Select previous tab
+```
