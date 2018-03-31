@@ -115,3 +115,5 @@
 - [CSS布局](http://web.jobbole.com/90844/)
 - [CSS布局技巧](http://www.imooc.com/article/2235)
 - [阮：flex布局](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+- [flexbox 骰子demo](https://codepen.io/LandonSchropp/pen/KpzzGo)
+- [css布局](http://www.cnblogs.com/dolphinX/archive/2012/10/13/2722501.html)

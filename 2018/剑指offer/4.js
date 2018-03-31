@@ -16,10 +16,10 @@ function reConstructBinaryTree(pre, vin) {
   var tree = {}
   if (pre.length === 0 || !pre) return null
   tree.val = pre[0]
-  vin.some((val, index) => {
+  vin.some((val, i) => {
     if (val === pre[0]) {
-      tree.left = reConstructBinaryTree(pre.slice(1, index + 1), vin.slice(0, index))
-      tree.right = reConstructBinaryTree(pre.slice(index + 1), vin.slice(index + 1))
+      tree.left = reConstructBinaryTree(pre.slice(1, i + 1), vin.slice(0, i))
+      tree.right = reConstructBinaryTree(pre.slice(i + 1), vin.slice(i + 1))
       return true
     }
   })

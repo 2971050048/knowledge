@@ -136,8 +136,8 @@ function() {
 
 快捷键编辑md文件
 
-- `ctrl+b` bold
-- `ctrl+i` italic
+- `ctrl+b` bold (改为`alt+b`)
+- `ctrl+i` italic (改为`alt+i`)
 - `ctrl+shift+]` #
 - `ctrl+shift+[` 去掉#
 - `alt+c` check task list item

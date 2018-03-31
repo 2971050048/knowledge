@@ -2,7 +2,12 @@
 
 # react-native
 
-## 
+## 学习网站
+
+- [中文官网](https://reactnative.cn/docs/0.47/getting-started.html)
+- [ant-design-mobile](https://mobile.ant.design/docs/react/introduce-cn)
+- [font awesome](https://fontawesome.com/icons?d=gallery)
+- [rn-textinput](http://www.hangge.com/blog/cache/detail_1526.html)
 
 ## 参考文档
 

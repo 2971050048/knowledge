@@ -53,7 +53,8 @@
 
 ## 四、参考文档
 
-- [官网: 入门教程](https://developer.chrome.com/extensions/getstarted)</br>
-- [官网: chrome开发者](https://developer.chrome.com/extensions)</br>
-- [知乎: 从零开始写一个 Chrome 扩展](https://www.zhihu.com/question/20179805)</br>
-- [dom api](https://www.w3schools.com/jsref/dom_obj_document.asp)</br>
+- [官网: 入门教程](https://developer.chrome.com/extensions/getstarted)
+- [官网: chrome开发者](https://developer.chrome.com/extensions)
+- [知乎: 从零开始写一个 Chrome 扩展](https://www.zhihu.com/question/20179805)
+- [dom api](https://www.w3schools.com/jsref/dom_obj_document.asp)
+- [chrome插件攻略](http://www.cnblogs.com/liuxianan/p/chrome-plugin-develop.html)
