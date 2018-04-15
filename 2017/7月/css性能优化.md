@@ -101,3 +101,6 @@ css规则顺序
 - [segmentfault: 从输入URL到页面加载完成的过程中都发生了什么事情？](https://segmentfault.com/q/1010000000489803)
 - [博客: 不简单的前端性能优化](http://www.bijishequ.com/detail/379404?p=61)
 - [地址栏输入URL到页面加载完成发生了什么](https://kknews.cc/other/vmv9kqy.html)
+- [sec优化实战](http://imweb.io/topic/5682938b57d7a6c47914fc00)
+- [web性能优化](http://www.cnblogs.com/50614090/archive/2011/08/19/2145620.html)
+- [Web性能优化2](https://w3ctech.com/topic/1767)

@@ -109,5 +109,6 @@ vscode命令端：`eslint: create ".eslintrc.json" file`
 ## 四、参考文档
 
 - [官网：eslint使用规则](http://eslint.cn/docs/rules/)
+- [eslint的配置](http://eslint.cn/docs/user-guide/configuring)
 - [standard扩展规则详解](https://github.com/standard/standard/blob/master/docs/RULES-zhcn.md)
 - [eslint官网](http://eslint.cn/docs/user-guide/configuring)
