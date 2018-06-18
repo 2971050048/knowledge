@@ -1,0 +1,67 @@
+{
+  "workbench.colorTheme": "Dracula",
+  "editor.tabSize": 2,
+  "editor.cursorBlinking": "solid",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "html.format.endWithNewline": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "window.zoomLevel": 0,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.snippetSuggestions": "top",
+  // sync
+  "sync.gist": "90fdb9b2ca3c41c26e7d5c3c228cd798",
+  "sync.lastUpload": "2018-04-30T04:26:30.339Z",
+  "sync.autoDownload": false,
+  "sync.autoUpload": false,
+  "sync.lastDownload": "",
+  "sync.forceDownload": false,
+  "sync.host": "",
+  "sync.pathPrefix": "",
+  "sync.quietSync": false,
+  "sync.askGistName": false,
+  "sync.removeExtensions": true,
+  "sync.syncExtensions": true,
+  // less
+  "less.compile": {
+    "compress": false, // true => remove surplus whitespace
+    "sourceMap": false, // true => generate source maps (.wxss.map files)
+    "out": true, // false => DON'T output .wxss files (overridable per-file, see below)
+  },
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+  // beautify
+  "beautify.config": {
+    "indent_size": 2,
+    "space_after_anon_function": true,
+    "keep_function_indentation": true,
+    "wrap_attributes": "force-aligned", // 属性的换行
+    "max_preserve_newlines": 2 // 保留的换行数最多为1
+  },
+  "beautify.language": {
+    "js": {
+      "type": [
+        "javascript",
+        "json"
+      ],
+      "filename": [
+        ".jshintrc",
+        ".jsbeautify"
+      ]
+    },
+    "css": [
+      "css",
+      "scss",
+      "less"
+    ],
+    "html": [
+      "htm",
+      "html",
+      "wxml"
+    ]
+  }
+}
